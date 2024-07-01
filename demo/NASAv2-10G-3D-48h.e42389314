@@ -1,0 +1,54 @@
+/home/jbaglino/PetIGA-3.20/demo/NASAv2.c: In function ‘Jacobian’:
+/home/jbaglino/PetIGA-3.20/demo/NASAv2.c:423:29: warning: variable ‘grad_ice’ set but not used [-Wunused-but-set-variable]
+  423 |     PetscScalar ice, ice_t, grad_ice[dim];
+      |                             ^~~~~~~~
+/home/jbaglino/PetIGA-3.20/demo/NASAv2.c: In function ‘main’:
+/home/jbaglino/PetIGA-3.20/demo/NASAv2.c:2031:5: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+ 2031 |     for(l=0;l<dim;l++) for(m=0;m<2;m++) ierr = IGASetBoundaryValue(iga,l,m,2,user.hum0*rho0_vs);CHKERRQ(ierr);
+      |     ^~~
+In file included from /home/jbaglino/Petsc-3.20/include/petscsys.h:1100,
+                 from /home/jbaglino/Petsc-3.20/include/petscvec.h:8,
+                 from /home/jbaglino/Petsc-3.20/include/petscmat.h:6,
+                 from /home/jbaglino/Petsc-3.20/include/petscpc.h:6,
+                 from /home/jbaglino/Petsc-3.20/include/petscksp.h:6,
+                 from /home/jbaglino/Petsc-3.20/include/petscsnes.h:6,
+                 from /home/jbaglino/Petsc-3.20/include/petscts.h:7,
+                 from /home/jbaglino/Petsc-3.20/include/petsc/private/tsimpl.h:3,
+                 from /home/jbaglino/PetIGA-3.20/demo/NASAv2.c:1:
+/home/jbaglino/Petsc-3.20/include/petscerror.h:457:5: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+  457 |     do { \
+      |     ^~
+/home/jbaglino/Petsc-3.20/include/petscerror.h:504:22: note: in expansion of macro ‘PetscCall’
+  504 | #define CHKERRQ(...) PetscCall(__VA_ARGS__)
+      |                      ^~~~~~~~~
+/home/jbaglino/PetIGA-3.20/demo/NASAv2.c:2031:97: note: in expansion of macro ‘CHKERRQ’
+ 2031 |     for(l=0;l<dim;l++) for(m=0;m<2;m++) ierr = IGASetBoundaryValue(iga,l,m,2,user.hum0*rho0_vs);CHKERRQ(ierr);
+      |                                                                                                 ^~~~~~~
+/home/jbaglino/PetIGA-3.20/demo/NASAv2.c:2037:5: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+ 2037 |     for(l=0;l<dim;l++) for(m=0;m<2;m++) ierr = IGASetBoundaryValue(iga,l,m,1,T_BC[l][m]);CHKERRQ(ierr);
+      |     ^~~
+In file included from /home/jbaglino/Petsc-3.20/include/petscsys.h:1100,
+                 from /home/jbaglino/Petsc-3.20/include/petscvec.h:8,
+                 from /home/jbaglino/Petsc-3.20/include/petscmat.h:6,
+                 from /home/jbaglino/Petsc-3.20/include/petscpc.h:6,
+                 from /home/jbaglino/Petsc-3.20/include/petscksp.h:6,
+                 from /home/jbaglino/Petsc-3.20/include/petscsnes.h:6,
+                 from /home/jbaglino/Petsc-3.20/include/petscts.h:7,
+                 from /home/jbaglino/Petsc-3.20/include/petsc/private/tsimpl.h:3,
+                 from /home/jbaglino/PetIGA-3.20/demo/NASAv2.c:1:
+/home/jbaglino/Petsc-3.20/include/petscerror.h:457:5: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+  457 |     do { \
+      |     ^~
+/home/jbaglino/Petsc-3.20/include/petscerror.h:504:22: note: in expansion of macro ‘PetscCall’
+  504 | #define CHKERRQ(...) PetscCall(__VA_ARGS__)
+      |                      ^~~~~~~~~
+/home/jbaglino/PetIGA-3.20/demo/NASAv2.c:2037:90: note: in expansion of macro ‘CHKERRQ’
+ 2037 |     for(l=0;l<dim;l++) for(m=0;m<2;m++) ierr = IGASetBoundaryValue(iga,l,m,1,T_BC[l][m]);CHKERRQ(ierr);
+      |                                                                                          ^~~~~~~
+/home/jbaglino/PetIGA-3.20/demo/NASAv2.c: In function ‘InitialSedGrainsGravity’:
+/home/jbaglino/PetIGA-3.20/demo/NASAv2.c:1103:35: warning: ‘cand_pick’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ 1103 |         yc_cand[init_cand]=yc_cand[cand_pick];
+      |                            ~~~~~~~^~~~~~~~~~~
+/home/jbaglino/PetIGA-3.20/demo/NASAv2.c:1163:7: warning: ‘init_cand’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ 1163 |       PetscPrintf(PETSC_COMM_WORLD,"     New %d candidates \n",cand-init_cand);
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

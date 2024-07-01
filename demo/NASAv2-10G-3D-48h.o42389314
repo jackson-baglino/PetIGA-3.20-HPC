@@ -1,0 +1,885 @@
+” ”
+“compiling NASAv2”
+” ”
+/home/jbaglino/Petsc-3.20/HPC_Petsc-3.20_OMPI-4.1.5_gcc-11.3.1-2clspqh/bin/mpicc -o NASAv2.o -c -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -O3 -march=native -mtune=native -g3 -Wall -Wextra -Wno-unused-parameter  -I/home/jbaglino/Petsc-3.20/include -I/home/jbaglino/Petsc-3.20/HPC_Petsc-3.20_OMPI-4.1.5_gcc-11.3.1-2clspqh/include    -I/home/jbaglino/PetIGA-3.20/HPC_Petsc-3.20_OMPI-4.1.5_gcc-11.3.1-2clspqh/include -I/home/jbaglino/PetIGA-3.20/include `pwd`/NASAv2.c
+/home/jbaglino/Petsc-3.20/HPC_Petsc-3.20_OMPI-4.1.5_gcc-11.3.1-2clspqh/bin/mpicc -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -O3 -march=native -mtune=native -g3 -Wall -Wextra -Wno-unused-parameter  -o NASAv2 NASAv2.o -Wl,-rpath,/home/jbaglino/PetIGA-3.20/HPC_Petsc-3.20_OMPI-4.1.5_gcc-11.3.1-2clspqh/lib -L/home/jbaglino/PetIGA-3.20/HPC_Petsc-3.20_OMPI-4.1.5_gcc-11.3.1-2clspqh/lib -lpetiga -L/home/jbaglino/Petsc-3.20/HPC_Petsc-3.20_OMPI-4.1.5_gcc-11.3.1-2clspqh/lib -Wl,-rpath,/home/jbaglino/Petsc-3.20/HPC_Petsc-3.20_OMPI-4.1.5_gcc-11.3.1-2clspqh/lib -L/home/jbaglino/Petsc-3.20/HPC_Petsc-3.20_OMPI-4.1.5_gcc-11.3.1-2clspqh/lib -L/usr/lib/gcc/x86_64-redhat-linux/11 -lpetsc -lsuperlu_dist -lflapack -lfblas -lparmetis -lmetis -lm -lX11 -lmpifort -lmpi -lpthread -lgfortran -lm -lgfortran -lm -lgfortran -lgcc_s -lquadmath -lstdc++
+/usr/bin/rm -f -f NASAv2.o
+------------------------------------------------------
+‘Job is running on node ’
+hpc-34-24.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-24.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-19.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-23.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+hpc-34-20.cm.cluster
+------------------------------------------------------
+qsub is running on login3.cm.cluster
+executing queue is geomechanics
+working directory is /central/home/jbaglino/PetIGA-3.20/demo
+partition/queue is expansion
+job identifier is 42389314
+job name is NASAv2-10G-3D-48h
+node file is hpc-34-[19-20,23-24]
+cluster central
+total nodes 4
+------------------------------------------------------
+” ”
+“setting up things”
+” ”
+42389314
+NASAv2-10G-3D-48h_42389314
+/central/scratch/jbaglino/NASAv2-10G-3D-48h_42389314
+/central/home/jbaglino/PetIGA-3.20/demo
+ 
+running NASAv2
+ 
+Unpacking environment variables...
+Environment variables successfully set.
+Nx: 275
+Ny: 275
+Nz: 122
+Lx: 0.5e-03
+Ly: 0.5e-03
+Lz: 1.101e-04
+delt_t: 1.0e-4
+t_final: 172800
+n_out: 100
+humidity: 0.98
+temp: -30.0
+grad_temp0X: 0
+grad_temp0Y: 3.0
+grad_temp0Z: 0
+dim: 3
+Adapative time stepping scheme: NR_iter 2-5  factor 1.334  dt0 1.00e-04  dt_range 1.00e-06-8.73e+02  
+
+Running on 200 processes.
+
+
+TEMPERATURE DEPENDENT G-T PARAMETERS 
+
+No sed grains
+
+--------------------- ICE GRAINS --------------------------
+Reading grains from /home/jbaglino/PetIGA-3.20/demo/input/grainReadFile-5_s1-10.dat
+
+
+ new ice grain 1!!  x 1.75e-04  y 1.75e-04  r 1.10e-04 
+ new ice grain 2!!  x 2.73e-04  y 2.92e-04  r 4.25e-05 
+ new ice grain 3!!  x 7.77e-05  y 5.57e-05  r 4.39e-05 
+ new ice grain 4!!  x 6.04e-05  y 2.93e-04  r 5.46e-05 
+ new ice grain 5!!  x 2.93e-04  y 7.51e-05  r 4.42e-05 
+Nx: 275.000000
+Ny: 275.000000
+Nz: 122.000000
+Lx: 0.000500
+Ly: 0.000500
+Lz: 0.000110
+delt_t: 0.000100
+t_final: 172800.000000
+humidity: 0.980000
+temp: -30.000000
+grad_temp0X: 0.000000
+grad_temp0Y: 3.000000
+grad_temp0Z: 0.000000
+dim: 3
+ b_min 7.30e+05 b_max 7.31e+05
+
+TIME               TIME_STEP     TOT_ICE      TOT_AIR       TEMP      TOT_RHOV     I-A interf   Tripl_junct 
+
+(0) 0.000e+00    1.000e-04   5.567e-12   2.196e-11   -8.257e-10   6.720e-15   3.055e-14   0.000e+00 
+
+OUTPUT print!
+    IT_NUMBER: 0     fnorm: 8.0495e-01 
+    n0: 2.66e-18 r 1.0e+00   n1: 8.05e-01 r 1.0e+00   n2: 7.73e-24 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 4
+    IT_NUMBER: 1     fnorm: 6.1143e-10 
+    n0: 3.62e-21 r 1.4e-03   n1: 6.11e-10 r 7.6e-10   n2: 1.25e-23 r 1.6e+00 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+    IT_NUMBER: 0     fnorm: 6.1208e-10 
+    n0: 2.66e-18 r 1.0e+00   n1: 6.12e-10 r 1.0e+00   n2: 1.39e-22 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 6
+    IT_NUMBER: 1     fnorm: 3.3011e-16 
+    n0: 4.86e-22 r 1.8e-04   n1: 3.30e-16 r 5.4e-07   n2: 1.95e-24 r 1.4e-02 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+    IT_NUMBER: 0     fnorm: 1.2074e+00 
+    n0: 5.99e-18 r 1.0e+00   n1: 1.21e+00 r 1.0e+00   n2: 5.82e-23 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 4
+    IT_NUMBER: 1     fnorm: 2.7087e-08 
+    n0: 7.85e-21 r 1.3e-03   n1: 2.71e-08 r 2.2e-08   n2: 2.75e-23 r 4.7e-01 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 1.000e-04 -> 1.334e-04 
+    IT_NUMBER: 0     fnorm: 6.0371e-01 
+    n0: 4.79e-18 r 1.0e+00   n1: 6.04e-01 r 1.0e+00   n2: 5.81e-22 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 4
+    IT_NUMBER: 1     fnorm: 2.1202e-07 
+    n0: 6.87e-21 r 1.4e-03   n1: 2.12e-07 r 3.5e-07   n2: 2.37e-23 r 4.1e-02 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 1.334e-04 -> 1.778e-04 
+    IT_NUMBER: 0     fnorm: 3.0186e-01 
+    n0: 5.02e-18 r 1.0e+00   n1: 3.02e-01 r 1.0e+00   n2: 1.20e-21 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 5
+    IT_NUMBER: 1     fnorm: 4.7366e-09 
+    n0: 2.46e-21 r 4.9e-04   n1: 4.74e-09 r 1.6e-08   n2: 1.09e-23 r 9.1e-03 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 1.778e-04 -> 2.371e-04 
+    IT_NUMBER: 0     fnorm: 1.5093e-01 
+    n0: 4.97e-18 r 1.0e+00   n1: 1.51e-01 r 1.0e+00   n2: 1.95e-21 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 6
+    IT_NUMBER: 1     fnorm: 8.2574e-08 
+    n0: 8.59e-22 r 1.7e-04   n1: 8.26e-08 r 5.5e-07   n2: 4.40e-24 r 2.2e-03 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 2.371e-04 -> 3.162e-04 
+    IT_NUMBER: 0     fnorm: 7.5464e-02 
+    n0: 4.97e-18 r 1.0e+00   n1: 7.55e-02 r 1.0e+00   n2: 2.86e-21 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 6
+    IT_NUMBER: 1     fnorm: 1.6523e-07 
+    n0: 7.36e-22 r 1.5e-04   n1: 1.65e-07 r 2.2e-06   n2: 4.17e-24 r 1.5e-03 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 3.162e-04 -> 4.217e-04 
+    IT_NUMBER: 0     fnorm: 3.7732e-02 
+    n0: 4.96e-18 r 1.0e+00   n1: 3.77e-02 r 1.0e+00   n2: 3.95e-21 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 6
+    IT_NUMBER: 1     fnorm: 1.7425e-07 
+    n0: 5.46e-22 r 1.1e-04   n1: 1.74e-07 r 4.6e-06   n2: 3.82e-24 r 9.7e-04 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 4.217e-04 -> 5.623e-04 
+    IT_NUMBER: 0     fnorm: 1.8866e-02 
+    n0: 4.95e-18 r 1.0e+00   n1: 1.89e-02 r 1.0e+00   n2: 5.25e-21 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 6
+    IT_NUMBER: 1     fnorm: 7.8736e-08 
+    n0: 4.07e-22 r 8.2e-05   n1: 7.87e-08 r 4.2e-06   n2: 3.82e-24 r 7.3e-04 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 5.623e-04 -> 7.499e-04 
+    IT_NUMBER: 0     fnorm: 9.4333e-03 
+    n0: 4.93e-18 r 1.0e+00   n1: 9.43e-03 r 1.0e+00   n2: 6.77e-21 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 7
+    IT_NUMBER: 1     fnorm: 3.4788e-08 
+    n0: 1.39e-22 r 2.8e-05   n1: 3.48e-08 r 3.7e-06   n2: 1.56e-24 r 2.3e-04 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 7.499e-04 -> 1.000e-03 
+    IT_NUMBER: 0     fnorm: 4.7166e-03 
+    n0: 4.91e-18 r 1.0e+00   n1: 4.72e-03 r 1.0e+00   n2: 8.52e-21 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 7
+    IT_NUMBER: 1     fnorm: 2.4790e-09 
+    n0: 1.46e-22 r 3.0e-05   n1: 2.48e-09 r 5.3e-07   n2: 1.83e-24 r 2.1e-04 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 1.000e-03 -> 1.334e-03 
+    IT_NUMBER: 0     fnorm: 2.3583e-03 
+    n0: 4.88e-18 r 1.0e+00   n1: 2.36e-03 r 1.0e+00   n2: 1.05e-20 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 8
+    IT_NUMBER: 1     fnorm: 2.8788e-09 
+    n0: 5.33e-23 r 1.1e-05   n1: 2.88e-09 r 1.2e-06   n2: 5.25e-25 r 5.0e-05 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 1.334e-03 -> 1.778e-03 
+
+TIME               TIME_STEP     TOT_ICE      TOT_AIR       TEMP      TOT_RHOV     I-A interf   Tripl_junct 
+
+(0) 5.032e-03    1.778e-03   5.567e-12   2.196e-11   -8.258e-10   6.720e-15   3.055e-14   0.000e+00 
+
+    IT_NUMBER: 0     fnorm: 1.1792e-03 
+    n0: 4.85e-18 r 1.0e+00   n1: 1.18e-03 r 1.0e+00   n2: 1.26e-20 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 8
+    IT_NUMBER: 1     fnorm: 6.4593e-09 
+    n0: 6.94e-23 r 1.4e-05   n1: 6.46e-09 r 5.5e-06   n2: 5.95e-25 r 4.7e-05 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 1.778e-03 -> 2.371e-03 
+    IT_NUMBER: 0     fnorm: 5.8957e-04 
+    n0: 4.81e-18 r 1.0e+00   n1: 5.90e-04 r 1.0e+00   n2: 1.49e-20 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 9
+    IT_NUMBER: 1     fnorm: 8.0356e-10 
+    n0: 3.07e-23 r 6.4e-06   n1: 8.04e-10 r 1.4e-06   n2: 7.31e-25 r 4.9e-05 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 2.371e-03 -> 3.162e-03 
+    IT_NUMBER: 0     fnorm: 2.9478e-04 
+    n0: 4.76e-18 r 1.0e+00   n1: 2.95e-04 r 1.0e+00   n2: 1.73e-20 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 9
+    IT_NUMBER: 1     fnorm: 1.3597e-09 
+    n0: 3.52e-23 r 7.4e-06   n1: 1.36e-09 r 4.6e-06   n2: 8.69e-25 r 5.0e-05 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 3.162e-03 -> 4.217e-03 
+    IT_NUMBER: 0     fnorm: 1.4739e-04 
+    n0: 4.70e-18 r 1.0e+00   n1: 1.47e-04 r 1.0e+00   n2: 1.96e-20 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 10
+    IT_NUMBER: 1     fnorm: 4.5198e-10 
+    n0: 1.97e-23 r 4.2e-06   n1: 4.52e-10 r 3.1e-06   n2: 4.50e-25 r 2.3e-05 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 4.217e-03 -> 5.623e-03 
+    IT_NUMBER: 0     fnorm: 7.3698e-05 
+    n0: 4.63e-18 r 1.0e+00   n1: 7.37e-05 r 1.0e+00   n2: 2.19e-20 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 11
+    IT_NUMBER: 1     fnorm: 4.5323e-10 
+    n0: 2.71e-23 r 5.9e-06   n1: 4.53e-10 r 6.1e-06   n2: 8.88e-25 r 4.1e-05 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 5.623e-03 -> 7.499e-03 
+    IT_NUMBER: 0     fnorm: 3.6848e-05 
+    n0: 4.54e-18 r 1.0e+00   n1: 3.68e-05 r 1.0e+00   n2: 2.40e-20 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 12
+    IT_NUMBER: 1     fnorm: 1.0579e-11 
+    n0: 2.66e-24 r 5.9e-07   n1: 1.06e-11 r 2.9e-07   n2: 8.49e-25 r 3.5e-05 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 7.499e-03 -> 1.000e-02 
+    IT_NUMBER: 0     fnorm: 1.8424e-05 
+    n0: 4.44e-18 r 1.0e+00   n1: 1.84e-05 r 1.0e+00   n2: 2.59e-20 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 13
+    IT_NUMBER: 1     fnorm: 5.8003e-11 
+    n0: 1.34e-23 r 3.0e-06   n1: 5.80e-11 r 3.1e-06   n2: 7.48e-25 r 2.9e-05 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 1.000e-02 -> 1.334e-02 
+    IT_NUMBER: 0     fnorm: 9.2122e-06 
+    n0: 4.33e-18 r 1.0e+00   n1: 9.21e-06 r 1.0e+00   n2: 2.75e-20 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 15
+    IT_NUMBER: 1     fnorm: 7.5441e-12 
+    n0: 4.59e-24 r 1.1e-06   n1: 7.54e-12 r 8.2e-07   n2: 1.01e-24 r 3.7e-05 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 1.334e-02 -> 1.778e-02 
+    IT_NUMBER: 0     fnorm: 4.6061e-06 
+    n0: 4.21e-18 r 1.0e+00   n1: 4.61e-06 r 1.0e+00   n2: 2.87e-20 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 16
+    IT_NUMBER: 1     fnorm: 3.2142e-17 
+    n0: 4.75e-24 r 1.1e-06   n1: 3.21e-17 r 7.0e-12   n2: 1.07e-24 r 3.7e-05 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 1.778e-02 -> 2.371e-02 
+    IT_NUMBER: 0     fnorm: 2.3030e-06 
+    n0: 4.07e-18 r 1.0e+00   n1: 2.30e-06 r 1.0e+00   n2: 2.95e-20 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 18
+    IT_NUMBER: 1     fnorm: 3.7927e-17 
+    n0: 5.60e-24 r 1.4e-06   n1: 3.79e-17 r 1.6e-11   n2: 1.19e-24 r 4.0e-05 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 2.371e-02 -> 3.162e-02 
+
+TIME               TIME_STEP     TOT_ICE      TOT_AIR       TEMP      TOT_RHOV     I-A interf   Tripl_junct 
+
+(0) 9.451e-02    3.162e-02   5.567e-12   2.196e-11   -8.258e-10   6.721e-15   3.055e-14   0.000e+00 
+
+    IT_NUMBER: 0     fnorm: 1.1515e-06 
+    n0: 3.93e-18 r 1.0e+00   n1: 1.15e-06 r 1.0e+00   n2: 2.99e-20 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 19
+    IT_NUMBER: 1     fnorm: 4.4166e-17 
+    n0: 6.38e-24 r 1.6e-06   n1: 4.42e-17 r 3.8e-11   n2: 1.44e-24 r 4.8e-05 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 3.162e-02 -> 4.217e-02 
+    IT_NUMBER: 0     fnorm: 5.7576e-07 
+    n0: 3.77e-18 r 1.0e+00   n1: 5.76e-07 r 1.0e+00   n2: 2.98e-20 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 21
+    IT_NUMBER: 1     fnorm: 5.3445e-17 
+    n0: 8.62e-24 r 2.3e-06   n1: 5.34e-17 r 9.3e-11   n2: 1.30e-24 r 4.4e-05 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 4.217e-02 -> 5.623e-02 
+    IT_NUMBER: 0     fnorm: 2.8788e-07 
+    n0: 3.60e-18 r 1.0e+00   n1: 2.88e-07 r 1.0e+00   n2: 2.93e-20 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 23
+    IT_NUMBER: 1     fnorm: 5.8650e-17 
+    n0: 1.16e-23 r 3.2e-06   n1: 5.87e-17 r 2.0e-10   n2: 1.20e-24 r 4.1e-05 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 5.623e-02 -> 7.499e-02 
+    IT_NUMBER: 0     fnorm: 1.4394e-07 
+    n0: 3.43e-18 r 1.0e+00   n1: 1.44e-07 r 1.0e+00   n2: 2.85e-20 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 24
+    IT_NUMBER: 1     fnorm: 7.5350e-17 
+    n0: 1.53e-23 r 4.5e-06   n1: 7.54e-17 r 5.2e-10   n2: 1.75e-24 r 6.2e-05 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 7.499e-02 -> 1.000e-01 
+    IT_NUMBER: 0     fnorm: 7.1974e-08 
+    n0: 3.25e-18 r 1.0e+00   n1: 7.20e-08 r 1.0e+00   n2: 2.75e-20 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 26
+    IT_NUMBER: 1     fnorm: 9.0096e-17 
+    n0: 2.00e-23 r 6.2e-06   n1: 9.01e-17 r 1.3e-09   n2: 2.29e-24 r 8.3e-05 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 1.000e-01 -> 1.334e-01 
+    IT_NUMBER: 0     fnorm: 3.5989e-08 
+    n0: 3.05e-18 r 1.0e+00   n1: 3.60e-08 r 1.0e+00   n2: 2.62e-20 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 27
+    IT_NUMBER: 1     fnorm: 1.2920e-16 
+    n0: 2.62e-23 r 8.6e-06   n1: 1.29e-16 r 3.6e-09   n2: 2.66e-24 r 1.0e-04 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 1.334e-01 -> 1.778e-01 
+    IT_NUMBER: 0     fnorm: 1.7997e-08 
+    n0: 2.86e-18 r 1.0e+00   n1: 1.80e-08 r 1.0e+00   n2: 2.48e-20 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 29
+    IT_NUMBER: 1     fnorm: 1.5911e-16 
+    n0: 3.39e-23 r 1.2e-05   n1: 1.59e-16 r 8.8e-09   n2: 2.28e-24 r 9.2e-05 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 1.778e-01 -> 2.371e-01 
+    IT_NUMBER: 0     fnorm: 8.9962e-09 
+    n0: 2.66e-18 r 1.0e+00   n1: 9.00e-09 r 1.0e+00   n2: 2.32e-20 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 31
+    IT_NUMBER: 1     fnorm: 1.7264e-16 
+    n0: 4.37e-23 r 1.6e-05   n1: 1.73e-16 r 1.9e-08   n2: 4.27e-24 r 1.8e-04 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 2.371e-01 -> 3.162e-01 
+    IT_NUMBER: 0     fnorm: 4.4959e-09 
+    n0: 2.45e-18 r 1.0e+00   n1: 4.50e-09 r 1.0e+00   n2: 2.16e-20 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 33
+    IT_NUMBER: 1     fnorm: 2.9323e-16 
+    n0: 5.48e-23 r 2.2e-05   n1: 2.93e-16 r 6.5e-08   n2: 4.22e-24 r 2.0e-04 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 3.162e-01 -> 4.217e-01 
+    IT_NUMBER: 0     fnorm: 2.2458e-09 
+    n0: 2.24e-18 r 1.0e+00   n1: 2.25e-09 r 1.0e+00   n2: 1.98e-20 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 34
+    IT_NUMBER: 1     fnorm: 2.9315e-16 
+    n0: 6.67e-23 r 3.0e-05   n1: 2.93e-16 r 1.3e-07   n2: 4.07e-24 r 2.1e-04 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 4.217e-01 -> 5.623e-01 
+
+TIME               TIME_STEP     TOT_ICE      TOT_AIR       TEMP      TOT_RHOV     I-A interf   Tripl_junct 
+
+(2) 1.686e+00    5.623e-01   5.566e-12   2.196e-11   -8.258e-10   6.731e-15   3.053e-14   0.000e+00 
+
+    IT_NUMBER: 0     fnorm: 1.1250e-09 
+    n0: 2.03e-18 r 1.0e+00   n1: 1.13e-09 r 1.0e+00   n2: 1.80e-20 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 35
+    IT_NUMBER: 1     fnorm: 3.1296e-16 
+    n0: 7.97e-23 r 3.9e-05   n1: 3.13e-16 r 2.8e-07   n2: 8.14e-24 r 4.5e-04 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 5.623e-01 -> 7.499e-01 
+    IT_NUMBER: 0     fnorm: 5.6481e-10 
+    n0: 1.81e-18 r 1.0e+00   n1: 5.65e-10 r 1.0e+00   n2: 1.61e-20 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 36
+    IT_NUMBER: 1     fnorm: 3.8527e-16 
+    n0: 9.36e-23 r 5.2e-05   n1: 3.85e-16 r 6.8e-07   n2: 8.15e-24 r 5.1e-04 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 7.499e-01 -> 1.000e+00 
+    IT_NUMBER: 0     fnorm: 2.8453e-10 
+    n0: 1.61e-18 r 1.0e+00   n1: 2.85e-10 r 1.0e+00   n2: 1.43e-20 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 37
+    IT_NUMBER: 1     fnorm: 3.6558e-16 
+    n0: 1.08e-22 r 6.7e-05   n1: 3.66e-16 r 1.3e-06   n2: 5.06e-24 r 3.5e-04 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 1.000e+00 -> 1.334e+00 
+    IT_NUMBER: 0     fnorm: 1.4011e-10 
+    n0: 1.41e-18 r 1.0e+00   n1: 1.40e-10 r 1.0e+00   n2: 1.26e-20 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 37
+    IT_NUMBER: 1     fnorm: 4.4156e-16 
+    n0: 1.22e-22 r 8.6e-05   n1: 4.42e-16 r 3.2e-06   n2: 8.23e-24 r 6.5e-04 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 1.334e+00 -> 1.778e+00 
+    IT_NUMBER: 0     fnorm: 6.8018e-11 
+    n0: 1.23e-18 r 1.0e+00   n1: 6.80e-11 r 1.0e+00   n2: 1.10e-20 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 38
+    IT_NUMBER: 1     fnorm: 3.8509e-16 
+    n0: 1.35e-22 r 1.1e-04   n1: 3.85e-16 r 5.7e-06   n2: 6.12e-24 r 5.6e-04 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 1.778e+00 -> 2.371e+00 
+    IT_NUMBER: 0     fnorm: 3.2009e-11 
+    n0: 1.06e-18 r 1.0e+00   n1: 3.20e-11 r 1.0e+00   n2: 9.52e-21 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 39
+    IT_NUMBER: 1     fnorm: 5.2573e-16 
+    n0: 1.48e-22 r 1.4e-04   n1: 5.26e-16 r 1.6e-05   n2: 6.19e-24 r 6.5e-04 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 2.371e+00 -> 3.162e+00 
+    IT_NUMBER: 0     fnorm: 1.8470e-11 
+    n0: 9.08e-19 r 1.0e+00   n1: 1.85e-11 r 1.0e+00   n2: 8.14e-21 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 39
+    IT_NUMBER: 1     fnorm: 6.2494e-16 
+    n0: 1.59e-22 r 1.7e-04   n1: 6.25e-16 r 3.4e-05   n2: 7.35e-24 r 9.0e-04 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 3.162e+00 -> 4.217e+00 
+    IT_NUMBER: 0     fnorm: 1.2042e-11 
+    n0: 7.69e-19 r 1.0e+00   n1: 1.20e-11 r 1.0e+00   n2: 6.88e-21 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 39
+    IT_NUMBER: 1     fnorm: 7.2506e-16 
+    n0: 1.64e-22 r 2.1e-04   n1: 7.25e-16 r 6.0e-05   n2: 9.08e-24 r 1.3e-03 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 4.217e+00 -> 5.623e+00 
+    IT_NUMBER: 0     fnorm: 4.5013e-12 
+    n0: 6.47e-19 r 1.0e+00   n1: 4.50e-12 r 1.0e+00   n2: 5.78e-21 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 39
+    IT_NUMBER: 1     fnorm: 7.9672e-16 
+    n0: 1.60e-22 r 2.5e-04   n1: 7.97e-16 r 1.8e-04   n2: 1.96e-23 r 3.4e-03 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 1
+Increase time step: 5.623e+00 -> 7.499e+00 
+    IT_NUMBER: 0     fnorm: 7.6954e-14 
+    n0: 5.46e-19 r 1.0e+00   n1: 7.70e-14 r 1.0e+00   n2: 4.88e-21 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 41
+    IT_NUMBER: 1     fnorm: 9.2843e-16 
+    n0: 1.50e-22 r 2.7e-04   n1: 9.28e-16 r 1.2e-02   n2: 2.59e-23 r 5.3e-03 
+    Linear solve converged due to CONVERGED_RTOL iterations 73
+    IT_NUMBER: 2     fnorm: 2.6107e-19 
+    n0: 1.60e-27 r 2.9e-09   n1: 2.61e-19 r 3.4e-06   n2: 5.22e-27 r 1.1e-06 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 2
+Increase time step: 7.499e+00 -> 1.000e+01 
+
+TIME               TIME_STEP     TOT_ICE      TOT_AIR       TEMP      TOT_RHOV     I-A interf   Tripl_junct 
+
+(30) 2.998e+01    1.000e+01   5.560e-12   2.196e-11   -8.258e-10   6.781e-15   3.026e-14   0.000e+00 
+
+    IT_NUMBER: 0     fnorm: 6.4756e-14 
+    n0: 4.69e-19 r 1.0e+00   n1: 6.48e-14 r 1.0e+00   n2: 4.19e-21 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 43
+    IT_NUMBER: 1     fnorm: 7.3084e-16 
+    n0: 1.41e-22 r 3.0e-04   n1: 7.31e-16 r 1.1e-02   n2: 2.87e-23 r 6.9e-03 
+    Linear solve converged due to CONVERGED_RTOL iterations 78
+    IT_NUMBER: 2     fnorm: 2.9355e-19 
+    n0: 4.31e-27 r 9.2e-09   n1: 2.94e-19 r 4.5e-06   n2: 5.57e-27 r 1.3e-06 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 2
+Increase time step: 1.000e+01 -> 1.334e+01 
+    IT_NUMBER: 0     fnorm: 5.6880e-14 
+    n0: 4.10e-19 r 1.0e+00   n1: 5.69e-14 r 1.0e+00   n2: 3.66e-21 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 44
+    IT_NUMBER: 1     fnorm: 7.0013e-16 
+    n0: 1.41e-22 r 3.4e-04   n1: 7.00e-16 r 1.2e-02   n2: 3.43e-23 r 9.4e-03 
+    Linear solve converged due to CONVERGED_RTOL iterations 84
+    IT_NUMBER: 2     fnorm: 3.2384e-19 
+    n0: 1.29e-26 r 3.1e-08   n1: 3.24e-19 r 5.7e-06   n2: 1.59e-26 r 4.3e-06 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 2
+Increase time step: 1.334e+01 -> 1.778e+01 
+    IT_NUMBER: 0     fnorm: 5.0241e-14 
+    n0: 3.61e-19 r 1.0e+00   n1: 5.02e-14 r 1.0e+00   n2: 3.23e-21 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 45
+    IT_NUMBER: 1     fnorm: 1.2762e-15 
+    n0: 1.54e-22 r 4.3e-04   n1: 1.28e-15 r 2.5e-02   n2: 3.64e-23 r 1.1e-02 
+    Linear solve converged due to CONVERGED_RTOL iterations 92
+    IT_NUMBER: 2     fnorm: 6.0366e-19 
+    n0: 3.12e-26 r 8.6e-08   n1: 6.04e-19 r 1.2e-05   n2: 9.77e-27 r 3.0e-06 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 2
+Increase time step: 1.778e+01 -> 2.371e+01 
+    IT_NUMBER: 0     fnorm: 4.3909e-14 
+    n0: 3.16e-19 r 1.0e+00   n1: 4.39e-14 r 1.0e+00   n2: 2.83e-21 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 48
+    IT_NUMBER: 1     fnorm: 1.8620e-15 
+    n0: 1.90e-22 r 6.0e-04   n1: 1.86e-15 r 4.2e-02   n2: 2.61e-23 r 9.2e-03 
+    Linear solve converged due to CONVERGED_RTOL iterations 97
+    IT_NUMBER: 2     fnorm: 1.0390e-18 
+    n0: 4.51e-26 r 1.4e-07   n1: 1.04e-18 r 2.4e-05   n2: 2.26e-26 r 8.0e-06 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 2
+Increase time step: 2.371e+01 -> 3.162e+01 
+    IT_NUMBER: 0     fnorm: 3.8112e-14 
+    n0: 2.73e-19 r 1.0e+00   n1: 3.81e-14 r 1.0e+00   n2: 2.43e-21 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 49
+    IT_NUMBER: 1     fnorm: 2.2039e-15 
+    n0: 2.53e-22 r 9.3e-04   n1: 2.20e-15 r 5.8e-02   n2: 2.19e-23 r 9.0e-03 
+    Linear solve converged due to CONVERGED_RTOL iterations 107
+    IT_NUMBER: 2     fnorm: 1.6983e-18 
+    n0: 7.61e-26 r 2.8e-07   n1: 1.70e-18 r 4.5e-05   n2: 2.98e-26 r 1.2e-05 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 2
+Increase time step: 3.162e+01 -> 4.217e+01 
+    IT_NUMBER: 0     fnorm: 3.3384e-14 
+    n0: 2.31e-19 r 1.0e+00   n1: 3.34e-14 r 1.0e+00   n2: 2.06e-21 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 50
+    IT_NUMBER: 1     fnorm: 2.0180e-15 
+    n0: 3.76e-22 r 1.6e-03   n1: 2.02e-15 r 6.0e-02   n2: 1.63e-23 r 7.9e-03 
+    Linear solve converged due to CONVERGED_RTOL iterations 117
+    IT_NUMBER: 2     fnorm: 2.5602e-18 
+    n0: 8.58e-26 r 3.7e-07   n1: 2.56e-18 r 7.7e-05   n2: 4.22e-26 r 2.0e-05 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 2
+Increase time step: 4.217e+01 -> 5.623e+01 
+    IT_NUMBER: 0     fnorm: 2.9953e-14 
+    n0: 1.95e-19 r 1.0e+00   n1: 3.00e-14 r 1.0e+00   n2: 1.74e-21 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 52
+    IT_NUMBER: 1     fnorm: 1.5690e-15 
+    n0: 6.25e-22 r 3.2e-03   n1: 1.57e-15 r 5.2e-02   n2: 1.25e-23 r 7.2e-03 
+    Linear solve converged due to CONVERGED_RTOL iterations 122
+    IT_NUMBER: 2     fnorm: 5.8331e-18 
+    n0: 1.16e-25 r 6.0e-07   n1: 5.83e-18 r 1.9e-04   n2: 7.79e-26 r 4.5e-05 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 2
+Increase time step: 5.623e+01 -> 7.499e+01 
+    IT_NUMBER: 0     fnorm: 2.7725e-14 
+    n0: 1.67e-19 r 1.0e+00   n1: 2.77e-14 r 1.0e+00   n2: 1.49e-21 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 56
+    IT_NUMBER: 1     fnorm: 8.6570e-16 
+    n0: 1.10e-21 r 6.6e-03   n1: 8.66e-16 r 3.1e-02   n2: 1.21e-23 r 8.1e-03 
+    Linear solve converged due to CONVERGED_RTOL iterations 112
+    IT_NUMBER: 2     fnorm: 1.2384e-17 
+    n0: 3.94e-25 r 2.4e-06   n1: 1.24e-17 r 4.5e-04   n2: 1.60e-25 r 1.1e-04 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 2
+Increase time step: 7.499e+01 -> 1.000e+02 
+    IT_NUMBER: 0     fnorm: 2.6419e-14 
+    n0: 1.49e-19 r 1.0e+00   n1: 2.64e-14 r 1.0e+00   n2: 1.33e-21 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 58
+    IT_NUMBER: 1     fnorm: 1.0153e-15 
+    n0: 1.94e-21 r 1.3e-02   n1: 1.02e-15 r 3.8e-02   n2: 1.70e-23 r 1.3e-02 
+    Linear solve converged due to CONVERGED_RTOL iterations 108
+    IT_NUMBER: 2     fnorm: 3.2448e-17 
+    n0: 1.46e-24 r 9.8e-06   n1: 3.24e-17 r 1.2e-03   n2: 2.55e-25 r 1.9e-04 
+    Linear solve converged due to CONVERGED_RTOL iterations 187
+    IT_NUMBER: 3     fnorm: 3.1429e-20 
+    n0: 7.28e-29 r 4.9e-10   n1: 3.14e-20 r 1.2e-06   n2: 1.18e-28 r 8.9e-08 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 3
+    IT_NUMBER: 0     fnorm: 2.5625e-14 
+    n0: 1.38e-19 r 1.0e+00   n1: 2.56e-14 r 1.0e+00   n2: 1.24e-21 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 50
+    IT_NUMBER: 1     fnorm: 1.1426e-15 
+    n0: 1.93e-21 r 1.4e-02   n1: 1.14e-15 r 4.5e-02   n2: 2.18e-23 r 1.8e-02 
+    Linear solve converged due to CONVERGED_RTOL iterations 101
+    IT_NUMBER: 2     fnorm: 1.3722e-17 
+    n0: 1.88e-24 r 1.4e-05   n1: 1.37e-17 r 5.4e-04   n2: 1.78e-25 r 1.4e-04 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 2
+Increase time step: 1.000e+02 -> 1.334e+02 
+
+TIME               TIME_STEP     TOT_ICE      TOT_AIR       TEMP      TOT_RHOV     I-A interf   Tripl_junct 
+
+(500) 4.998e+02    1.334e+02   5.551e-12   2.197e-11   -8.257e-10   6.863e-15   2.883e-14   0.000e+00 
+
+    IT_NUMBER: 0     fnorm: 2.4900e-14 
+    n0: 1.34e-19 r 1.0e+00   n1: 2.49e-14 r 1.0e+00   n2: 1.19e-21 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 23
+    IT_NUMBER: 1     fnorm: 1.1601e-15 
+    n0: 3.05e-21 r 2.3e-02   n1: 1.16e-15 r 4.7e-02   n2: 2.58e-23 r 2.2e-02 
+    Linear solve converged due to CONVERGED_RTOL iterations 105
+    IT_NUMBER: 2     fnorm: 9.6508e-17 
+    n0: 3.94e-24 r 3.0e-05   n1: 9.65e-17 r 3.9e-03   n2: 3.59e-25 r 3.0e-04 
+    Linear solve converged due to CONVERGED_RTOL iterations 207
+    IT_NUMBER: 3     fnorm: 6.2254e-20 
+    n0: 5.15e-29 r 3.9e-10   n1: 6.23e-20 r 2.5e-06   n2: 6.59e-28 r 5.5e-07 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 3
+    IT_NUMBER: 0     fnorm: 2.4081e-14 
+    n0: 1.29e-19 r 1.0e+00   n1: 2.41e-14 r 1.0e+00   n2: 1.15e-21 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 18
+    IT_NUMBER: 1     fnorm: 1.0219e-15 
+    n0: 2.88e-21 r 2.2e-02   n1: 1.02e-15 r 4.2e-02   n2: 1.26e-23 r 1.1e-02 
+    Linear solve converged due to CONVERGED_RTOL iterations 90
+    IT_NUMBER: 2     fnorm: 8.4205e-17 
+    n0: 2.07e-24 r 1.6e-05   n1: 8.42e-17 r 3.5e-03   n2: 2.79e-25 r 2.4e-04 
+    Linear solve converged due to CONVERGED_RTOL iterations 235
+    IT_NUMBER: 3     fnorm: 2.2429e-20 
+    n0: 3.34e-29 r 2.6e-10   n1: 2.24e-20 r 9.3e-07   n2: 2.30e-28 r 2.0e-07 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 3
+    IT_NUMBER: 0     fnorm: 2.2811e-14 
+    n0: 1.24e-19 r 1.0e+00   n1: 2.28e-14 r 1.0e+00   n2: 1.11e-21 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 17
+    IT_NUMBER: 1     fnorm: 9.1995e-16 
+    n0: 2.60e-21 r 2.1e-02   n1: 9.20e-16 r 4.0e-02   n2: 6.35e-24 r 5.7e-03 
+    Linear solve converged due to CONVERGED_RTOL iterations 81
+    IT_NUMBER: 2     fnorm: 5.2353e-17 
+    n0: 1.73e-24 r 1.4e-05   n1: 5.24e-17 r 2.3e-03   n2: 2.26e-25 r 2.0e-04 
+    Linear solve converged due to CONVERGED_RTOL iterations 225
+    IT_NUMBER: 3     fnorm: 4.3946e-20 
+    n0: 2.10e-28 r 1.7e-09   n1: 4.39e-20 r 1.9e-06   n2: 1.37e-28 r 1.2e-07 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 3
+    IT_NUMBER: 0     fnorm: 2.1498e-14 
+    n0: 1.19e-19 r 1.0e+00   n1: 2.15e-14 r 1.0e+00   n2: 1.07e-21 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 16
+    IT_NUMBER: 1     fnorm: 8.3594e-16 
+    n0: 2.25e-21 r 1.9e-02   n1: 8.36e-16 r 3.9e-02   n2: 3.17e-24 r 3.0e-03 
+    Linear solve converged due to CONVERGED_RTOL iterations 74
+    IT_NUMBER: 2     fnorm: 1.3491e-17 
+    n0: 1.60e-24 r 1.3e-05   n1: 1.35e-17 r 6.3e-04   n2: 3.74e-25 r 3.5e-04 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 2
+Increase time step: 1.334e+02 -> 1.778e+02 
+    IT_NUMBER: 0     fnorm: 2.0213e-14 
+    n0: 1.15e-19 r 1.0e+00   n1: 2.02e-14 r 1.0e+00   n2: 1.03e-21 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 18
+    IT_NUMBER: 1     fnorm: 1.0240e-15 
+    n0: 3.18e-21 r 2.8e-02   n1: 1.02e-15 r 5.1e-02   n2: 2.82e-24 r 2.7e-03 
+    Linear solve converged due to CONVERGED_RTOL iterations 54
+    IT_NUMBER: 2     fnorm: 3.4547e-17 
+    n0: 2.17e-24 r 1.9e-05   n1: 3.45e-17 r 1.7e-03   n2: 3.75e-25 r 3.6e-04 
+    Linear solve converged due to CONVERGED_RTOL iterations 198
+    IT_NUMBER: 3     fnorm: 4.2861e-20 
+    n0: 9.81e-28 r 8.5e-09   n1: 4.29e-20 r 2.1e-06   n2: 2.05e-28 r 2.0e-07 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 3
+    IT_NUMBER: 0     fnorm: 1.8928e-14 
+    n0: 1.10e-19 r 1.0e+00   n1: 1.89e-14 r 1.0e+00   n2: 9.89e-22 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 17
+    IT_NUMBER: 1     fnorm: 9.2519e-16 
+    n0: 2.61e-21 r 2.4e-02   n1: 9.25e-16 r 4.9e-02   n2: 3.86e-24 r 3.9e-03 
+    Linear solve converged due to CONVERGED_RTOL iterations 42
+    IT_NUMBER: 2     fnorm: 3.0231e-17 
+    n0: 1.22e-24 r 1.1e-05   n1: 3.02e-17 r 1.6e-03   n2: 2.23e-25 r 2.3e-04 
+    Linear solve converged due to CONVERGED_RTOL iterations 220
+    IT_NUMBER: 3     fnorm: 2.8001e-20 
+    n0: 2.81e-28 r 2.5e-09   n1: 2.80e-20 r 1.5e-06   n2: 1.60e-28 r 1.6e-07 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 3
+    IT_NUMBER: 0     fnorm: 1.7679e-14 
+    n0: 1.07e-19 r 1.0e+00   n1: 1.77e-14 r 1.0e+00   n2: 9.51e-22 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 19
+    IT_NUMBER: 1     fnorm: 8.3551e-16 
+    n0: 2.12e-21 r 2.0e-02   n1: 8.36e-16 r 4.7e-02   n2: 1.98e-24 r 2.1e-03 
+    Linear solve converged due to CONVERGED_RTOL iterations 43
+    IT_NUMBER: 2     fnorm: 1.4656e-17 
+    n0: 5.35e-25 r 5.0e-06   n1: 1.47e-17 r 8.3e-04   n2: 8.37e-26 r 8.8e-05 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 2
+Increase time step: 1.778e+02 -> 2.371e+02 
+    IT_NUMBER: 0     fnorm: 1.6792e-14 
+    n0: 1.03e-19 r 1.0e+00   n1: 1.68e-14 r 1.0e+00   n2: 9.22e-22 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 21
+    IT_NUMBER: 1     fnorm: 1.0226e-15 
+    n0: 3.17e-21 r 3.1e-02   n1: 1.02e-15 r 6.1e-02   n2: 1.59e-24 r 1.7e-03 
+    Linear solve converged due to CONVERGED_RTOL iterations 44
+    IT_NUMBER: 2     fnorm: 3.4190e-17 
+    n0: 1.15e-24 r 1.1e-05   n1: 3.42e-17 r 2.0e-03   n2: 1.48e-25 r 1.6e-04 
+    Linear solve converged due to CONVERGED_RTOL iterations 256
+    IT_NUMBER: 3     fnorm: 4.9332e-20 
+    n0: 7.27e-29 r 7.0e-10   n1: 4.93e-20 r 2.9e-06   n2: 1.51e-28 r 1.6e-07 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 3
+OUTPUT print!
+    IT_NUMBER: 0     fnorm: 1.5976e-14 
+    n0: 9.95e-20 r 1.0e+00   n1: 1.60e-14 r 1.0e+00   n2: 8.90e-22 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 20
+    IT_NUMBER: 1     fnorm: 9.1831e-16 
+    n0: 2.77e-21 r 2.8e-02   n1: 9.18e-16 r 5.7e-02   n2: 1.82e-24 r 2.0e-03 
+    Linear solve converged due to CONVERGED_RTOL iterations 42
+    IT_NUMBER: 2     fnorm: 2.1181e-17 
+    n0: 9.31e-25 r 9.4e-06   n1: 2.12e-17 r 1.3e-03   n2: 1.17e-25 r 1.3e-04 
+    Linear solve converged due to CONVERGED_RTOL iterations 228
+    IT_NUMBER: 3     fnorm: 2.7909e-20 
+    n0: 7.45e-29 r 7.5e-10   n1: 2.79e-20 r 1.7e-06   n2: 1.92e-28 r 2.2e-07 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 3
+    IT_NUMBER: 0     fnorm: 1.5144e-14 
+    n0: 9.65e-20 r 1.0e+00   n1: 1.51e-14 r 1.0e+00   n2: 8.61e-22 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 21
+    IT_NUMBER: 1     fnorm: 8.2848e-16 
+    n0: 2.43e-21 r 2.5e-02   n1: 8.28e-16 r 5.5e-02   n2: 1.16e-24 r 1.4e-03 
+    Linear solve converged due to CONVERGED_RTOL iterations 47
+    IT_NUMBER: 2     fnorm: 3.4916e-17 
+    n0: 7.95e-25 r 8.2e-06   n1: 3.49e-17 r 2.3e-03   n2: 8.26e-26 r 9.6e-05 
+    Linear solve converged due to CONVERGED_RTOL iterations 257
+    IT_NUMBER: 3     fnorm: 1.0339e-20 
+    n0: 5.25e-29 r 5.4e-10   n1: 1.03e-20 r 6.8e-07   n2: 1.08e-28 r 1.3e-07 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 3
+
+TIME               TIME_STEP     TOT_ICE      TOT_AIR       TEMP      TOT_RHOV     I-A interf   Tripl_junct 
+
+(2278) 2.278e+03    2.371e+02   5.551e-12   2.197e-11   -8.257e-10   6.865e-15   2.805e-14   0.000e+00 
+
+    IT_NUMBER: 0     fnorm: 1.4566e-14 
+    n0: 9.37e-20 r 1.0e+00   n1: 1.46e-14 r 1.0e+00   n2: 8.36e-22 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 20
+    IT_NUMBER: 1     fnorm: 7.5409e-16 
+    n0: 2.20e-21 r 2.4e-02   n1: 7.54e-16 r 5.2e-02   n2: 9.96e-25 r 1.2e-03 
+    Linear solve converged due to CONVERGED_RTOL iterations 49
+    IT_NUMBER: 2     fnorm: 3.1044e-17 
+    n0: 6.77e-25 r 7.2e-06   n1: 3.10e-17 r 2.1e-03   n2: 7.22e-26 r 8.6e-05 
+    Linear solve converged due to CONVERGED_RTOL iterations 254
+    IT_NUMBER: 3     fnorm: 7.7436e-21 
+    n0: 4.88e-29 r 5.2e-10   n1: 7.74e-21 r 5.3e-07   n2: 1.00e-28 r 1.2e-07 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 3
+    IT_NUMBER: 0     fnorm: 1.4054e-14 
+    n0: 9.13e-20 r 1.0e+00   n1: 1.41e-14 r 1.0e+00   n2: 8.14e-22 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 20
+    IT_NUMBER: 1     fnorm: 6.9250e-16 
+    n0: 2.02e-21 r 2.2e-02   n1: 6.92e-16 r 4.9e-02   n2: 8.95e-25 r 1.1e-03 
+    Linear solve converged due to CONVERGED_RTOL iterations 50
+    IT_NUMBER: 2     fnorm: 2.5557e-17 
+    n0: 5.81e-25 r 6.4e-06   n1: 2.56e-17 r 1.8e-03   n2: 6.27e-26 r 7.7e-05 
+    Linear solve converged due to CONVERGED_RTOL iterations 257
+    IT_NUMBER: 3     fnorm: 8.4286e-21 
+    n0: 4.45e-29 r 4.9e-10   n1: 8.43e-21 r 6.0e-07   n2: 6.60e-29 r 8.1e-08 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 3
+    IT_NUMBER: 0     fnorm: 1.3623e-14 
+    n0: 8.92e-20 r 1.0e+00   n1: 1.36e-14 r 1.0e+00   n2: 7.94e-22 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 20
+    IT_NUMBER: 1     fnorm: 6.4057e-16 
+    n0: 1.86e-21 r 2.1e-02   n1: 6.41e-16 r 4.7e-02   n2: 8.17e-25 r 1.0e-03 
+    Linear solve converged due to CONVERGED_RTOL iterations 51
+    IT_NUMBER: 2     fnorm: 1.9408e-17 
+    n0: 5.03e-25 r 5.6e-06   n1: 1.94e-17 r 1.4e-03   n2: 5.46e-26 r 6.9e-05 
+    Linear solve converged due to CONVERGED_RTOL iterations 269
+    IT_NUMBER: 3     fnorm: 7.4822e-21 
+    n0: 3.93e-29 r 4.4e-10   n1: 7.48e-21 r 5.5e-07   n2: 4.50e-29 r 5.7e-08 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 3
+    IT_NUMBER: 0     fnorm: 1.3244e-14 
+    n0: 8.72e-20 r 1.0e+00   n1: 1.32e-14 r 1.0e+00   n2: 7.76e-22 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 20
+    IT_NUMBER: 1     fnorm: 5.9613e-16 
+    n0: 1.73e-21 r 2.0e-02   n1: 5.96e-16 r 4.5e-02   n2: 7.62e-25 r 9.8e-04 
+    Linear solve converged due to CONVERGED_RTOL iterations 51
+    IT_NUMBER: 2     fnorm: 1.9120e-17 
+    n0: 4.39e-25 r 5.0e-06   n1: 1.91e-17 r 1.4e-03   n2: 5.12e-26 r 6.6e-05 
+    Linear solve converged due to CONVERGED_RTOL iterations 277
+    IT_NUMBER: 3     fnorm: 7.2064e-21 
+    n0: 3.75e-29 r 4.3e-10   n1: 7.21e-21 r 5.4e-07   n2: 4.99e-29 r 6.4e-08 
+  Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 3
+    IT_NUMBER: 0     fnorm: 1.2911e-14 
+    n0: 8.55e-20 r 1.0e+00   n1: 1.29e-14 r 1.0e+00   n2: 7.60e-22 r 1.0e+00 
+    Linear solve converged due to CONVERGED_RTOL iterations 20
+    IT_NUMBER: 1     fnorm: 5.5743e-16 
+    n0: 1.62e-21 r 1.9e-02   n1: 5.57e-16 r 4.3e-02   n2: 7.20e-25 r 9.5e-04 
+    Linear solve converged due to CONVERGED_RTOL iterations 52
+    IT_NUMBER: 2     fnorm: 1.8554e-17 
+    n0: 3.86e-25 r 4.5e-06   n1: 1.86e-17 r 1.4e-03   n2: 4.66e-26 r 6.1e-05 
