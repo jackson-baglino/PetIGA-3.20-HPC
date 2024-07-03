@@ -45,6 +45,7 @@ export folder
 export I_MPI_PMI_LIBRARY=/path/to/slurm/pmi/library/libpmi.so
 
 mkdir $folder
+echo "Copying files to scratch"
 scp /home/jbaglino/PetIGA-3.20/demo/NASAv2.c $folder/
 scp /home/jbaglino/PetIGA-3.20/demo/run_NASAv2.sh $folder/
 cd $SLURM_SUBMIT_DIR
@@ -147,5 +148,50 @@ echo "running NASAv2"
 echo " "
 
 mpiexec ./NASAv2 -initial_cond -initial_PFgeom -snes_rtol 1e-3 -snes_stol 1e-6 -snes_max_it 6 -ksp_gmres_restart 150 -ksp_max_it 500 -ksp_converged_maxits 1 -ksp_converged_reason -snes_converged_reason -snes_linesearch_monitor  -snes_linesearch_type basic | tee $folder/outp.txt
+
+# Create descriptive file ------------------------------------------------------
+echo "----- SIMULATION PARAMETERS -----" > $folder/sim_params.dat
+echo "Input file: $inputFile" >> $folder/sim_params.dat
+
+echo " " >> $folder/sim_params.dat
+
+echo "Dimensions:" >> $folder/sim_params.dat
+echo "dim = $dim" >> $folder/sim_params.dat
+
+echo " " >> $folder/sim_params.dat
+
+echo "Domain sizes:" >> $folder/sim_params.dat
+echo "Lx = $Lx" >> $folder/sim_params.dat
+echo "Ly = $Ly" >> $folder/sim_params.dat
+echo "Lz = $Lz" >> $folder/sim_params.dat
+
+echo " " >> $folder/sim_params.dat
+
+
+echo "Number of elements:" >> $folder/sim_params.dat
+echo "Nx = $Nx" >> $folder/sim_params.dat
+echo "Ny = $Ny" >> $folder/sim_params.dat
+echo "Nz = $Nz" >> $folder/sim_params.dat
+
+echo " " >> $folder/sim_params.dat
+
+echo "Time parameters:" >> $folder/sim_params.dat
+echo "delt_t = $delt_t" >> $folder/sim_params.dat
+echo "t_final = $t_final" >> $folder/sim_params.dat
+
+echo " " >> $folder/sim_params.dat
+
+echo "State parameters:" >> $folder/sim_params.dat
+echo "humidity = $humidity" >> $folder/sim_params.dat
+echo "temp = $temp" >> $folder/sim_params.dat
+
+echo " " >> $folder/sim_params.dat
+
+echo "Initial temperature gradients:" >> $folder/sim_params.dat
+echo "grad_temp0X = $grad_temp0X" >> $folder/sim_params.dat
+echo "grad_temp0Y = $grad_temp0Y" >> $folder/sim_params.dat
+echo "grad_temp0Z = $grad_temp0Z" >> $folder/sim_params.dat
+
+echo "-------------------------------------------------------------------------"
 
 echo "done"
