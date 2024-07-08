@@ -642,16 +642,18 @@ PetscErrorCode Monitor(TS ts,PetscInt step,PetscReal t,Vec U,void *mctx)
   } else {
     if (t>= user->t_out) print=1;
   }
-
-  char filedata[256];
-  const char *env = "folder"; char *dir; dir = getenv(env);
-
-  sprintf(filedata,"%s/SSA_evo.dat",dir);
-  PetscViewer       view;
-  PetscViewerCreate(PETSC_COMM_WORLD,&view);
-  PetscViewerSetType(view,PETSCVIEWERASCII);
+  
+  print = 1;
 
   if(print==1) {
+    char filedata[256];
+    const char *env = "folder"; char *dir; dir = getenv(env);
+
+    sprintf(filedata,"%s/SSA_evo.dat",dir);
+    PetscViewer       view;
+    PetscViewerCreate(PETSC_COMM_WORLD,&view);
+    PetscViewerSetType(view,PETSCVIEWERASCII);
+
     if (step==0){
       PetscViewerFileSetMode(view,FILE_MODE_WRITE);
     } else {

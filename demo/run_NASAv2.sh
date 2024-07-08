@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH -J NASAv2-2G-3D-21D-gradX
+#SBATCH -J NASAv2-2G-3D-48h-gradX
 #SBATCH -t 5-00:00:00
-#SBATCH --nodes=4
+#SBATCH --nodes=2
 #SBATCH --ntasks-per-node=50
 #SBATCH --cpus-per-task=1
 #SBATCH -o "%x.o%j"
@@ -36,7 +36,7 @@ echo ” ”
 id=${SLURM_JOB_ID:0:9}
 echo $id
 
-name=NASAv2-2G-3D-21D-gradX_$id
+name=NASAv2-2G-3D-48h-gradX_$id
 folder=/central/scratch/jbaglino/$name
 echo $name
 echo $folder
@@ -122,7 +122,7 @@ Nz=132                        # Number of elements in Z -- 2 Grain
 
 # Time parameters
 delt_t=1.0e-4                 # Time step
-t_final=21*24*60*60              # Final time
+t_final=2*24*60*60              # Final time
 n_out=100                     # Number of output files
 
 # Convert scientific notation to decimal using bc
