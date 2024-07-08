@@ -1,0 +1,13 @@
+/home/jbaglino/PetIGA-3.20-HPC/lib/petiga/conf/variables:37: *** Incorrect PETSC_ARCH: HPC_Petsc-3.20-HPC_OMPI-4.1.5_gcc-11.3.1-2clspqh.  Stop.
+cp: cannot stat '/home/jbaglino/PetIGA-3.20/demo/NASAv2.c': No such file or directory
+cp: cannot stat '/home/jbaglino/PetIGA-3.20/demo/run_NASAv2.sh': No such file or directory
+srun: error: hpc-35-38: tasks 212,230,238,241: Illegal instruction (core dumped)
+srun: error: hpc-35-36: tasks 100-107,109,111,113-119,121-125,127,129,131-133,135,143,145: Illegal instruction (core dumped)
+srun: error: hpc-35-36: tasks 108,110,112,120,126,128,130,134,136-142,144,146-149: Illegal instruction
+srun: error: hpc-35-37: tasks 150-151,153-155,157-161,163,165-168,172-174,177,179-188,192-193: Illegal instruction (core dumped)
+srun: error: hpc-35-38: tasks 200-201,206,209,211,214,216,219-221,223,225-229,231-237: Illegal instruction
+srun: error: hpc-35-37: tasks 152,156,162,164,169-171,175-176,178,189-191,194-199: Illegal instruction
+srun: error: hpc-35-38: tasks 202-205,207-208,210,213,215,217-218,222,224,239-240,242-249: Illegal instruction (core dumped)
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 42440009 ON hpc-34-34 CANCELLED AT 2024-07-03T13:50:30 ***
+slurmstepd: error: *** STEP 42440009.1 ON hpc-34-34 CANCELLED AT 2024-07-03T13:50:30 ***
