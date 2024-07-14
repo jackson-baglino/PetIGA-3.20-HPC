@@ -1,0 +1,1451 @@
+/usr/bin/bash: line 1: /home/jbaglino/Petsc-3.20/HPC_Petsc-3.20_OMPI-4.1.5_gcc-11.3.1-2clspqh/bin/mpicc: No such file or directory
+make: *** [/home/jbaglino/Petsc-3.20-HPC/lib/petsc/conf/rules:148: NASAv2.o] Error 127
+cp: cannot stat '/home/jbaglino/PetIGA-3.20/demo/NASAv2.c': No such file or directory
+cp: cannot stat '/home/jbaglino/PetIGA-3.20/demo/run_NASAv2.sh': No such file or directory
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+:
+system msg for write_line failure : Bad file descriptor
+--------------------------------------------------------------------------
+mpiexec noticed that process rank 103 with PID 912047 on node hpc-35-36 exited on signal 4 (Illegal instruction).
+--------------------------------------------------------------------------

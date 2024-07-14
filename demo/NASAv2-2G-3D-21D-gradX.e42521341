@@ -1,4 +1,0 @@
-/usr/bin/bash: line 1: /home/jbaglino/Petsc-3.20/HPC_Petsc-3.20_OMPI-4.1.5_gcc-11.3.1-2clspqh/bin/mpicc: No such file or directory
-make: *** [/home/jbaglino/Petsc-3.20-HPC/lib/petsc/conf/rules:148: NASAv2.o] Error 127
-cp: cannot stat '/home/jbaglino/PetIGA-3.20/demo/NASAv2.c': No such file or directory
-cp: cannot stat '/home/jbaglino/PetIGA-3.20/demo/run_NASAv2.sh': No such file or directory
