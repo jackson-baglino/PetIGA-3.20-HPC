@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH -J NASAv2-135G-2D-7D
+#SBATCH -J NASAv2-88G-2D-48h
 #SBATCH -t 5-00:00:00
 #SBATCH --nodes=4
-#SBATCH --ntasks-per-node=50
+#SBATCH --ntasks-per-node=64
 #SBATCH --cpus-per-task=1
 #SBATCH -o "%x.o%j"
 #SBATCH -e "%x.e%j"
@@ -36,7 +36,7 @@ echo ” ”
 id=${SLURM_JOB_ID:0:9}
 echo $id
 
-name=NASAv2-135G-3D-7D_$id
+name=NASAv2-88G-3D-48h_$id
 folder=/central/scratch/jbaglino/$name
 echo $name
 echo $folder
@@ -54,8 +54,8 @@ echo $SLURM_SUBMIT_DIR
 # Define variable names to be exported -----------------------------------------
   # File names
 input_dir="/home/jbaglino/PetIGA-3.20-HPC/demo/input/"
-# inputFile=$input_dir"grainReadFile-88_s1-10_s2-21.dat"
-inputFile=$input_dir"grainReadFile-135_s1-10_s2-21.dat"
+inputFile=$input_dir"grainReadFile-88_s1-10_s2-21.dat"
+# inputFile=$input_dir"grainReadFile-135_s1-10_s2-21.dat"
 # inputFile=$input_dir"grainReadFile-165_s1-10_s2-30.dat"
 # inputFile=$input_dir"grainReadFile-10_s1-10.dat"
 # inputFile=$input_dir"grainReadFile-5_s1-10.dat"
@@ -81,17 +81,17 @@ dim=$(echo "$dim" | bc -l)
 # Ly=0.5e-03                    # Domain size Y -- 10 Grain
 # Lz=2.312e-04                  # Domain size Z -- 10 Grain
 
-# Lx=2.0e-3                     # Domain size X -- 88 Grain
-# Ly=2.0e-3                     # Domain size Y -- 88 Grain
-# Lz=2.509e-04                  # Domain size Z -- 88 Grain
+Lx=2.0e-3                     # Domain size X -- 88 Grain
+Ly=2.0e-3                     # Domain size Y -- 88 Grain
+Lz=2.509e-04                  # Domain size Z -- 88 Grain
 
 # Lx=3.2e-3                     # Domain size X -- 165 Grain
 # Ly=3.2e-3                     # Domain size Y -- 165 Grain
 # Lz=0.773e-3                   # Domain size Z -- 165 Grain
 
-Lx=3.2e-3                     # Domain size X -- 165 Grain
-Ly=3.2e-3                     # Domain size Y -- 165 Grain
-Lz=1.0e-3                     # Domain size Z -- 165 Grain
+# Lx=3.2e-3                     # Domain size X -- 165 Grain
+# Ly=3.2e-3                     # Domain size Y -- 165 Grain
+# Lz=1.0e-3                     # Domain size Z -- 165 Grain
 
 
 # Number of elements
@@ -111,19 +111,19 @@ Lz=1.0e-3                     # Domain size Z -- 165 Grain
 # Ny=385
 # Nz=243
 
-# Nx=1100                       # Number of elements in X -- 88 Grain
-# Ny=1100                       # Number of elements in Y -- 88 Grain
-# Nz=138                        # Number of elements in Z -- 88 Grain
+Nx=1100                       # Number of elements in X -- 88 Grain
+Ny=1100                       # Number of elements in Y -- 88 Grain
+Nz=138                        # Number of elements in Z -- 88 Grain
 
-Nx=1724                       # Number of elements in X -- 165 Grain
-Ny=1724                       # Number of elements in Y -- 165 Grain
-Nz=417                        # Number of elements in Z -- 165 Grain
+# Nx=1724                       # Number of elements in X -- 165 Grain
+# Ny=1724                       # Number of elements in Y -- 165 Grain
+# Nz=417                        # Number of elements in Z -- 165 Grain
 
 
 # Time parameters
 delt_t=1.0e-4                 # Time step
-t_final=7*24*60*60              # Final time
-n_out=2000                     # Number of output files
+t_final=2*24*60*60              # Final time
+n_out=500                     # Number of output files
 
 # Convert scientific notation to decimal using bc
 t_final=$(echo "$t_final" | bc -l)
