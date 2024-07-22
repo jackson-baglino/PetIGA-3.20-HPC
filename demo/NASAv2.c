@@ -300,7 +300,10 @@ PetscErrorCode Residual(IGAPoint pnt,
     PetscScalar ice, ice_t, grad_ice[dim];
     ice          = sol[0]; 
     ice_t        = sol_t[0]; 
-    for(l=0;l<dim;l++) grad_ice[l]  = grad_sol[0][l];
+
+    for(l=0;l<dim;l++) {
+      grad_ice[l]  = grad_sol[0][l];
+    }
 
 
     PetscScalar air, air_t;
@@ -420,10 +423,15 @@ PetscErrorCode Jacobian(IGAPoint pnt,
     IGAPointFormValue(pnt,U,&sol[0]);
     IGAPointFormGrad (pnt,U,&grad_sol[0][0]);
 
-    PetscScalar ice, ice_t, grad_ice[dim];
+    PetscScalar ice, ice_t; // grad_ice[dim];
     ice          = sol[0]; 
     ice_t        = sol_t[0]; 
-    for(l=0;l<dim;l++) grad_ice[l]  = grad_sol[0][l];
+
+    /* Commented out to avoid unused variable warning
+    for(l=0;l<dim;l++) {
+      grad_ice[l]  = grad_sol[0][l];
+    }
+    */
 
     PetscScalar air, air_t;
     air          = 1.0-met-ice;
@@ -739,7 +747,7 @@ PetscErrorCode InitialSedGrains(IGA iga,AppCtx *user)
   PetscInt  numb_clust = user->NCsed,ii,jj,tot=10000;
   PetscInt  l, n_act=0, flag, dim=user->dim, seed=13;
 
-//----- cluster info
+  //----- cluster info
   PetscReal centX[3][numb_clust], radius[numb_clust];
   PetscRandom randcX,randcY,randcZ,randcR;
   ierr = PetscRandomCreate(PETSC_COMM_WORLD,&randcX);CHKERRQ(ierr);
@@ -801,9 +809,9 @@ PetscErrorCode InitialSedGrains(IGA iga,AppCtx *user)
   ierr = PetscRandomDestroy(&randcR);CHKERRQ(ierr);
   if(dim==3) {ierr = PetscRandomDestroy(&randcZ);CHKERRQ(ierr);}
 
-//PetscPrintf(PETSC_COMM_SELF,"before  %.4f %.4f %.4f \n",centX[0],centY[0],radius[0]);
+  //PetscPrintf(PETSC_COMM_SELF,"before  %.4f %.4f %.4f \n",centX[0],centY[0],radius[0]);
 
-//----- communication
+  //----- communication
   for(l=0;l<dim;l++){ierr = MPI_Bcast(centX[l],numb_clust,MPI_DOUBLE,0,PETSC_COMM_WORLD);CHKERRQ(ierr);}
   ierr = MPI_Bcast(radius,numb_clust,MPI_DOUBLE,0,PETSC_COMM_WORLD);CHKERRQ(ierr);
   ierr = MPI_Bcast(&n_act,1,MPI_INT,0,PETSC_COMM_WORLD);CHKERRQ(ierr);
@@ -816,7 +824,7 @@ PetscErrorCode InitialSedGrains(IGA iga,AppCtx *user)
     //PetscPrintf(PETSC_COMM_SELF,"Sed grains: points %.4f %.4f %.4f \n",centX[jj],centY[jj],radius[jj]);
   }
 
-//-------- define the Phi_sed values
+  //-------- define the Phi_sed values
 
   IGAElement element;
   IGAPoint point;
@@ -866,7 +874,7 @@ PetscErrorCode InitialSedGrainsGravity(IGA iga,AppCtx *user)
   PetscInt  tot_part = user->NCsed, ii, jj, kk, ll;
   PetscInt  n_act=0, flag, flag_nextpart, seed=11, fail=0, repeat=0;
 
-//----- x-coordinate and radius of new particles
+  //----- x-coordinate and radius of new particles
   PetscReal centX[tot_part],centY[tot_part], radius[tot_part];
   PetscRandom randcX,randcR;
   ierr = PetscRandomCreate(PETSC_COMM_WORLD,&randcX);CHKERRQ(ierr);
@@ -908,7 +916,7 @@ PetscErrorCode InitialSedGrainsGravity(IGA iga,AppCtx *user)
     }
 
 
-//particles in stripe xc+-3R
+    //particles in stripe xc+-3R
     PetscReal xst[n_act+1],yst[n_act+1],rst[n_act+1];
     nst=0;
     for(jj=0;jj<n_act;jj++){
@@ -920,7 +928,7 @@ PetscErrorCode InitialSedGrainsGravity(IGA iga,AppCtx *user)
       }
     }
     PetscPrintf(PETSC_COMM_WORLD," There are %d existing particles in stripe around xc %.2e \n",nst,xc);
-//order according to y-coordinate and pick the upper 20?
+    //order according to y-coordinate and pick the upper 20?
     //PetscInt lim=20, upp;
     //PetscReal xxst[upp+1],yyst[upp+1],rrst[upp+1];
     for(jj=0;jj<nst-1;jj++){
@@ -934,22 +942,22 @@ PetscErrorCode InitialSedGrainsGravity(IGA iga,AppCtx *user)
     }
     if(nst<lim) upp = nst;
     else upp=lim;
-//pick the upper #
+    //pick the upper #
     for(jj=0;jj<upp;jj++){
       xxst[jj] = xst[jj];
       yyst[jj] = yst[jj];
       rrst[jj] = rst[jj];
     }
-// if upp<20, we should consider the bottom boundary!!
-// it is possible that upp=0 (no particles)
+    // if upp<20, we should consider the bottom boundary!!
+    // it is possible that upp=0 (no particles)
 
-//bottom wall
+    //bottom wall
     if(upp<lim){
       PetscPrintf(PETSC_COMM_WORLD,"  BOTTOM: Low number of particles, thus, we check the bottom \n");
       cand=0;
       yc=rc;
       flag=1;
-  //try particle placed on bottom, no readjustment
+      //try particle placed on bottom, no readjustment
       for(jj=0;jj<n_act;jj++){ //
         dist = sqrt(SQ(xc-centX[jj])+SQ(yc-centY[jj]));
         if(1.01*dist < rc+radius[jj]) flag = 0;
@@ -963,21 +971,21 @@ PetscErrorCode InitialSedGrainsGravity(IGA iga,AppCtx *user)
         n_act++;
         flag_nextpart = 1;
       } 
-    // try with readjustment //for each upp we find a potential candidate
+      // try with readjustment //for each upp we find a potential candidate
       if(flag_nextpart==0){
         PetscPrintf(PETSC_COMM_WORLD,"   Bottom contact needs adjustment: \n");
         for(jj=0;jj<upp;jj++){ 
           flag=1;
           if(2.0*rc + rrst[jj] > yyst[jj]) { //contact: new particle in contact with floor and particle jj
             //PetscPrintf(PETSC_COMM_WORLD,"    Computing position with particle %d in the stripe \n",jj);
-        //two solutions
+            //two solutions
             x1 = xxst[jj] - sqrt(SQ(rc+rrst[jj])-SQ(rc-yyst[jj]));
             x2 = xxst[jj] + sqrt(SQ(rc+rrst[jj])-SQ(rc-yyst[jj]));
-        //pick solution closer to xc
+            //pick solution closer to xc
             if(fabs(x1-xc)<fabs(x2-xc)) xcaux = x1;
             else xcaux = x2;
             //PetscPrintf(PETSC_COMM_WORLD,"     Left xc %.3e, right xc %.3e, our pick is %.3e \n",x1,x2,xcaux);
-        //look for overlap
+            //look for overlap
             for(kk=0;kk<n_act;kk++){
               dist = sqrt(SQ(xcaux-centX[kk]) + SQ(yc-centY[kk]));
               if(1.01*dist < rc+radius[kk]) flag = 0;
@@ -992,7 +1000,7 @@ PetscErrorCode InitialSedGrainsGravity(IGA iga,AppCtx *user)
             if(cand == n_cand) jj=upp; //number of candidates is completed!
           } //else PetscPrintf(PETSC_COMM_WORLD,"   No possible contact with particle %d in the stripe \n",jj);
         }
-      //choose a candidate (the closer one)
+        //choose a candidate (the closer one)
         if(cand>0){
           //PetscPrintf(PETSC_COMM_WORLD,"    Choosing candidates (closer to original xc) amongst the %d options \n",cand);
           dist=1.0e6;
@@ -1014,7 +1022,7 @@ PetscErrorCode InitialSedGrainsGravity(IGA iga,AppCtx *user)
 
     cand=0;
 
-//lateral walls (left wall)
+    //lateral walls (left wall)
     if(xc<3.0*rad*(1.0+rad_dev) && flag_nextpart==0 ) {
       PetscPrintf(PETSC_COMM_WORLD," LEFT WALL! \n");
       init_cand = cand;
@@ -1022,12 +1030,12 @@ PetscErrorCode InitialSedGrainsGravity(IGA iga,AppCtx *user)
         flag=1;
         if(2.0*rc+rrst[jj] > xxst[jj] && rc<xxst[jj]) { //contact: new particle in contact with wall and particle jj
           //PetscPrintf(PETSC_COMM_WORLD,"  Contact with particle %d ",jj);
-      //two solutions
+          //two solutions
           //PetscReal y1;
           y1 = yyst[jj] + sqrt(SQ(rc+rrst[jj])-SQ(rc-xxst[jj]));
           //PetscPrintf(PETSC_COMM_WORLD,"  at point y=%.3e \n",y1);
           //y2 = yyst[jj] - sqrt(SQ(rc+rrst[jj])-SQ(rc-xxst[jj]));
-      //look for overlap
+          //look for overlap
           for(kk=0;kk<n_act;kk++){
             dist = sqrt(SQ(xc-centX[kk])+SQ(y1-centY[kk]));
             if(1.01*dist < rc+radius[kk]) flag = 0;
@@ -1042,7 +1050,7 @@ PetscErrorCode InitialSedGrainsGravity(IGA iga,AppCtx *user)
           if(cand == n_cand) jj=upp; //number of candidates is completed!
         }
       }
-    //choose a candidate (the higher one)
+      //choose a candidate (the higher one)
       if(cand>init_cand){
         PetscPrintf(PETSC_COMM_WORLD,"   Pick amongst %d left_B candidates ",cand-init_cand);
         dist=0.0;
@@ -1058,9 +1066,9 @@ PetscErrorCode InitialSedGrainsGravity(IGA iga,AppCtx *user)
         yc_cand[init_cand]=yc_cand[cand_pick];
         cand = init_cand+1;
       }
-
     }
-//right wall
+
+    //right wall
     if(xc>user->Lx-3.0*rad*(1.0+rad_dev)  && flag_nextpart==0 ) {
       PetscPrintf(PETSC_COMM_WORLD," RIGHT WALL! \n");
       init_cand = cand;
@@ -1068,11 +1076,11 @@ PetscErrorCode InitialSedGrainsGravity(IGA iga,AppCtx *user)
         flag=1;
         if(2.0*rc+rrst[jj] > user->Lx-xxst[jj] && rc<user->Lx-xxst[jj]) { //contact: new particle in contact with wall and particle jj
           //PetscPrintf(PETSC_COMM_WORLD,"  Contact with particle %d ",jj);
-      //two solutions
+          //two solutions
           //PetscReal y1;
           y1 = yyst[jj] + sqrt(SQ(rc+rrst[jj])-SQ(rc-(user->Lx-xxst[jj])));
           //PetscPrintf(PETSC_COMM_WORLD,"  at point y=%.3e \n",y1);
-      //look for overlap
+          //look for overlap
           for(kk=0;kk<n_act;kk++){
             dist = sqrt(SQ(xc-centX[kk])+SQ(y1-centY[kk]));
             if(1.01*dist < rc+radius[kk]) flag = 0;
@@ -1087,7 +1095,7 @@ PetscErrorCode InitialSedGrainsGravity(IGA iga,AppCtx *user)
           if(cand == n_cand) jj=upp; //number of candidates is completed!
         }
       }
-    //choose a candidate (the higher one)
+      //choose a candidate (the higher one)
       if(cand>init_cand){
         PetscPrintf(PETSC_COMM_WORLD,"   Pick amongst %d right_B candidates ",cand-init_cand);
         dist=0.0;
@@ -1104,7 +1112,7 @@ PetscErrorCode InitialSedGrainsGravity(IGA iga,AppCtx *user)
         cand = init_cand+1;
       }
     }
-//loop amongs the particles on the top
+    //loop amongs the particles on the top
     if(flag_nextpart==0 && cand<n_cand) {
       PetscPrintf(PETSC_COMM_WORLD," INNER PARTICLES: Check particles far from boundaries! \n");
       for(jj=0;jj<upp-1;jj++){
@@ -1162,7 +1170,7 @@ PetscErrorCode InitialSedGrainsGravity(IGA iga,AppCtx *user)
       }
       PetscPrintf(PETSC_COMM_WORLD,"     New %d candidates \n",cand-init_cand);
     }
-  //pick among candidates
+    //pick among candidates
     if(flag_nextpart==0 && cand>0){
       PetscPrintf(PETSC_COMM_WORLD,"    Pick amongst %d candidates the lowest one \n",cand);
       dist = 1.0e6;
@@ -1206,7 +1214,7 @@ PetscErrorCode InitialSedGrainsGravity(IGA iga,AppCtx *user)
   //ierr = MPI_Barrier(PETSC_COMM_WORLD);CHKERRQ(ierr);
   PetscPrintf(PETSC_COMM_WORLD,"Iteration amongst grains finished. Now, communication \n");
 
-//----- communication
+  //----- communication
   ierr = MPI_Bcast(centX,tot_part,MPI_DOUBLE,0,PETSC_COMM_WORLD);CHKERRQ(ierr);
   ierr = MPI_Bcast(centY,tot_part,MPI_DOUBLE,0,PETSC_COMM_WORLD);CHKERRQ(ierr);
   ierr = MPI_Bcast(radius,tot_part,MPI_DOUBLE,0,PETSC_COMM_WORLD);CHKERRQ(ierr);
@@ -1225,7 +1233,7 @@ PetscErrorCode InitialSedGrainsGravity(IGA iga,AppCtx *user)
   }
 
 
-//-------- define the Phi_sed values
+  //-------- define the Phi_sed values
   IGAElement element;
   IGAPoint point;
   PetscReal sed=0.0;
@@ -1918,6 +1926,7 @@ int main(int argc, char *argv[]) {
   user.p=p; user.C=C;  user.dim=dim;
   user.Lx=Lx; user.Ly=Ly; user.Lz=Lz; 
   user.Nx=Nx; user.Ny=Ny; user.Nz=Nz;
+  user.eps=eps;
 
   // grains!
   flag_sedgrav    = 0; 
@@ -2034,13 +2043,21 @@ int main(int argc, char *argv[]) {
   if(flag_BC_rhovfix==1){
     PetscReal rho0_vs;
     RhoVS_I(&user,user.temp0,&rho0_vs,NULL);
-    for(l=0;l<dim;l++) for(m=0;m<2;m++) ierr = IGASetBoundaryValue(iga,l,m,2,user.hum0*rho0_vs);CHKERRQ(ierr);
+    for(l=0;l<dim;l++) {
+      for(m=0;m<2;m++) {
+        ierr = IGASetBoundaryValue(iga,l,m,2,user.hum0*rho0_vs);CHKERRQ(ierr);
+      }
+    }
   }
   if(flag_BC_Tfix==1){
     PetscReal T_BC[dim][2], LL[dim];
     LL[0] = Lx; LL[1]=Ly; LL[2]=Lz;
     for(l=0;l<dim;l++) for(m=0;m<2;m++) T_BC[l][m] = user.temp0 + (2.0*m-1)*user.grad_temp0[l]*0.5*LL[l];
-    for(l=0;l<dim;l++) for(m=0;m<2;m++) ierr = IGASetBoundaryValue(iga,l,m,1,T_BC[l][m]);CHKERRQ(ierr);
+    for(l=0;l<dim;l++) {
+      for(m=0;m<2;m++) {
+        ierr = IGASetBoundaryValue(iga,l,m,1,T_BC[l][m]);CHKERRQ(ierr);
+      }
+    }
   }
 
   TS ts;
