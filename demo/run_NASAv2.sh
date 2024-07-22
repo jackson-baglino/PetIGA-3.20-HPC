@@ -1,13 +1,14 @@
 #!/bin/bash
-#SBATCH -J NASAv2-88G-2D-48h
+#SBATCH -J NASAv2-88G-3D-2W--TEST
 #SBATCH -t 5-00:00:00
 #SBATCH --nodes=4
-#SBATCH --ntasks-per-node=64
+#SBATCH --ntasks-per-node=60
 #SBATCH --cpus-per-task=1
 #SBATCH -o "%x.o%j"
 #SBATCH -e "%x.e%j"
 #SBATCH --export=ALL
 #SBATCH --partition=expansion
+#SBATCH --mem-per-cpu=8G
 
 ##SBATCH --mem-per-cpu=1G  # memory per CPU core
 ##SBATCH -p         #general partition
@@ -36,7 +37,7 @@ echo ” ”
 id=${SLURM_JOB_ID:0:9}
 echo $id
 
-name=NASAv2-88G-3D-48h_$id
+name=NASAv2-88G-3D-2W--TEST_$id
 folder=/central/scratch/jbaglino/$name
 echo $name
 echo $folder
@@ -63,7 +64,8 @@ inputFile=$input_dir"grainReadFile-88_s1-10_s2-21.dat"
 
 # Define simulation parameters -------------------------------------------------
 # Define dimensions
-dim=2
+diim=3
+
 
 # Converty scientic notation to decimal using bc if needed
 dim=$(echo "$dim" | bc -l)
@@ -83,7 +85,7 @@ dim=$(echo "$dim" | bc -l)
 
 Lx=2.0e-3                     # Domain size X -- 88 Grain
 Ly=2.0e-3                     # Domain size Y -- 88 Grain
-Lz=2.509e-04                  # Domain size Z -- 88 Grain
+Lz=0.6021e-3                  # Domain size Z -- 88 Grain
 
 # Lx=3.2e-3                     # Domain size X -- 165 Grain
 # Ly=3.2e-3                     # Domain size Y -- 165 Grain
@@ -111,19 +113,22 @@ Lz=2.509e-04                  # Domain size Z -- 88 Grain
 # Ny=385
 # Nz=243
 
-Nx=1100                       # Number of elements in X -- 88 Grain
-Ny=1100                       # Number of elements in Y -- 88 Grain
-Nz=138                        # Number of elements in Z -- 88 Grain
+Nx=1078                       # Number of elements in X -- 88 Grain
+Ny=1078                       # Number of elements in Y -- 88 Grain
+Nz=325                        # Number of elements in Z -- 88 Grain
 
 # Nx=1724                       # Number of elements in X -- 165 Grain
 # Ny=1724                       # Number of elements in Y -- 165 Grain
 # Nz=417                        # Number of elements in Z -- 165 Grain
 
+eps=9.28146307269926e-07			# Interface width
 
 # Time parameters
 delt_t=1.0e-4                 # Time step
-t_final=2*24*60*60              # Final time
-n_out=500                     # Number of output files
+t_final=2*7*24*60*60              # Final time
+n_out=2000                     # Number of output files
+# t_final=1.0
+# n_out=10
 
 # Convert scientific notation to decimal using bc
 t_final=$(echo "$t_final" | bc -l)
@@ -145,7 +150,7 @@ grad_temp0Z=$(echo "$grad_temp0Z" | bc -l)
 
 # Export variables
 export folder input_dir inputFile Lx Ly Lz Nx Ny Nz delt_t t_final n_out \
-    humidity temp grad_temp0X grad_temp0Y grad_temp0Z dim
+    humidity temp grad_temp0X grad_temp0Y grad_temp0Z dim eps
 
 
 echo " "
@@ -165,7 +170,10 @@ echo " " >> $folder/sim_params.dat
 
 echo "Dimensions:" >> $folder/sim_params.dat
 echo "dim = $dim" >> $folder/sim_params.dat
+echo " " >> $folder/sim_params.dat
 
+echo "Interface wiedth:" >> $folder/sim_params.dat
+echo "eps = $eps" >> $folder/sim_params.dat
 echo " " >> $folder/sim_params.dat
 
 echo "Domain sizes:" >> $folder/sim_params.dat

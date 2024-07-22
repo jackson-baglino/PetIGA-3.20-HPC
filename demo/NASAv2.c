@@ -1783,8 +1783,9 @@ int main(int argc, char *argv[]) {
   user.flag_xiT   = 1;            //    note kinetics change 2-3 orders of magnitude from 0 to -70 C. 
                                   //    xi_v > 1e2*Lx/beta_sub;      xi_t > 1e4*Lx/beta_sub;   xi_v>1e-5; xi_T>1e-5;
 
-  user.eps        = 9.1e-7;  // 2.0e-7;       //--- usually: eps < 1.0e-7, in some setups this limitation can be relaxed (see Manuscript-draft)
-  user.Lambd      = 1.0;          //    for low temperatures (T=-70C), we might have eps < 1e-11
+  // user.eps        = 9.1e-7;  // 2.0e-7;       //--- usually: eps < 1.0e-7, in some setups this limitation can be relaxed (see Manuscript-draft)
+// 	user.eps				= eps;
+	user.Lambd      = 1.0;          //    for low temperatures (T=-70C), we might have eps < 1e-11
   user.air_lim    = 1.0e-6;
   user.nsteps_IC  = 10;
 
@@ -1852,10 +1853,12 @@ int main(int argc, char *argv[]) {
   const char *grad_temp0Z_str = getenv("grad_temp0Z");
 
   const char *dim_str         = getenv("dim");
-
+	
+	const char *eps_str 				= getenv("eps");
+	
   if (!Nx_str || !Ny_str || !Nz_str || !Lx_str || !Ly_str || !Lz_str || 
       !delt_t_str || !t_final_str || !humidity_str || !temp_str || 
-      !grad_temp0X_str || !grad_temp0Y_str || !grad_temp0Z_str || !dim_str) {
+      !grad_temp0X_str || !grad_temp0Y_str || !grad_temp0Z_str || !dim_str || !eps_str) {
       PetscPrintf(PETSC_COMM_WORLD, "Error: One or more environment variables are not set.\n");
       PetscFinalize();
       return EXIT_FAILURE;
@@ -1876,6 +1879,7 @@ int main(int argc, char *argv[]) {
       PetscPrintf(PETSC_COMM_WORLD, "grad_temp0Y: %s\n", grad_temp0Y_str);
       PetscPrintf(PETSC_COMM_WORLD, "grad_temp0Z: %s\n", grad_temp0Z_str);
       PetscPrintf(PETSC_COMM_WORLD, "dim: %s\n", dim_str);
+      PetscPrintf(PETSC_COMM_WORLD, "eps: %s\n", eps_str);
   }
 
   char *endptr;
@@ -1899,6 +1903,8 @@ int main(int argc, char *argv[]) {
   PetscReal grad_temp0Z = strtod(grad_temp0Z_str, &endptr);
 
   PetscInt dim          = strtod(dim_str, &endptr);
+  
+	PetscInt eps          = strtod(eps_str, &endptr);
 
   // Verify that conversion was successful
   if (*endptr != '\0') {
@@ -2132,6 +2138,7 @@ int main(int argc, char *argv[]) {
   PetscPrintf(PETSC_COMM_WORLD, "grad_temp0Y: %f\n", user.grad_temp0[1]);
   PetscPrintf(PETSC_COMM_WORLD, "grad_temp0Z: %f\n", user.grad_temp0[2]);
   PetscPrintf(PETSC_COMM_WORLD, "dim: %d\n", user.dim);
+  PetscPrintf(PETSC_COMM_WORLD, "eps: %d\n", user.eps);
 
   PetscReal t=0; Vec U;
   ierr = IGACreateVec(iga,&U);CHKERRQ(ierr);

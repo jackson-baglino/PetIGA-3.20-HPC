@@ -41,11 +41,13 @@ else
     
     mkdir -p vtkOut
     mkdir -p stlOut
+    cp -r -p stlOut stl_Out-copy
+
     python3.11 plotNASA.py
     
-    # python3.11 writeNASA2CSV.py
+    python3.11 plotSSA.py
+    python3.11 plotPorosity.py
 
-    # python3.11 plotSSA.py
-    # python3.11 plotPorosity.py
+    python3.11 rename_STL_files.py
 fi
 

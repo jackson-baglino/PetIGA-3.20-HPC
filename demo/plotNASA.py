@@ -11,7 +11,7 @@ from rich.traceback import install
 install()
 
 def create_vtk_files():
-    maxNum = 150
+    maxNum = 300
     numX = int(os.getenv("Nx", maxNum))
     numY = int(os.getenv("Ny", maxNum))
     numZ = int(os.getenv("Nz", maxNum))

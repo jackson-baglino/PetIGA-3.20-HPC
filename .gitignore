@@ -17,3 +17,4 @@ src/*
 include/* 
 docs/*
 lib/*
+HPC_Petsc-3.20/*
