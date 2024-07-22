@@ -1904,7 +1904,7 @@ int main(int argc, char *argv[]) {
 
   PetscInt dim          = strtod(dim_str, &endptr);
   
-	PetscInt eps          = strtod(eps_str, &endptr);
+	PetscReal eps          = strtod(eps_str, &endptr);
 
   // Verify that conversion was successful
   if (*endptr != '\0') {
@@ -2138,7 +2138,7 @@ int main(int argc, char *argv[]) {
   PetscPrintf(PETSC_COMM_WORLD, "grad_temp0Y: %f\n", user.grad_temp0[1]);
   PetscPrintf(PETSC_COMM_WORLD, "grad_temp0Z: %f\n", user.grad_temp0[2]);
   PetscPrintf(PETSC_COMM_WORLD, "dim: %d\n", user.dim);
-  PetscPrintf(PETSC_COMM_WORLD, "eps: %d\n", user.eps);
+  PetscPrintf(PETSC_COMM_WORLD, "eps: %f\n", user.eps);
 
   PetscReal t=0; Vec U;
   ierr = IGACreateVec(iga,&U);CHKERRQ(ierr);
