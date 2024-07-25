@@ -18,3 +18,5 @@ include/*
 docs/*
 lib/*
 HPC_Petsc-3.20/*
+HPC_Petsc-3.20_gcc-13.2.0_omp-4.1.5/*
+HPC_Petsc-3.20_gcc-13.2.0_omp-4.1.5/obj/src/petiga2d.o
