@@ -1,0 +1,96 @@
+” ”
+“compiling NASAv2”
+” ”
+/home/jbaglino/Petsc-3.20-HPC/HPC_Petsc-3.20/bin/mpicc -o NASAv2.o -c -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -O3 -march=native -mtune=native -g3 -Wall -Wextra -Wno-unused-parameter  -I/home/jbaglino/Petsc-3.20-HPC/include -I/home/jbaglino/Petsc-3.20-HPC/HPC_Petsc-3.20/include    -I/home/jbaglino/PetIGA-3.20-HPC/HPC_Petsc-3.20/include -I/home/jbaglino/PetIGA-3.20-HPC/include `pwd`/NASAv2.c
+/home/jbaglino/Petsc-3.20-HPC/HPC_Petsc-3.20/bin/mpicc -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -O3 -march=native -mtune=native -g3 -Wall -Wextra -Wno-unused-parameter  -o NASAv2 NASAv2.o -Wl,-rpath,/home/jbaglino/PetIGA-3.20-HPC/HPC_Petsc-3.20/lib -L/home/jbaglino/PetIGA-3.20-HPC/HPC_Petsc-3.20/lib -lpetiga -L/home/jbaglino/Petsc-3.20-HPC/HPC_Petsc-3.20/lib -Wl,-rpath,/home/jbaglino/Petsc-3.20-HPC/HPC_Petsc-3.20/lib -L/home/jbaglino/Petsc-3.20-HPC/HPC_Petsc-3.20/lib -L/usr/lib/gcc/x86_64-redhat-linux/11 -lpetsc -lsuperlu_dist -lflapack -lfblas -lparmetis -lmetis -lm -lX11 -lmpifort -lmpi -lpthread -lgfortran -lm -lpciaccess -lgfortran -lm -lgfortran -lgcc_s -lquadmath -lstdc++
+/usr/bin/rm -f -f NASAv2.o
+------------------------------------------------------
+‘Job is running on node ’
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+hpc-35-36.cm.cluster
+------------------------------------------------------
+qsub is running on login4.cm.cluster
+executing queue is geomechanics
+working directory is /central/home/jbaglino/PetIGA-3.20-HPC/demo
+partition/queue is expansion
+job identifier is 42841338
+job name is NASAv2-10G-3D-2W
+node file is hpc-35-36
+cluster central
+total nodes 1
+------------------------------------------------------
+” ”
+“setting up things”
+” ”
+42841338
+NASAv2-10G-3D-2W_42841338
+/central/scratch/jbaglino/NASAv2-10G-3D-2W_42841338
+Copying files to scratch
+/central/home/jbaglino/PetIGA-3.20-HPC/demo
+ 
+running NASAv2
+ 
+-------------------------------------------------------------------------
+done

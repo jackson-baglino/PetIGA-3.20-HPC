@@ -1,14 +1,14 @@
 #!/bin/bash
-#SBATCH -J NASAv2-88G-3D-2W--TEST
+#SBATCH -J NASAv2-10G-3D-2W
 #SBATCH -t 5-00:00:00
-#SBATCH --nodes=4
-#SBATCH --ntasks-per-node=60
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=64
 #SBATCH --cpus-per-task=1
 #SBATCH -o "%x.o%j"
 #SBATCH -e "%x.e%j"
 #SBATCH --export=ALL
 #SBATCH --partition=expansion
-#SBATCH --mem-per-cpu=8G
+#SBATCH --mem-per-cpu=4G
 
 ##SBATCH --mem-per-cpu=1G  # memory per CPU core
 ##SBATCH -p         #general partition
@@ -37,7 +37,7 @@ echo ” ”
 id=${SLURM_JOB_ID:0:9}
 echo $id
 
-name=NASAv2-88G-3D-2W--TEST_$id
+name=NASAv2-10G-3D-2W_$id
 folder=/central/scratch/jbaglino/$name
 echo $name
 echo $folder
@@ -47,24 +47,24 @@ export I_MPI_PMI_LIBRARY=/path/to/slurm/pmi/library/libpmi.so
 
 mkdir $folder
 echo "Copying files to scratch"
-scp /home/jbaglino/PetIGA-3.20/demo/NASAv2.c $folder/
-scp /home/jbaglino/PetIGA-3.20/demo/run_NASAv2.sh $folder/
+scp /home/jbaglino/PetIGA-3.20-HPC/demo/NASAv2.c $folder/
+scp /home/jbaglino/PetIGA-3.20-HPC/demo/run_NASAv2.sh $folder/
 cd $SLURM_SUBMIT_DIR
 echo $SLURM_SUBMIT_DIR
 
 # Define variable names to be exported -----------------------------------------
   # File names
 input_dir="/home/jbaglino/PetIGA-3.20-HPC/demo/input/"
-inputFile=$input_dir"grainReadFile-88_s1-10_s2-21.dat"
+# inputFile=$input_dir"grainReadFile-88_s1-10_s2-21.dat"
 # inputFile=$input_dir"grainReadFile-135_s1-10_s2-21.dat"
 # inputFile=$input_dir"grainReadFile-165_s1-10_s2-30.dat"
-# inputFile=$input_dir"grainReadFile-10_s1-10.dat"
+inputFile=$input_dir"grainReadFile-10_s1-10.dat"
 # inputFile=$input_dir"grainReadFile-5_s1-10.dat"
 # inputFile=$input_dir"grainReadFile-2.dat"
 
 # Define simulation parameters -------------------------------------------------
 # Define dimensions
-diim=3
+dim=3
 
 
 # Converty scientic notation to decimal using bc if needed
@@ -79,13 +79,13 @@ dim=$(echo "$dim" | bc -l)
 # Ly=0.35e-03                   # Domain size Y -- 5 Grain
 # Lz=2.202e-04                  # Domain size Z -- 5 Grain
 
-# Lx=0.5e-03                    # Domain size X -- 10 Grain
-# Ly=0.5e-03                    # Domain size Y -- 10 Grain
-# Lz=2.312e-04                  # Domain size Z -- 10 Grain
+Lx=0.5e-03                    # Domain size X -- 10 Grain
+Ly=0.5e-03                    # Domain size Y -- 10 Grain
+Lz=2.422e-04                  # Domain size Z -- 10 Grain
 
-Lx=2.0e-3                     # Domain size X -- 88 Grain
-Ly=2.0e-3                     # Domain size Y -- 88 Grain
-Lz=0.6021e-3                  # Domain size Z -- 88 Grain
+# Lx=2.0e-3                     # Domain size X -- 88 Grain
+# Ly=2.0e-3                     # Domain size Y -- 88 Grain
+# Lz=0.6021e-3                  # Domain size Z -- 88 Grain
 
 # Lx=3.2e-3                     # Domain size X -- 165 Grain
 # Ly=3.2e-3                     # Domain size Y -- 165 Grain
@@ -105,17 +105,17 @@ Lz=0.6021e-3                  # Domain size Z -- 88 Grain
 # Ny=193                       # Number of elements in Y -- 5 Grain
 # Nz=122                        # Number of elements in Z -- 5 Grain
 
-# Nx=270                        # Number of elements in X -- 10 Grain
-# Ny=270                        # Number of elements in Y -- 10 Grain
-# Nz=125                        # Number of elements in Z -- 10 Grain
+Nx=270                        # Number of elements in X -- 10 Grain
+Ny=270                        # Number of elements in Y -- 10 Grain
+Nz=131                        # Number of elements in Z -- 10 Grain
 
 # Nx=385
 # Ny=385
 # Nz=243
 
-Nx=1078                       # Number of elements in X -- 88 Grain
-Ny=1078                       # Number of elements in Y -- 88 Grain
-Nz=325                        # Number of elements in Z -- 88 Grain
+# Nx=1078                       # Number of elements in X -- 88 Grain
+# Ny=1078                       # Number of elements in Y -- 88 Grain
+# Nz=325                        # Number of elements in Z -- 88 Grain
 
 # Nx=1724                       # Number of elements in X -- 165 Grain
 # Ny=1724                       # Number of elements in Y -- 165 Grain
@@ -157,10 +157,17 @@ echo " "
 echo "running NASAv2"
 echo " "
 
-mpiexec ./NASAv2 -initial_cond -initial_PFgeom -snes_rtol 1e-3 -snes_stol 1e-6 \
+# mpirun
+# mpiexec ./NASAv2 -initial_cond -initial_PFgeom -snes_rtol 1e-3 -snes_stol 1e-6 \
+# -snes_max_it 6 -ksp_gmres_restart 150 -ksp_max_it 500 -ksp_converged_maxits 1 \
+# -ksp_converged_reason -snes_converged_reason -snes_linesearch_monitor  \
+# -snes_linesearch_type basic | tee $folder/outp.txt
+
+mpiexec -- ./NASAv2 -initial_cond -initial_PFgeom -snes_rtol 1e-3 -snes_stol 1e-6 \
 -snes_max_it 6 -ksp_gmres_restart 150 -ksp_max_it 500 -ksp_converged_maxits 1 \
--ksp_converged_reason -snes_converged_reason -snes_linesearch_monitor  \
+-ksp_converged_reason -snes_converged_reason -snes_linesearch_monitor \
 -snes_linesearch_type basic | tee $folder/outp.txt
+
 
 # Create descriptive file ------------------------------------------------------
 echo "----- SIMULATION PARAMETERS -----" > $folder/sim_params.dat
