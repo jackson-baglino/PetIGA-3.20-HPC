@@ -32,8 +32,18 @@ typedef struct {
 } AppCtx;
 
 PetscErrorCode SNESDOFConvergence(SNES snes,PetscInt it_number,PetscReal xnorm, 
-    PetscReal gnorm,PetscReal fnorm,SNESConvergedReason *reason,void *cctx)
+   PetscReal gnorm,PetscReal fnorm,SNESConvergedReason *reason,void *cctx)
 {
+  /* ***************************************************************************
+  * This function is called to check the convergence of the SNES solver at each 
+  * iteration.
+  * It calculates the norms of the residual vector and the solution update 
+  * vector, and prints them along with the iteration number and the function 
+  * norm.
+  * It also checks if the convergence criteria are met and updates the 
+  * convergence reason accordingly. 
+  *************************************************************************** */
+
   PetscFunctionBegin;
   PetscErrorCode ierr;
   AppCtx *user = (AppCtx *)cctx;
@@ -47,17 +57,17 @@ PetscErrorCode SNESDOFConvergence(SNES snes,PetscInt it_number,PetscReal xnorm,
   ierr = VecStrideNorm(Res,1,NORM_2,&n2dof1);CHKERRQ(ierr);
   ierr = VecStrideNorm(Res,2,NORM_2,&n2dof2);CHKERRQ(ierr);
   if(user->flag_tIC == 1){
-    ierr = SNESGetSolution(snes,&Sol);CHKERRQ(ierr);
-    ierr = VecStrideNorm(Sol,2,NORM_2,&solv);CHKERRQ(ierr);
-    ierr = SNESGetSolutionUpdate(snes,&Sol_upd);CHKERRQ(ierr);
-    ierr = VecStrideNorm(Sol_upd,2,NORM_2,&solupdv);CHKERRQ(ierr);
+   ierr = SNESGetSolution(snes,&Sol);CHKERRQ(ierr);
+   ierr = VecStrideNorm(Sol,2,NORM_2,&solv);CHKERRQ(ierr);
+   ierr = SNESGetSolutionUpdate(snes,&Sol_upd);CHKERRQ(ierr);
+   ierr = VecStrideNorm(Sol_upd,2,NORM_2,&solupdv);CHKERRQ(ierr);
   }
 
   if(it_number==0) {
-    user->norm0_0 = n2dof0;
-    user->norm0_1 = n2dof1;
-    user->norm0_2 = n2dof2;
-    if(user->flag_tIC == 1) solupdv = solv;  
+   user->norm0_0 = n2dof0;
+   user->norm0_1 = n2dof1;
+   user->norm0_2 = n2dof2;
+   if(user->flag_tIC == 1) solupdv = solv;  
   }
 
   PetscPrintf(PETSC_COMM_WORLD,"    IT_NUMBER: %d ", it_number);
@@ -73,21 +83,21 @@ PetscErrorCode SNESDOFConvergence(SNES snes,PetscInt it_number,PetscReal xnorm,
   if(snes->prev_dt_red ==1) rtol *= 10.0;
 
   if(user->flag_it0 == 1){
-    atol = 1.0e-12;
-    if ( (n2dof0 <= rtol*user->norm0_0 || n2dof0 < atol) 
-      && (n2dof1 <= rtol*user->norm0_1 || n2dof1 < atol)  
-      && (n2dof2 <= rtol*user->norm0_2 || n2dof2 < atol) ) {
+   atol = 1.0e-12;
+   if ( (n2dof0 <= rtol*user->norm0_0 || n2dof0 < atol) 
+    && (n2dof1 <= rtol*user->norm0_1 || n2dof1 < atol)  
+    && (n2dof2 <= rtol*user->norm0_2 || n2dof2 < atol) ) {
 
-      *reason = SNES_CONVERGED_FNORM_RELATIVE;
-    }    
+    *reason = SNES_CONVERGED_FNORM_RELATIVE;
+   }    
   } else {
-    atol = 1.0e-20;
-    if ( (n2dof0 <= rtol*user->norm0_0 || n2dof0 < atol) 
-      && (n2dof1 <= rtol*user->norm0_1 || n2dof1 < atol)  
-      && (n2dof2 <= rtol*user->norm0_2 || n2dof2 < atol) ) {
+   atol = 1.0e-20;
+   if ( (n2dof0 <= rtol*user->norm0_0 || n2dof0 < atol) 
+    && (n2dof1 <= rtol*user->norm0_1 || n2dof1 < atol)  
+    && (n2dof2 <= rtol*user->norm0_2 || n2dof2 < atol) ) {
 
-      *reason = SNES_CONVERGED_FNORM_RELATIVE;
-    }     
+    *reason = SNES_CONVERGED_FNORM_RELATIVE;
+   }     
   }
 
   PetscFunctionReturn(0);
@@ -300,10 +310,7 @@ PetscErrorCode Residual(IGAPoint pnt,
     PetscScalar ice, ice_t, grad_ice[dim];
     ice          = sol[0]; 
     ice_t        = sol_t[0]; 
-
-    for(l=0;l<dim;l++) {
-      grad_ice[l]  = grad_sol[0][l];
-    }
+    for(l=0;l<dim;l++) grad_ice[l]  = grad_sol[0][l];
 
 
     PetscScalar air, air_t;
@@ -423,15 +430,10 @@ PetscErrorCode Jacobian(IGAPoint pnt,
     IGAPointFormValue(pnt,U,&sol[0]);
     IGAPointFormGrad (pnt,U,&grad_sol[0][0]);
 
-    PetscScalar ice, ice_t; // grad_ice[dim];
+    PetscScalar ice, ice_t, grad_ice[dim];
     ice          = sol[0]; 
     ice_t        = sol_t[0]; 
-
-    /* Commented out to avoid unused variable warning
-    for(l=0;l<dim;l++) {
-      grad_ice[l]  = grad_sol[0][l];
-    }
-    */
+    for(l=0;l<dim;l++) grad_ice[l]  = grad_sol[0][l];
 
     PetscScalar air, air_t;
     air          = 1.0-met-ice;
@@ -747,7 +749,7 @@ PetscErrorCode InitialSedGrains(IGA iga,AppCtx *user)
   PetscInt  numb_clust = user->NCsed,ii,jj,tot=10000;
   PetscInt  l, n_act=0, flag, dim=user->dim, seed=13;
 
-  //----- cluster info
+//----- cluster info
   PetscReal centX[3][numb_clust], radius[numb_clust];
   PetscRandom randcX,randcY,randcZ,randcR;
   ierr = PetscRandomCreate(PETSC_COMM_WORLD,&randcX);CHKERRQ(ierr);
@@ -809,9 +811,9 @@ PetscErrorCode InitialSedGrains(IGA iga,AppCtx *user)
   ierr = PetscRandomDestroy(&randcR);CHKERRQ(ierr);
   if(dim==3) {ierr = PetscRandomDestroy(&randcZ);CHKERRQ(ierr);}
 
-  //PetscPrintf(PETSC_COMM_SELF,"before  %.4f %.4f %.4f \n",centX[0],centY[0],radius[0]);
+//PetscPrintf(PETSC_COMM_SELF,"before  %.4f %.4f %.4f \n",centX[0],centY[0],radius[0]);
 
-  //----- communication
+//----- communication
   for(l=0;l<dim;l++){ierr = MPI_Bcast(centX[l],numb_clust,MPI_DOUBLE,0,PETSC_COMM_WORLD);CHKERRQ(ierr);}
   ierr = MPI_Bcast(radius,numb_clust,MPI_DOUBLE,0,PETSC_COMM_WORLD);CHKERRQ(ierr);
   ierr = MPI_Bcast(&n_act,1,MPI_INT,0,PETSC_COMM_WORLD);CHKERRQ(ierr);
@@ -824,7 +826,7 @@ PetscErrorCode InitialSedGrains(IGA iga,AppCtx *user)
     //PetscPrintf(PETSC_COMM_SELF,"Sed grains: points %.4f %.4f %.4f \n",centX[jj],centY[jj],radius[jj]);
   }
 
-  //-------- define the Phi_sed values
+//-------- define the Phi_sed values
 
   IGAElement element;
   IGAPoint point;
@@ -957,7 +959,7 @@ PetscErrorCode InitialSedGrainsGravity(IGA iga,AppCtx *user)
       cand=0;
       yc=rc;
       flag=1;
-      //try particle placed on bottom, no readjustment
+    //try particle placed on bottom, no readjustment
       for(jj=0;jj<n_act;jj++){ //
         dist = sqrt(SQ(xc-centX[jj])+SQ(yc-centY[jj]));
         if(1.01*dist < rc+radius[jj]) flag = 0;
@@ -1000,7 +1002,7 @@ PetscErrorCode InitialSedGrainsGravity(IGA iga,AppCtx *user)
             if(cand == n_cand) jj=upp; //number of candidates is completed!
           } //else PetscPrintf(PETSC_COMM_WORLD,"   No possible contact with particle %d in the stripe \n",jj);
         }
-        //choose a candidate (the closer one)
+      //choose a candidate (the closer one)
         if(cand>0){
           //PetscPrintf(PETSC_COMM_WORLD,"    Choosing candidates (closer to original xc) amongst the %d options \n",cand);
           dist=1.0e6;
@@ -1035,7 +1037,7 @@ PetscErrorCode InitialSedGrainsGravity(IGA iga,AppCtx *user)
           y1 = yyst[jj] + sqrt(SQ(rc+rrst[jj])-SQ(rc-xxst[jj]));
           //PetscPrintf(PETSC_COMM_WORLD,"  at point y=%.3e \n",y1);
           //y2 = yyst[jj] - sqrt(SQ(rc+rrst[jj])-SQ(rc-xxst[jj]));
-          //look for overlap
+        //look for overlap
           for(kk=0;kk<n_act;kk++){
             dist = sqrt(SQ(xc-centX[kk])+SQ(y1-centY[kk]));
             if(1.01*dist < rc+radius[kk]) flag = 0;
@@ -1066,8 +1068,8 @@ PetscErrorCode InitialSedGrainsGravity(IGA iga,AppCtx *user)
         yc_cand[init_cand]=yc_cand[cand_pick];
         cand = init_cand+1;
       }
-    }
 
+    }
     //right wall
     if(xc>user->Lx-3.0*rad*(1.0+rad_dev)  && flag_nextpart==0 ) {
       PetscPrintf(PETSC_COMM_WORLD," RIGHT WALL! \n");
@@ -1076,11 +1078,11 @@ PetscErrorCode InitialSedGrainsGravity(IGA iga,AppCtx *user)
         flag=1;
         if(2.0*rc+rrst[jj] > user->Lx-xxst[jj] && rc<user->Lx-xxst[jj]) { //contact: new particle in contact with wall and particle jj
           //PetscPrintf(PETSC_COMM_WORLD,"  Contact with particle %d ",jj);
-          //two solutions
+      //two solutions
           //PetscReal y1;
           y1 = yyst[jj] + sqrt(SQ(rc+rrst[jj])-SQ(rc-(user->Lx-xxst[jj])));
           //PetscPrintf(PETSC_COMM_WORLD,"  at point y=%.3e \n",y1);
-          //look for overlap
+      //look for overlap
           for(kk=0;kk<n_act;kk++){
             dist = sqrt(SQ(xc-centX[kk])+SQ(y1-centY[kk]));
             if(1.01*dist < rc+radius[kk]) flag = 0;
@@ -1823,20 +1825,6 @@ int main(int argc, char *argv[]) {
   PetscReal gamma_im = 0.033, gamma_iv = 0.109, gamma_mv = 0.056; //76
   PetscReal rho_rhovs = 2.0e5; // at 0C;  rho_rhovs=5e5 at -10C
 
-  /*
-  // Domain and mesh characteristics
-  PetscReal Lx=3.2e-3,   Ly=3.2e-3,   Lz=1.0e-3;  // 135-grain simulation
-  PetscInt  Nx=1760,     Ny=1760,     Nz=300;     // 135-grain simulation
-
-  PetscReal Lx=1.6e-3,  Ly=1.6e-3,  Lz=1.0e-3;    // Experimental images
-  PetscInt  Nx=880,     Ny=880,     Nz=300;       // Experimental images
-
-  PetscReal Lx=0.2e-3,  Ly=0.1e-3,  Lz=1.0e-3;    // 2-grain simulation
-  PetscInt  Nx=230,     Ny=115,     Nz=115;       // 2-grain simulation
-
-  PetscReal Lx=420e-6,  Ly=420e-6,  Lz=1.0e-3;    // 2-grain Molaro simulation
-  PetscInt  Nx=475,     Ny=475,     Nz=300;       // 2-grain Molaro simulation
-  */
 
   // Unpack environment variables
   PetscPrintf(PETSC_COMM_WORLD, "Unpacking environment variables...\n");
@@ -2043,21 +2031,13 @@ int main(int argc, char *argv[]) {
   if(flag_BC_rhovfix==1){
     PetscReal rho0_vs;
     RhoVS_I(&user,user.temp0,&rho0_vs,NULL);
-    for(l=0;l<dim;l++) {
-      for(m=0;m<2;m++) {
-        ierr = IGASetBoundaryValue(iga,l,m,2,user.hum0*rho0_vs);CHKERRQ(ierr);
-      }
-    }
+    for(l=0;l<dim;l++) for(m=0;m<2;m++) ierr = IGASetBoundaryValue(iga,l,m,2,user.hum0*rho0_vs);CHKERRQ(ierr);
   }
   if(flag_BC_Tfix==1){
     PetscReal T_BC[dim][2], LL[dim];
     LL[0] = Lx; LL[1]=Ly; LL[2]=Lz;
     for(l=0;l<dim;l++) for(m=0;m<2;m++) T_BC[l][m] = user.temp0 + (2.0*m-1)*user.grad_temp0[l]*0.5*LL[l];
-    for(l=0;l<dim;l++) {
-      for(m=0;m<2;m++) {
-        ierr = IGASetBoundaryValue(iga,l,m,1,T_BC[l][m]);CHKERRQ(ierr);
-      }
-    }
+    for(l=0;l<dim;l++) for(m=0;m<2;m++) ierr = IGASetBoundaryValue(iga,l,m,1,T_BC[l][m]);CHKERRQ(ierr);
   }
 
   TS ts;
@@ -2093,7 +2073,7 @@ int main(int argc, char *argv[]) {
       }
     } else {ierr = InitialSedGrains(iga,&user);CHKERRQ(ierr);}
 
-//output sediment/metal in OutputMonitor function --> single file for all variables
+    //output sediment/metal in OutputMonitor function --> single file for all variables
 
     IGA igaS;   IGAAxis axis0S, axis1S, axis2S;
     ierr = IGACreate(PETSC_COMM_WORLD,&igaS);CHKERRQ(ierr);
