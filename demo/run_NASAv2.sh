@@ -1,14 +1,14 @@
 #!/bin/bash
 #SBATCH -J NASAv2-10G-3D-2W
 #SBATCH -t 5-00:00:00
-#SBATCH --nodes=8
+#SBATCH --nodes=4
 #SBATCH --ntasks-per-node=50
 #SBATCH --cpus-per-task=1
 #SBATCH -o "%x.o%j"
 #SBATCH -e "%x.e%j"
 #SBATCH --export=ALL
 #SBATCH --partition=expansion
-#SBATCH --mem-per-cpu=16G
+#SBATCH --mem-per-cpu=8G
 
 # Define the job name
 JOB_NAME="NASAv2-10G-3D-2W"
