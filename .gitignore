@@ -21,3 +21,4 @@ HPC_Petsc-3.20/*
 HPC_Petsc-3.20_gcc-13.2.0_omp-4.1.5/*
 HPC_Petsc-3.20_gcc-13.2.0_omp-5.0.1/*
 demo/NASAv2.o
+demo/output_files/*

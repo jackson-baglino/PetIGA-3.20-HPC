@@ -4,11 +4,11 @@
 #SBATCH --nodes=4
 #SBATCH --ntasks-per-node=50
 #SBATCH --cpus-per-task=1
-#SBATCH -o "%x.o%j"
-#SBATCH -e "%x.e%j"
+#SBATCH -o "output_files/%x.o%j"
+#SBATCH -e "output_files/%x.e%j"
 #SBATCH --export=ALL
 #SBATCH --partition=expansion
-#SBATCH --mem-per-cpu=8G
+#SBATCH --mem-per-cpu=2G
 
 # Define the job name
 JOB_NAME="NASAv2-10G-3D-2W"
@@ -60,8 +60,9 @@ echo $SLURM_SUBMIT_DIR
 input_dir="/home/jbaglino/PetIGA-3.20-HPC/demo/input/"
 # inputFile=$input_dir"grainReadFile-2.dat"
 # inputFile=$input_dir"grainReadFile-5_s1-10.dat"
-inputFile=$input_dir"grainReadFile-10_s1-10.dat"
-# inputFile=$input_dir"grainReadFile-88_s1-10_s2-21.dat"
+# inputFile=$input_dir"grainReadFile-10_s1-10.dat"
+# inputFile=$input_dir"grainReadFile_3D-42_s1-10.dat"
+inputFile=$input_dir"grainReadFile-88_s1-10_s2-21.dat"
 # inputFile=$input_dir"grainReadFile-135_s1-10_s2-21.dat"
 # inputFile=$input_dir"grainReadFile-165_s1-10_s2-30.dat"
 
@@ -87,6 +88,10 @@ Lx=0.5e-03                    # Domain size X -- 10 Grain
 Ly=0.5e-03                    # Domain size Y -- 10 Grain
 Lz=2.422e-04                  # Domain size Z -- 10 Grain
 
+# Lx=0.5e-03                    # Domain size X -- 42 Grain (3D)
+# Ly=0.5e-03                    # Domain size Y -- 42 Grain (3D)
+# Lz=0.5e-03                    # Domain size Z -- 42 Grain (3D)
+
 # Lx=2.0e-3                     # Domain size X -- 88 Grain
 # Ly=2.0e-3                     # Domain size Y -- 88 Grain
 # Lz=0.6021e-3                  # Domain size Z -- 88 Grain
@@ -104,6 +109,10 @@ Lz=2.422e-04                  # Domain size Z -- 10 Grain
 # Nx=264                        # Number of elements in X -- 2 Grain
 # Ny=132                        # Number of elements in Y -- 2 Grain
 # Nz=132                        # Number of elements in Z -- 2 Grain
+
+# Nx=275                        # Number of elements in X -- 42 Grain (3D)
+# Ny=275                        # Number of elements in Y -- 42 Grain (3D)
+# Nz=275                        # Number of elements in Z -- 42 Grain (3D)
 
 # Nx=193                        # Number of elements in X -- 5 Grain
 # Ny=193                        # Number of elements in Y -- 5 Grain
@@ -141,7 +150,7 @@ n_out=$(echo "$n_out" | bc -l)
 
 # Other parameters
 humidity=0.98                 # Relative humidity
-temp=-30.0                    # Temperature
+temp=-20.0                    # Temperature
 
 
 # Initial temperature gradients

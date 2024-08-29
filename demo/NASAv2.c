@@ -1335,34 +1335,33 @@ PetscErrorCode InitialIceGrains(IGA iga,AppCtx *user)
     }
 
     PetscInt grainCount = 0;
-    PetscReal x, y, r;
-    while (fscanf(file, "%lf %lf %lf", &x, &y, &r) == 3) {
+    PetscReal x, y, z, r;
+    int readCount;
+    while ((readCount = fscanf(file, "%lf %lf %lf %lf", &x, &y, &z, &r)) >= 3) {
         if (grainCount >= 200) {
             fclose(file);  // Make sure to close the file before returning
             SETERRQ(PETSC_COMM_SELF, PETSC_ERR_ARG_OUTOFRANGE, "Exceeds maximum number of grains");
         }
         user->cent[0][grainCount] = x;
         user->cent[1][grainCount] = y;
-        
+
         if (dim == 3) {
-          // At some point, come  back and fix this--should be able to read in 
-          // 3D data, need to update MATLAB script
-          // PetscReal z;
-          // fscanf(file, "%lf", &z);
-
-          PetscReal z = user->Lz/2.0;
-
-          user->cent[2][grainCount] = z;
+            if (readCount == 4) {
+                user->cent[2][grainCount] = z;
+                user->radius[grainCount] = r;
+            } else if (readCount == 3) {
+                user->cent[2][grainCount] = user->Lz / 2.0;
+                user->radius[grainCount] = z;  // The third value in this case is the radius
+            }
+        } else {
+            user->radius[grainCount] = r;
         }
-        user->radius[grainCount] = r;
+        
         grainCount++;
 
-        if (rank == 0)
-        {
-          PetscPrintf(PETSC_COMM_WORLD," new ice grain %d!!  x %.2e  y %.2e  r %.2e \n",grainCount,x,y,r);
+        if (rank == 0) {
+            PetscPrintf(PETSC_COMM_WORLD, " new ice grain %d!!  x %.2e  y %.2e  z %.2e  r %.2e \n", grainCount, x, y, (readCount == 4) ? z : user->Lz / 2.0, r);
         }
-        
-
     }
 
 
