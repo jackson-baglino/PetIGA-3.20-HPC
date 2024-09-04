@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -J NASAv2-10G-3D-2W
+#SBATCH -J NASAv2-TEST
 #SBATCH -t 5-00:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=10
@@ -8,10 +8,12 @@
 #SBATCH -e "output_files/%x.e%j"
 #SBATCH --export=ALL
 #SBATCH --partition=expansion
-#SBATCH --mem-per-cpu=4G
+#SBATCH --mem-per-cpu=8G
 
 # Define the job name
-JOB_NAME="NASAv2-42G-3D-48h"
+# JOB_NAME="NASAv2-165G-3D-48h"
+JOB_NAME="NASAv2-TEST"
+
 
 # Compilation
 echo ""
@@ -59,10 +61,10 @@ input_dir="/home/jbaglino/PetIGA-3.20-HPC/demo/input/"
 # inputFile=$input_dir"grainReadFile-2.dat"
 # inputFile=$input_dir"grainReadFile-5_s1-10.dat"
 # inputFile=$input_dir"grainReadFile-10_s1-10.dat"
-inputFile=$input_dir"grainReadFile_3D-42_s1-10.dat"
+# inputFile=$input_dir"grainReadFile_3D-42_s1-10.dat"
 # inputFile=$input_dir"grainReadFile-88_s1-10_s2-21.dat"
-# inputFile=$input_dir"grainReadFile-135_s1-10_s2-21.dat"
-# inputFile=$input_dir"grainReadFile-165_s1-10_s2-30.dat"
+# inputFile=$input_dir"grainReadFile-135_s1-10_s2-30.dat"
+inputFile=$input_dir"grainReadFile-165_s1-10_s2-30.dat"
 
 
 # Define simulation parameters -------------------------------------------------
@@ -86,21 +88,17 @@ dim=$(echo "$dim" | bc -l)
 # Ly=0.5e-03                    # Domain size Y -- 10 Grain
 # Lz=2.422e-04                  # Domain size Z -- 10 Grain
 
-Lx=0.5e-03                    # Domain size X -- 42 Grain (3D)
-Ly=0.5e-03                    # Domain size Y -- 42 Grain (3D)
-Lz=0.5e-03                    # Domain size Z -- 42 Grain (3D)
+# Lx=0.5e-03                    # Domain size X -- 42 Grain (3D)
+# Ly=0.5e-03                    # Domain size Y -- 42 Grain (3D)
+# Lz=0.5e-03                    # Domain size Z -- 42 Grain (3D)
 
 # Lx=2.0e-3                     # Domain size X -- 88 Grain
 # Ly=2.0e-3                     # Domain size Y -- 88 Grain
 # Lz=0.6021e-3                  # Domain size Z -- 88 Grain
 
-# Lx=3.2e-3                     # Domain size X -- 165 Grain
-# Ly=3.2e-3                     # Domain size Y -- 165 Grain
-# Lz=0.773e-3                   # Domain size Z -- 165 Grain
-
-# Lx=3.2e-3                     # Domain size X -- 165 Grain
-# Ly=3.2e-3                     # Domain size Y -- 165 Grain
-# Lz=1.0e-3                     # Domain size Z -- 165 Grain
+Lx=3.2e-3                     # Domain size X -- 135/165 Grain
+Ly=3.2e-3                     # Domain size Y -- 135/165 Grain
+Lz=1.0e-3                     # Domain size Z -- 135/165 Grain
 
 
 # Number of elements
@@ -108,9 +106,9 @@ Lz=0.5e-03                    # Domain size Z -- 42 Grain (3D)
 # Ny=132                        # Number of elements in Y -- 2 Grain
 # Nz=132                        # Number of elements in Z -- 2 Grain
 
-Nx=275                        # Number of elements in X -- 42 Grain (3D)
-Ny=275                        # Number of elements in Y -- 42 Grain (3D)
-Nz=275                        # Number of elements in Z -- 42 Grain (3D)
+# Nx=275                        # Number of elements in X -- 42 Grain (3D)
+# Ny=275                        # Number of elements in Y -- 42 Grain (3D)
+# Nz=275                        # Number of elements in Z -- 42 Grain (3D)
 
 # Nx=193                        # Number of elements in X -- 5 Grain
 # Ny=193                        # Number of elements in Y -- 5 Grain
@@ -124,9 +122,9 @@ Nz=275                        # Number of elements in Z -- 42 Grain (3D)
 # Ny=1078                       # Number of elements in Y -- 88 Grain
 # Nz=325                        # Number of elements in Z -- 88 Grain
 
-# Nx=1724                       # Number of elements in X -- 165 Grain
-# Ny=1724                       # Number of elements in Y -- 165 Grain
-# Nz=417                        # Number of elements in Z -- 165 Grain
+Nx=1724                       # Number of elements in X -- 135/165 Grain
+Ny=1724                       # Number of elements in Y -- 135/165 Grain
+Nz=550                        # Number of elements in Z -- 135/165 Grain
 
 
 # Interface width
@@ -135,10 +133,10 @@ eps=9.28146307269926e-07			  # Interface width
 
 # Time parameters
 delt_t=1.0e-4                   # Time step
-t_final=2*24*60*60            # Final time
-n_out=200                      # Number of output files
-# t_final=1.0                     # Final time (TEST)
-# n_out=10                        # Number of output files (TEST)
+# t_final=2*24*60*60            # Final time
+# n_out=200                      # Number of output files
+t_final=1.0e-4                     # Final time (TEST)
+n_out=1                        # Number of output files (TEST)
 
 
 # Convert scientific notation to decimal using bc
