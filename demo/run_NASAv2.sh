@@ -8,7 +8,7 @@
 #SBATCH -e "output_files/%x.e%j"
 #SBATCH --export=ALL
 #SBATCH --partition=expansion
-#SBATCH --mem-per-cpu=8G
+#SBATCH --mem-per-cpu=20G
 
 # Define the job name
 # JOB_NAME="NASAv2-165G-3D-48h"
@@ -62,9 +62,10 @@ input_dir="/home/jbaglino/PetIGA-3.20-HPC/demo/input/"
 # inputFile=$input_dir"grainReadFile-5_s1-10.dat"
 # inputFile=$input_dir"grainReadFile-10_s1-10.dat"
 # inputFile=$input_dir"grainReadFile_3D-42_s1-10.dat"
+inputFile=$input_dir"grainReadFile-45_MOLARO_s2-10.dat"
 # inputFile=$input_dir"grainReadFile-88_s1-10_s2-21.dat"
 # inputFile=$input_dir"grainReadFile-135_s1-10_s2-30.dat"
-inputFile=$input_dir"grainReadFile-165_s1-10_s2-30.dat"
+# inputFile=$input_dir"grainReadFile-165_s1-10_s2-30.dat"
 
 
 # Define simulation parameters -------------------------------------------------
@@ -92,6 +93,10 @@ dim=$(echo "$dim" | bc -l)
 # Ly=0.5e-03                    # Domain size Y -- 42 Grain (3D)
 # Lz=0.5e-03                    # Domain size Z -- 42 Grain (3D)
 
+Lx=1.5e-3                     # Domain size X -- 45 Grain
+Lx=1.5e-3                     # Domain size X -- 45 Grain
+Lx=1.5e-3                     # Domain size X -- 45 Grain
+
 # Lx=2.0e-3                     # Domain size X -- 88 Grain
 # Ly=2.0e-3                     # Domain size Y -- 88 Grain
 # Lz=0.6021e-3                  # Domain size Z -- 88 Grain
@@ -118,14 +123,21 @@ Lz=1.0e-3                     # Domain size Z -- 135/165 Grain
 # Ny=270                        # Number of elements in Y -- 10 Grain
 # Nz=131                        # Number of elements in Z -- 10 Grain
 
+Nx=688                        # Number of elements in X -- 45 Grain
+Ny=688                        # Number of elements in Y -- 45 Grain
+Nz=325                        # Number of elements in Z -- 45 Grain
+
 # Nx=1078                       # Number of elements in X -- 88 Grain
 # Ny=1078                       # Number of elements in Y -- 88 Grain
 # Nz=325                        # Number of elements in Z -- 88 Grain
 
-Nx=1724                       # Number of elements in X -- 135/165 Grain
-Ny=1724                       # Number of elements in Y -- 135/165 Grain
-Nz=550                        # Number of elements in Z -- 135/165 Grain
+# Nx=1724                       # Number of elements in X -- 135/165 Grain
+# Ny=1724                       # Number of elements in Y -- 135/165 Grain
+# Nz=549                        # Number of elements in Z -- 135/165 Grain
 
+# Nx=200
+# Ny=200
+# Nz=720
 
 # Interface width
 eps=9.28146307269926e-07			  # Interface width

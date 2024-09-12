@@ -1338,6 +1338,7 @@ PetscErrorCode InitialIceGrains(IGA iga,AppCtx *user)
     PetscReal x, y, z, r;
     int readCount;
     while ((readCount = fscanf(file, "%lf %lf %lf %lf", &x, &y, &z, &r)) >= 3) {
+      PetscPrintf(PETSC_COMM_WORLD,"Reading grains. readCount = %d,  grainCount = %d\n", readCount, grainCount);
         if (grainCount >= 200) {
             fclose(file);  // Make sure to close the file before returning
             SETERRQ(PETSC_COMM_SELF, PETSC_ERR_ARG_OUTOFRANGE, "Exceeds maximum number of grains");
@@ -1921,7 +1922,7 @@ int main(int argc, char *argv[]) {
   user.RCsed      = 0.8e-5;
   user.RCsed_dev  = 0.4;
 
-  user.NCice      = 2; //less than 200, otherwise update in user
+  user.NCice      = 165; //less than 200, otherwise update in user
   user.RCice      = 0.2e-4;
   user.RCice_dev  = 0.5;
 
@@ -1985,6 +1986,8 @@ int main(int argc, char *argv[]) {
   ierr = PetscOptionsBool("-NASA_monitor","Monitor the solution",__FILE__,monitor,&monitor,NULL);CHKERRQ(ierr);
   PetscOptionsEnd();
 
+  PetscPrintf(PETSC_COMM_WORLD,"Line 1988 ---------- \n\n");
+
   IGA iga;
   ierr = IGACreate(PETSC_COMM_WORLD,&iga);CHKERRQ(ierr);
   ierr = IGASetDim(iga,dim);CHKERRQ(ierr);
@@ -1992,6 +1995,8 @@ int main(int argc, char *argv[]) {
   ierr = IGASetFieldName(iga,0,"phaseice"); CHKERRQ(ierr);
   ierr = IGASetFieldName(iga,1,"temperature"); CHKERRQ(ierr);
   ierr = IGASetFieldName(iga,2,"vap_density"); CHKERRQ(ierr);
+
+  PetscPrintf(PETSC_COMM_WORLD,"Line 1999 ---------- \n\n");
 
   IGAAxis axis0, axis1, axis2;
   ierr = IGAGetAxis(iga,0,&axis0);CHKERRQ(ierr);
@@ -2002,6 +2007,9 @@ int main(int argc, char *argv[]) {
   if(user.periodic==1) {ierr = IGAAxisSetPeriodic(axis1,PETSC_TRUE);CHKERRQ(ierr);}
   ierr = IGAAxisSetDegree(axis1,p);CHKERRQ(ierr);
   ierr = IGAAxisInitUniform(axis1,Ny,0.0,Ly,C);CHKERRQ(ierr);
+
+  PetscPrintf(PETSC_COMM_WORLD,"Line 2011 ---------- \n\n");
+
   if(dim==3){
     ierr = IGAGetAxis(iga,2,&axis2);CHKERRQ(ierr);
     if(user.periodic==1) {ierr = IGAAxisSetPeriodic(axis2,PETSC_TRUE);CHKERRQ(ierr);}
@@ -2012,6 +2020,8 @@ int main(int argc, char *argv[]) {
   ierr = IGASetFromOptions(iga);CHKERRQ(ierr);
   ierr = IGASetUp(iga);CHKERRQ(ierr);
   user.iga = iga;
+
+  PetscPrintf(PETSC_COMM_WORLD,"Line 2019 ---------- \n\n");
 
   PetscInt nmb = iga->elem_width[0]*iga->elem_width[1]*SQ(p+1);
   if(dim==3) nmb = iga->elem_width[0]*iga->elem_width[1]*iga->elem_width[2]*CU(p+1);
@@ -2070,7 +2080,9 @@ int main(int argc, char *argv[]) {
         PetscPrintf(PETSC_COMM_WORLD,"Pluviation Script not prepared for 3D. Run no-gravity \n");
         ierr = InitialSedGrains(iga,&user);CHKERRQ(ierr);
       }
-    } else {ierr = InitialSedGrains(iga,&user);CHKERRQ(ierr);}
+    } else {
+      ierr = InitialSedGrains(iga,&user);CHKERRQ(ierr);
+    }
 
     //output sediment/metal in OutputMonitor function --> single file for all variables
 
@@ -2117,6 +2129,7 @@ int main(int argc, char *argv[]) {
     user.n_actsed= 0;
   }
 
+  PetscPrintf(PETSC_COMM_WORLD,"Initializing ice grains. \n");
   ierr = InitialIceGrains(iga,&user);CHKERRQ(ierr);
 
   // Print the variables
