@@ -671,7 +671,7 @@ PetscErrorCode Monitor(TS ts,PetscInt step,PetscReal t,Vec U,void *mctx)
     }
 
     PetscViewerFileSetName(view,filedata);
-    PetscViewerASCIIPrintf(view,"%e %e %e \n",sub_interf/user->eps, tot_ice, t);
+    PetscViewerASCIIPrintf(view,"%e %e %e %d\n",sub_interf/user->eps, tot_ice, t, step);
 
     PetscViewerDestroy(&view);
   }
