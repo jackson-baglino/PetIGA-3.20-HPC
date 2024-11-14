@@ -1,20 +1,20 @@
 #!/bin/bash
-#SBATCH -J NASAv2-2G-3D-48h-T20-hum988
+#SBATCH -J NASAv2-2G-3D-48h-T20-hum05
 #SBATCH -t 5-00:00:00
-#SBATCH --nodes=4
-#SBATCH --ntasks-per-node=50
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=32
 #SBATCH --cpus-per-task=1
 #SBATCH -o "output_files/%x.o%j"
 #SBATCH -e "output_files/%x.e%j"
 #SBATCH --export=ALL
 #SBATCH --partition=expansion
-#SBATCH --mem-per-cpu=1G
+#SBATCH --mem-per-cpu=2G
 
 # Define the job name
-JOB_NAME="NASAv2-2G-3D-48h-T20-hum98"
+JOB_NAME="NASAv2-2G-3D-48h-T20-hum05"
 
 # Other parameters
-humidity=0.98                 # Relative humidity
+humidity=0.05                 # Relative humidity
 temp=-20.0                    # Temperature
 
 
@@ -61,8 +61,8 @@ echo $SLURM_SUBMIT_DIR
 # Define variable names to be exported -----------------------------------------
   # File names
 input_dir="/home/jbaglino/PetIGA-3.20-HPC/demo/input/"
-# inputFile=$input_dir"grainReadFile-2.dat"
-inputFile=$input_dir"grainReadFile-2_Molaro.dat"
+inputFile=$input_dir"grainReadFile-2.dat"
+# inputFile=$input_dir"grainReadFile-2_Molaro.dat"
 # inputFile=$input_dir"grainReadFile-5_s1-10.dat"
 # inputFile=$input_dir"grainReadFile-10_s1-10.dat"
 # inputFile=$input_dir"grainReadFile_3D-42_s1-10.dat"
@@ -172,9 +172,9 @@ eps=9.1e-07                       # Interface width (2 Grain)
 
 # Time parameters
 delt_t=1.0e-4                     # Time step
-t_final=2*24*60*60                # Final time
-n_out=200                         # Number of output files
 # t_final=2*24*60*60                # Final time
+n_out=000                         # Number of output files
+t_final=2*24*60*60                # Final time
 # n_out=1100                        # Number of output files
 # t_final=1.0e-4                    # Final time (TEST)
 # n_out=1                           # Number of output files (TEST)

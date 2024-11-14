@@ -720,7 +720,7 @@ PetscErrorCode OutputMonitor(TS ts, PetscInt step, PetscReal t, Vec U,
 
     // Create the filename for the output file
     char filename[256];
-    sprintf(filename, "%s/sol%d.dat", dir, step);
+    sprintf(filename, "%s/sol%05d.dat", dir, step);
 
     // Write the vector U to the output file
     ierr = IGAWriteVec(user->iga, U, filename);
@@ -1939,8 +1939,9 @@ int main(int argc, char *argv[]) {
   if(user.periodic==1 && flag_BC_rhovfix==1) flag_BC_rhovfix=0;
 
   //output
-  user.outp = 0; // if 0 -> output according to t_interv
-  user.t_out = 0;    user.t_interv = t_final/(n_out-1); //output every t_interv
+  user.outp = 5; // if 0 -> output according to t_interv
+  user.t_out = 0;    // user.t_interv = t_final/(n_out-1); //output every t_interv
+  user.t_interv = 1000.0; //output every t_interv
 
   PetscInt adap = 1;
   PetscInt NRmin = 2, NRmax = 5;
@@ -1986,8 +1987,6 @@ int main(int argc, char *argv[]) {
   ierr = PetscOptionsBool("-NASA_monitor","Monitor the solution",__FILE__,monitor,&monitor,NULL);CHKERRQ(ierr);
   PetscOptionsEnd();
 
-  PetscPrintf(PETSC_COMM_WORLD,"Line 1988 ---------- \n\n");
-
   IGA iga;
   ierr = IGACreate(PETSC_COMM_WORLD,&iga);CHKERRQ(ierr);
   ierr = IGASetDim(iga,dim);CHKERRQ(ierr);
@@ -1995,8 +1994,6 @@ int main(int argc, char *argv[]) {
   ierr = IGASetFieldName(iga,0,"phaseice"); CHKERRQ(ierr);
   ierr = IGASetFieldName(iga,1,"temperature"); CHKERRQ(ierr);
   ierr = IGASetFieldName(iga,2,"vap_density"); CHKERRQ(ierr);
-
-  PetscPrintf(PETSC_COMM_WORLD,"Line 1999 ---------- \n\n");
 
   IGAAxis axis0, axis1, axis2;
   ierr = IGAGetAxis(iga,0,&axis0);CHKERRQ(ierr);
@@ -2008,8 +2005,6 @@ int main(int argc, char *argv[]) {
   ierr = IGAAxisSetDegree(axis1,p);CHKERRQ(ierr);
   ierr = IGAAxisInitUniform(axis1,Ny,0.0,Ly,C);CHKERRQ(ierr);
 
-  PetscPrintf(PETSC_COMM_WORLD,"Line 2011 ---------- \n\n");
-
   if(dim==3){
     ierr = IGAGetAxis(iga,2,&axis2);CHKERRQ(ierr);
     if(user.periodic==1) {ierr = IGAAxisSetPeriodic(axis2,PETSC_TRUE);CHKERRQ(ierr);}
@@ -2020,8 +2015,6 @@ int main(int argc, char *argv[]) {
   ierr = IGASetFromOptions(iga);CHKERRQ(ierr);
   ierr = IGASetUp(iga);CHKERRQ(ierr);
   user.iga = iga;
-
-  PetscPrintf(PETSC_COMM_WORLD,"Line 2019 ---------- \n\n");
 
   PetscInt nmb = iga->elem_width[0]*iga->elem_width[1]*SQ(p+1);
   if(dim==3) nmb = iga->elem_width[0]*iga->elem_width[1]*iga->elem_width[2]*CU(p+1);
