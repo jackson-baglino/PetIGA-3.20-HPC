@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -J NASAv2-2G-3D-48h-T20-hum05
+#SBATCH -J NASAv2-2GMolaro-3D-2h-T20-hum98
 #SBATCH -t 5-00:00:00
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=32
@@ -11,10 +11,10 @@
 #SBATCH --mem-per-cpu=2G
 
 # Define the job name
-JOB_NAME="NASAv2-2G-3D-48h-T20-hum05"
+JOB_NAME="NASAv2-2GMolaro-3D-2h-T20-hum98"
 
 # Other parameters
-humidity=0.05                 # Relative humidity
+humidity=0.98                 # Relative humidity
 temp=-20.0                    # Temperature
 
 
@@ -61,8 +61,8 @@ echo $SLURM_SUBMIT_DIR
 # Define variable names to be exported -----------------------------------------
   # File names
 input_dir="/home/jbaglino/PetIGA-3.20-HPC/demo/input/"
-inputFile=$input_dir"grainReadFile-2.dat"
-# inputFile=$input_dir"grainReadFile-2_Molaro.dat"
+# inputFile=$input_dir"grainReadFile-2.dat"
+inputFile=$input_dir"grainReadFile-2_Molaro.dat"
 # inputFile=$input_dir"grainReadFile-5_s1-10.dat"
 # inputFile=$input_dir"grainReadFile-10_s1-10.dat"
 # inputFile=$input_dir"grainReadFile_3D-42_s1-10.dat"
@@ -82,13 +82,13 @@ dim=3
 dim=$(echo "$dim" | bc -l)
 
 # Domain sizes
-Lx=488.4e-6                   # Domain size X -- 2 Grain
-Ly=244.2e-6                   # Domain size Y -- 2 Grain
-Lz=244.2e-6                   # Domain size Z -- 2 Grain
+# Lx=488.4e-6                   # Domain size X -- 2 Grain
+# Ly=244.2e-6                   # Domain size Y -- 2 Grain
+# Lz=244.2e-6                   # Domain size Z -- 2 Grain
 
-# Lx=3.0300e-04                   # Domain size X -- 2 Grain (Molaro)
-# Ly=3.8280e-04                   # Domain size Y -- 2 Grain (Molaro)
-# Lz=3.0300e-04                   # Domain size Z -- 2 Grain (Molaro)
+Lx=3.0300e-04                   # Domain size X -- 2 Grain (Molaro)
+Ly=3.8280e-04                   # Domain size Y -- 2 Grain (Molaro)
+Lz=3.0300e-04                   # Domain size Z -- 2 Grain (Molaro)
 
 # Lx=0.35e-03                   # Domain size X -- 5 Grain
 # Ly=0.35e-03                   # Domain size Y -- 5 Grain
@@ -120,17 +120,17 @@ Lz=244.2e-6                   # Domain size Z -- 2 Grain
 
 
 # Number of elements
-Nx=264                        # Number of elements in X -- 2 Grain
-Ny=132                        # Number of elements in Y -- 2 Grain
-Nz=132                        # Number of elements in Z -- 2 Grain
+# Nx=264                        # Number of elements in X -- 2 Grain
+# Ny=132                        # Number of elements in Y -- 2 Grain
+# Nz=132                        # Number of elements in Z -- 2 Grain
 
 # Nx=537                          # Number of elements in X -- 2 Grain (High-res)
 # Ny=269                          # Number of elements in Y -- 2 Grain (High-res)
 # Nz=269                          # Number of elements in Z -- 2 Grain (High-res)
 
-# Nx=167                        # Domain size X -- 2 Grain (Molaro)
-# Ny=211                        # Domain size Y -- 2 Grain (Molaro)
-# Nz=167                        # Domain size Z -- 2 Grain (Molaro)
+Nx=167                        # Domain size X -- 2 Grain (Molaro)
+Ny=211                        # Domain size Y -- 2 Grain (Molaro)
+Nz=167                        # Domain size Z -- 2 Grain (Molaro)
 
 # Nx=275                        # Number of elements in X -- 42 Grain (3D)
 # Ny=275                        # Number of elements in Y -- 42 Grain (3D)
@@ -174,7 +174,7 @@ eps=9.1e-07                       # Interface width (2 Grain)
 delt_t=1.0e-4                     # Time step
 # t_final=2*24*60*60                # Final time
 n_out=000                         # Number of output files
-t_final=2*24*60*60                # Final time
+t_final=1*2*60*60                # Final time
 # n_out=1100                        # Number of output files
 # t_final=1.0e-4                    # Final time (TEST)
 # n_out=1                           # Number of output files (TEST)
@@ -187,7 +187,7 @@ n_out=$(echo "$n_out" | bc -l)
 
 # Initial temperature gradients
 grad_temp0X=0.0               # Initial temperature gradient X
-grad_temp0Y=0.03               # Initial temperature gradient Y
+grad_temp0Y=0.001               # Initial temperature gradient Y
 grad_temp0Z=0.0               # Initial temperature gradient Z
 
 
