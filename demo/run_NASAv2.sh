@@ -2,8 +2,8 @@
 #SBATCH -J NASAv2-2GMolaro-3D-2h-T05-hum70
 #SBATCH -A rubyfu
 #SBATCH -t 5-00:00:00
-#SBATCH --nodes=4
-#SBATCH --ntasks-per-node=64
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=16
 #SBATCH --cpus-per-task=1
 #SBATCH -o "output_files/%x.o%j"
 #SBATCH -e "output_files/%x.e%j"
@@ -23,7 +23,7 @@ exec_file="./NASAv2"
 
 # Job-specific settings
 humidity=0.70
-temp=-05.0
+temp=-188.0
 
 # Define input file (uncomment the desired file)
 # inputFile="$input_dir/grainReadFile-2.dat"

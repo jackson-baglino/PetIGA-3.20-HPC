@@ -177,7 +177,8 @@ void RhoVS_I(AppCtx *user, PetscScalar tem, PetscScalar *rho_vs,
   PetscReal K0,K1,K2,K3,K4,K5;
   K0 = -0.5865*1.0e4;   K1 = 0.2224*1.0e2;    K2 = 0.1375*1.0e-1;
   K3 = -0.3403*1.0e-4;  K4 = 0.2697*1.0e-7;   K5 = 0.6918;
-  PetscReal Patm = 101325.0;
+  // PetscReal Patm = 101325.0;
+  PetscReal Patm = 101.325;
   PetscReal bb = 0.62;
   PetscReal temK = tem+273.15;
   PetscReal Pvs = exp(K0*pow(temK,-1.0)+K1+K2*pow(temK,1.0)+K3*pow(temK,2.0)+K4*pow(temK,3.0)+K5*log(temK));
@@ -242,7 +243,7 @@ void Sigma0(PetscScalar temp, PetscScalar *sigm0)
   sig[0] = 3.0e-3;  sig[1] = 4.1e-3;  sig[2] = 5.5e-3; sig[3] = 8.0e-3; sig[4] = 4.0e-3;
   tem[0] = -0.0001;     tem[1] = -2.0;    tem[2] = -4.0;   tem[3] = -6.0;   tem[4] = -7.0;
   sig[5] = 6.0e-3;  sig[6] = 3.5e-2;  sig[7] = 7.0e-2; sig[8] = 1.1e-1; sig[9] = 0.75; 
-  tem[5] = -10.0;   tem[6] = -20.0;   tem[7] = -30.0;  tem[8] = -40.0;  tem[9] = -100.0;
+  tem[5] = -10.0;   tem[6] = -20.0;   tem[7] = -30.0;  tem[8] = -40.0;  tem[9] = -200.0;
 
   PetscInt ii, interv=0;
   PetscReal t0, t1, s0, s1;
