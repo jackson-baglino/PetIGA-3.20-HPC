@@ -1,260 +1,227 @@
 #!/bin/bash
-#SBATCH -J NASAv2-2GMolaro-3D-2h-T20-hum98
+#SBATCH -J NASAv2-2GMolaro-3D-2h-T05-hum70
+#SBATCH -A rubyfu
 #SBATCH -t 5-00:00:00
-#SBATCH --nodes=2
-#SBATCH --ntasks-per-node=32
+#SBATCH --nodes=4
+#SBATCH --ntasks-per-node=64
 #SBATCH --cpus-per-task=1
 #SBATCH -o "output_files/%x.o%j"
 #SBATCH -e "output_files/%x.e%j"
 #SBATCH --export=ALL
 #SBATCH --partition=expansion
-#SBATCH --mem-per-cpu=2G
+#SBATCH --mem-per-cpu=4G
 
-# Define the job name
-JOB_NAME="NASAv2-2GMolaro-3D-2h-T20-hum98"
+##############################################
+# CONFIGURATION
+##############################################
 
-# Other parameters
-humidity=0.98                 # Relative humidity
-temp=-20.0                    # Temperature
+# General settings
+BASE_DIR="/home/jbaglino/PetIGA-3.20-HPC/demo"
+input_dir="$BASE_DIR/input"
+output_dir="/central/scratch/jbaglino"
+exec_file="./NASAv2"
 
+# Job-specific settings
+humidity=0.70
+temp=-05.0
 
-# Compilation
-echo ""
-echo "compiling NASAv2"
-echo ""
-make NASAv2
-echo "------------------------------------------------------"
-echo "Job is running on node"; srun hostname
-echo "------------------------------------------------------"
-echo "qsub is running on $SLURM_SUBMIT_HOST"
-echo "executing queue is $SLURM_JOB_ACCOUNT"
-echo "working directory is $SLURM_SUBMIT_DIR"
-echo "partition/queue is $SLURM_JOB_PARTITION"
-echo "job identifier is $SLURM_JOB_ID"
-echo "job name is $SLURM_JOB_NAME"
-echo "node file is $SLURM_JOB_NODELIST"
-echo "cluster $SLURM_CLUSTER_NAME"
-echo "total nodes $SLURM_JOB_NUM_NODES"
-echo "------------------------------------------------------"
-echo ""
-echo "setting up things"
-echo ""
+# Define input file (uncomment the desired file)
+# inputFile="$input_dir/grainReadFile-2.dat"
+inputFile="$input_dir/grainReadFile-2_Molaro.dat"
+# inputFile="$input_dir/grainReadFile-5_s1-10.dat"
+# inputFile="$input_dir/grainReadFile-10_s1-10.dat"
 
-# Create a unique folder name using the job name and job ID
-id=${SLURM_JOB_ID:0:9}
-name="${JOB_NAME}_${id}"
-folder="/central/scratch/jbaglino/$name"
-echo $name
-echo $folder
-export folder
+##############################################
+# FUNCTIONS
+##############################################
 
-# The rest of your script goes here, utilizing the $folder variable
-export I_MPI_PMI_LIBRARY=/path/to/slurm/pmi/library/libpmi.so
+# Validate critical inputs
+validate_inputs() {
+    if [[ -z "$inputFile" ]]; then
+        echo "[ERROR] No input file specified. Exiting."
+        exit 1
+    fi
 
-mkdir $folder
-echo "Copying files to scratch"
-scp /home/jbaglino/PetIGA-3.20-HPC/demo/NASAv2.c $folder/
-scp /home/jbaglino/PetIGA-3.20-HPC/demo/run_NASAv2.sh $folder/
-cd $SLURM_SUBMIT_DIR
-echo $SLURM_SUBMIT_DIR
+    if [[ ! -f "$inputFile" ]]; then
+        echo "[ERROR] Input file '$inputFile' does not exist. Exiting."
+        exit 1
+    fi
+}
 
-# Define variable names to be exported -----------------------------------------
-  # File names
-input_dir="/home/jbaglino/PetIGA-3.20-HPC/demo/input/"
-# inputFile=$input_dir"grainReadFile-2.dat"
-inputFile=$input_dir"grainReadFile-2_Molaro.dat"
-# inputFile=$input_dir"grainReadFile-5_s1-10.dat"
-# inputFile=$input_dir"grainReadFile-10_s1-10.dat"
-# inputFile=$input_dir"grainReadFile_3D-42_s1-10.dat"
-# inputFile=$input_dir"grainReadFile-45_MOLARO_s2-10.dat"
-# inputFile=$input_dir"grainReadFile-27_MOLARO_s2-10.dat"
-# inputFile=$input_dir"grainReadFile-88_s1-10_s2-21.dat"
-# inputFile=$input_dir"grainReadFile-135_s1-10_s2-30.dat"
-# inputFile=$input_dir"grainReadFile-165_s1-10_s2-30.dat"
+# Set parameters based on input file
+set_parameters() {
+    case "$inputFile" in
+        *grainReadFile-2.dat)
+            Lx=488.4e-6
+            Ly=244.2e-6
+            Lz=244.2e-6
 
+            Nx=269
+            Ny=135
+            Nz=135
 
-# Define simulation parameters -------------------------------------------------
-# Define dimensions
-dim=3
+            eps=9.096e-07
+            ;;
+        *grainReadFile-2_Molaro.dat)
+            Lx=0.0002424
+            Ly=0.0003884
+            Lz=0.0002424
 
+            Nx=134
+            Ny=214
+            Nz=134
 
-# Converty scientic notation to decimal using bc if needed
-dim=$(echo "$dim" | bc -l)
+            eps=9.096e-07
+            ;;
+        *grainReadFile-5_s1-10.dat)
+            Lx=0.35e-03; Ly=0.35e-03; Lz=2.202e-04
+            Nx=193; Ny=193; Nz=122
+            eps=9.096e-07
+            ;;
+        *)
+            echo "[WARNING] No matching parameters for '$inputFile'. Using defaults."
+            Lx=0.0002424; Ly=0.0003884; Lz=0.0002424
+            Nx=200; Ny=200; Nz=720
+            eps=9.096e-07;
+            ;;
+    esac
 
-# Domain sizes
-# Lx=488.4e-6                   # Domain size X -- 2 Grain
-# Ly=244.2e-6                   # Domain size Y -- 2 Grain
-# Lz=244.2e-6                   # Domain size Z -- 2 Grain
+    # Shared parameters
+    dim=3
+    grad_temp0X=0.0
+    grad_temp0Y=0.001
+    grad_temp0Z=0.0
 
-Lx=3.0300e-04                   # Domain size X -- 2 Grain (Molaro)
-Ly=3.8280e-04                   # Domain size Y -- 2 Grain (Molaro)
-Lz=3.0300e-04                   # Domain size Z -- 2 Grain (Molaro)
-
-# Lx=0.35e-03                   # Domain size X -- 5 Grain
-# Ly=0.35e-03                   # Domain size Y -- 5 Grain
-# Lz=2.202e-04                  # Domain size Z -- 5 Grain
-
-# Lx=0.5e-03                    # Domain size X -- 10 Grain
-# Ly=0.5e-03                    # Domain size Y -- 10 Grain
-# Lz=2.422e-04                  # Domain size Z -- 10 Grain
-
-# Lx=0.75e-03                   # Domain size X -- 27 Grain
-# Ly=0.75e-03                   # Domain size Y -- 27 Grain
-# Lz=0.000242175903182621       # Domain size Z -- 27 Grain
-
-# Lx=0.5e-03                    # Domain size X -- 42 Grain (3D)
-# Ly=0.5e-03                    # Domain size Y -- 42 Grain (3D)
-# Lz=0.5e-03                    # Domain size Z -- 42 Grain (3D)
-
-# Lx=1.5e-3                     # Domain size X -- 45 Grain
-# Lx=1.5e-3                     # Domain size X -- 45 Grain
-# Lx=1.5e-3                     # Domain size X -- 45 Grain
-
-# Lx=2.0e-3                     # Domain size X -- 88 Grain
-# Ly=2.0e-3                     # Domain size Y -- 88 Grain
-# Lz=0.6021e-3                  # Domain size Z -- 88 Grain
-
-# Lx=3.2e-3                     # Domain size X -- 135/165 Grain
-# Ly=3.2e-3                     # Domain size Y -- 135/165 Grain
-# Lz=1.0e-3                     # Domain size Z -- 135/165 Grain
+    t_final=1.0*2.0*60.0*60.0
+    delt_t=1.0e-4
+    n_out=0
 
 
-# Number of elements
-# Nx=264                        # Number of elements in X -- 2 Grain
-# Ny=132                        # Number of elements in Y -- 2 Grain
-# Nz=132                        # Number of elements in Z -- 2 Grain
+    # Export all the variables
+    export Lx Ly Lz Nx Ny Nz eps delt_t t_final n_out dim grad_temp0X grad_temp0Y grad_temp0Z \
+           humidity temp inputFile folder
+}
 
-# Nx=537                          # Number of elements in X -- 2 Grain (High-res)
-# Ny=269                          # Number of elements in Y -- 2 Grain (High-res)
-# Nz=269                          # Number of elements in Z -- 2 Grain (High-res)
+# Log system and job information
+log_job_info() {
+    echo "------------------------------------------------------"
+    echo "[INFO] Job Information:"
+    echo "Running on node:"; srun hostname
+    echo "Submit host: $SLURM_SUBMIT_HOST"
+    echo "Account: $SLURM_JOB_ACCOUNT"
+    echo "Working directory: $SLURM_SUBMIT_DIR"
+    echo "Partition/queue: $SLURM_JOB_PARTITION"
+    echo "Job ID: $SLURM_JOB_ID"
+    echo "Job name: $SLURM_JOB_NAME"
+    echo "Node list: $SLURM_JOB_NODELIST"
+    echo "Cluster: $SLURM_CLUSTER_NAME"
+    echo "Total nodes: $SLURM_JOB_NUM_NODES"
+    echo "------------------------------------------------------"
+}
 
-Nx=167                        # Domain size X -- 2 Grain (Molaro)
-Ny=211                        # Domain size Y -- 2 Grain (Molaro)
-Nz=167                        # Domain size Z -- 2 Grain (Molaro)
+# Create unique output folder
+setup_output_folder() {
+    id=${SLURM_JOB_ID:0:9}
+    name="${SLURM_JOB_NAME}_${id}"
+    folder="$output_dir/$name"
+    mkdir -p "$folder"
+    export folder
+    echo "[INFO] Output folder created: $folder"
+}
 
-# Nx=275                        # Number of elements in X -- 42 Grain (3D)
-# Ny=275                        # Number of elements in Y -- 42 Grain (3D)
-# Nz=275                        # Number of elements in Z -- 42 Grain (3D)
+# Compile NASAv2
+compile_program() {
+    echo "[INFO] Compiling NASAv2..."
+    make NASAv2 || { echo "[ERROR] Compilation failed! Exiting."; exit 2; }
+}
 
-# Nx=193                        # Number of elements in X -- 5 Grain
-# Ny=193                        # Number of elements in Y -- 5 Grain
-# Nz=122                        # Number of elements in Z -- 5 Grain
+# Run the program
+run_program() {
+    echo "[INFO] Running NASAv2..."
+    export I_MPI_PMI_LIBRARY=/path/to/slurm/pmi/library/libpmi.so
+    mpiexec -- "$exec_file" -initial_cond -initial_PFgeom -snes_rtol 1e-3 -snes_stol 1e-6 \
+     -snes_max_it 6 -ksp_gmres_restart 150 -ksp_max_it 500 -ksp_converged_maxits 1 \
+     -ksp_converged_reason -snes_converged_reason -snes_linesearch_monitor \
+     -snes_linesearch_type basic | tee "$folder/outp.txt"
+}
 
-# Nx=270                        # Number of elements in X -- 10 Grain
-# Ny=270                        # Number of elements in Y -- 10 Grain
-# Nz=131                        # Number of elements in Z -- 10 Grain
+# Save parameters to a file
+save_simulation_parameters() {
+    cat << EOF > "$folder/sim_params.dat"
+----- SIMULATION PARAMETERS -----
+Input file: $inputFile
 
-# Nx=413                        # Number of elements in X -- 27 Grain
-# Ny=413                        # Number of elements in Y -- 27 Grain
-# Nz=134                        # Number of elements in Z -- 27 Grain
+Dimensions:
+dim = $dim
 
-# Nx=825                        # Number of elements in X -- 45 Grain
-# Ny=825                        # Number of elements in Y -- 45 Grain
-# Nz=325                        # Number of elements in Z -- 45 Grain
+Domain sizes:
+Lx = $Lx
+Ly = $Ly
+Lz = $Lz
 
-# Nx=1078                       # Number of elements in X -- 88 Grain
-# Ny=1078                       # Number of elements in Y -- 88 Grain
-# Nz=325                        # Number of elements in Z -- 88 Grain
+Number of elements:
+Nx = $Nx
+Ny = $Ny
+Nz = $Nz
 
-# Nx=1724                       # Number of elements in X -- 135/165 Grain
-# Ny=1724                       # Number of elements in Y -- 135/165 Grain
-# Nz=549                        # Number of elements in Z -- 135/165 Grain
+Interface width:
+eps = $eps
 
-# Nx=200
-# Ny=200
-# Nz=720
+Time parameters:
+delt_t = $delt_t
+t_final = $t_final
 
-# Interface width
-eps=9.1e-07                       # Interface width (2 Grain)
-# eps=9.28146307269926e-07			  # Interface width
-# eps=9.09629658751972e-07        # Interface width (27 Grain)
+State parameters:
+humidity = $humidity
+temp = $temp
 
+Initial temperature gradients:
+grad_temp0X = $grad_temp0X
+grad_temp0Y = $grad_temp0Y
+grad_temp0Z = $grad_temp0Z
 
-# Time parameters
-delt_t=1.0e-4                     # Time step
-# t_final=2*24*60*60                # Final time
-n_out=000                         # Number of output files
-t_final=1*2*60*60                # Final time
-# n_out=1100                        # Number of output files
-# t_final=1.0e-4                    # Final time (TEST)
-# n_out=1                           # Number of output files (TEST)
+EOF
+    echo "[INFO] Simulation parameters saved to: $folder/sim_params.dat"
+}
 
+# Cleanup temporary files
+cleanup() {
+    echo "[INFO] Cleaning up temporary files..."
+    rm -rf "$folder/tmp/*"
+}
 
-# Convert scientific notation to decimal using bc
-t_final=$(echo "$t_final" | bc -l)
-n_out=$(echo "$n_out" | bc -l)
+##############################################
+# MAIN SCRIPT
+##############################################
 
+# Validate inputs
+validate_inputs
 
-# Initial temperature gradients
-grad_temp0X=0.0               # Initial temperature gradient X
-grad_temp0Y=0.001               # Initial temperature gradient Y
-grad_temp0Z=0.0               # Initial temperature gradient Z
+# Setup output folder
+setup_output_folder
 
+# Set parameters
+set_parameters
 
-# Convert scientific notation gradients to decimal using bc if needed
-grad_temp0X=$(echo "$grad_temp0X" | bc -l)
-grad_temp0Y=$(echo "$grad_temp0Y" | bc -l)
-grad_temp0Z=$(echo "$grad_temp0Z" | bc -l)
+# Log job info
+log_job_info
 
+# Copy necessary files to the output folder
+echo "[INFO] Copying files to output folder..."
+scp "$inputFile" "$folder/"
+scp "$BASE_DIR/NASAv2.c" "$folder/"
+scp "$BASE_DIR/run_NASAv2.sh" "$folder/"
 
-# Export variables
-export folder input_dir inputFile Lx Ly Lz Nx Ny Nz delt_t t_final n_out \
-    humidity temp grad_temp0X grad_temp0Y grad_temp0Z dim eps
+# Compile program
+compile_program
 
+# Run program
+run_program
 
-echo " "
-echo "running NASAv2"
-echo " "
+# Save parameters to file
+save_simulation_parameters
 
+# Cleanup
+cleanup
 
-# Run NASAv2 -------------------------------------------------------------------
-mpiexec -- ./NASAv2 -initial_cond -initial_PFgeom -snes_rtol 1e-3 -snes_stol 1e-6 \
--snes_max_it 6 -ksp_gmres_restart 150 -ksp_max_it 500 -ksp_converged_maxits 1 \
--ksp_converged_reason -snes_converged_reason -snes_linesearch_monitor \
--snes_linesearch_type basic | tee $folder/outp.txt
-
-
-# Create descriptive file ------------------------------------------------------
-echo "----- SIMULATION PARAMETERS -----" > $folder/sim_params.dat
-echo "Input file: $inputFile" >> $folder/sim_params.dat
-echo " " >> $folder/sim_params.dat
-
-echo "Dimensions:" >> $folder/sim_params.dat
-echo "dim = $dim" >> $folder/sim_params.dat
-echo " " >> $folder/sim_params.dat
-
-echo "Interface wiedth:" >> $folder/sim_params.dat
-echo "eps = $eps" >> $folder/sim_params.dat
-echo " " >> $folder/sim_params.dat
-
-echo "Domain sizes:" >> $folder/sim_params.dat
-echo "Lx = $Lx" >> $folder/sim_params.dat
-echo "Ly = $Ly" >> $folder/sim_params.dat
-echo "Lz = $Lz" >> $folder/sim_params.dat
-echo " " >> $folder/sim_params.dat
-
-
-echo "Number of elements:" >> $folder/sim_params.dat
-echo "Nx = $Nx" >> $folder/sim_params.dat
-echo "Ny = $Ny" >> $folder/sim_params.dat
-echo "Nz = $Nz" >> $folder/sim_params.dat
-echo " " >> $folder/sim_params.dat
-
-echo "Time parameters:" >> $folder/sim_params.dat
-echo "delt_t = $delt_t" >> $folder/sim_params.dat
-echo "t_final = $t_final" >> $folder/sim_params.dat
-echo " " >> $folder/sim_params.dat
-
-echo "State parameters:" >> $folder/sim_params.dat
-echo "humidity = $humidity" >> $folder/sim_params.dat
-echo "temp = $temp" >> $folder/sim_params.dat
-echo " " >> $folder/sim_params.dat
-
-echo "Initial temperature gradients:" >> $folder/sim_params.dat
-echo "grad_temp0X = $grad_temp0X" >> $folder/sim_params.dat
-echo "grad_temp0Y = $grad_temp0Y" >> $folder/sim_params.dat
-echo "grad_temp0Z = $grad_temp0Z" >> $folder/sim_params.dat
-
-echo "-------------------------------------------------------------------------"
-
-echo "done"
+echo "[INFO] Simulation completed successfully. Results saved in $folder."
