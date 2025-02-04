@@ -1,15 +1,15 @@
 #!/bin/bash
-#SBATCH -J NASAv2-2GMolaro-3D-2h-T85K-hum70
+#SBATCH -J NASAv2-500Go-3D-2D-T85K-hum70
 #SBATCH -A rubyfu
 #SBATCH -t 5-00:00:00
 #SBATCH --nodes=2
-#SBATCH --ntasks-per-node=16
+#SBATCH --ntasks-per-node=25
 #SBATCH --cpus-per-task=1
 #SBATCH -o "output_files/%x.o%j"
 #SBATCH -e "output_files/%x.e%j"
 #SBATCH --export=ALL
 #SBATCH --partition=expansion
-#SBATCH --mem-per-cpu=4G
+#SBATCH --mem-per-cpu=2G
 
 ##############################################
 # CONFIGURATION
@@ -27,9 +27,10 @@ temp=-188.0
 
 # Define input file (uncomment the desired file)
 # inputFile="$input_dir/grainReadFile-2.dat"
-inputFile="$input_dir/grainReadFile-2_Molaro.dat"
+# inputFile="$input_dir/grainReadFile-2_Molaro.dat"
 # inputFile="$input_dir/grainReadFile-5_s1-10.dat"
 # inputFile="$input_dir/grainReadFile-10_s1-10.dat"
+inputFile="$input_dir/grainReadFile_3D-500_s1-10.dat"
 
 ##############################################
 # FUNCTIONS
@@ -78,6 +79,12 @@ set_parameters() {
             Nx=193; Ny=193; Nz=122
             eps=9.096e-07
             ;;
+
+        *grainReadFile_3D-500_s1-10.dat)
+            Lx=1.5e-03; Ly=1.5e-03; Lz=1.5e-03
+            Nx=478; Ny=478; Nz=478
+            eps=1.56979924263831e-06;
+            ;;
         *)
             echo "[WARNING] No matching parameters for '$inputFile'. Using defaults."
             Lx=0.0002424; Ly=0.0003884; Lz=0.0002424
@@ -92,7 +99,7 @@ set_parameters() {
     grad_temp0Y=0.001
     grad_temp0Z=0.0
 
-    t_final=1.0*2.0*60.0*60.0
+    t_final=2.0*24.0*60.0*60.0
     delt_t=1.0e-4
     n_out=0
 
