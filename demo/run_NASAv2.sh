@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -J NASAv2-2GMolaro-3D-2h-T05-hum70
+#SBATCH -J NASAv2-2GMolaro-3D-2h-T85K-hum70
 #SBATCH -A rubyfu
 #SBATCH -t 5-00:00:00
 #SBATCH --nodes=2
