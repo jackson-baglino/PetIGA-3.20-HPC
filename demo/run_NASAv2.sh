@@ -1,15 +1,15 @@
 #!/bin/bash
-#SBATCH -J NASAv2-500Go-3D-2D-T85K-hum70
+#SBATCH -J NASAv2-10G-3D-T253K-hum90
 #SBATCH -A rubyfu
 #SBATCH -t 5-00:00:00
-#SBATCH --nodes=2
-#SBATCH --ntasks-per-node=25
+#SBATCH --nodes=4
+#SBATCH --ntasks-per-node=50
 #SBATCH --cpus-per-task=1
 #SBATCH -o "output_files/%x.o%j"
 #SBATCH -e "output_files/%x.e%j"
 #SBATCH --export=ALL
 #SBATCH --partition=expansion
-#SBATCH --mem-per-cpu=2G
+#SBATCH --mem-per-cpu=1G
 
 ##############################################
 # CONFIGURATION
@@ -22,15 +22,15 @@ output_dir="/central/scratch/jbaglino"
 exec_file="./NASAv2"
 
 # Job-specific settings
-humidity=0.70
-temp=-188.0
+humidity=0.90
+temp=-20.0
 
 # Define input file (uncomment the desired file)
 # inputFile="$input_dir/grainReadFile-2.dat"
 # inputFile="$input_dir/grainReadFile-2_Molaro.dat"
 # inputFile="$input_dir/grainReadFile-5_s1-10.dat"
-# inputFile="$input_dir/grainReadFile-10_s1-10.dat"
-inputFile="$input_dir/grainReadFile_3D-500_s1-10.dat"
+inputFile="$input_dir/grainReadFile-10_s1-10.dat"
+# inputFile="$input_dir/grainReadFile_3D-100_s1-10.dat"
 
 ##############################################
 # FUNCTIONS
@@ -79,11 +79,31 @@ set_parameters() {
             Nx=193; Ny=193; Nz=122
             eps=9.096e-07
             ;;
-
+        *grainReadFile_3D-100_s1-10.dat)
+            Lx=0.75e-03; Ly=0.75e-03; Lz=0.75e-03
+            Nx=239; Ny=239; Nz=239
+            eps=1.56979924263831e-06;
+            ;;
+        *grainReadFile_3D-175_s1-10.dat)
+            Lx=0.75e-03; Ly=2.0e-03; Lz=0.75e-03
+            Nx=239; Ny=638; Nz=239
+            eps=1.56979924263831e-06;
+            ;;
         *grainReadFile_3D-500_s1-10.dat)
             Lx=1.5e-03; Ly=1.5e-03; Lz=1.5e-03
             Nx=478; Ny=478; Nz=478
             eps=1.56979924263831e-06;
+            ;;
+        *"grainReadFile-10_s1-10.dat")
+            Lx=0.5e-03
+            Ly=0.5e-03
+            Lz=2.202e-04
+
+            Nx=275
+            Ny=275
+            Nz=122
+
+            eps=9.096e-07
             ;;
         *)
             echo "[WARNING] No matching parameters for '$inputFile'. Using defaults."
@@ -96,12 +116,15 @@ set_parameters() {
     # Shared parameters
     dim=3
     grad_temp0X=0.0
-    grad_temp0Y=0.001
+    grad_temp0Y=3.0
     grad_temp0Z=0.0
 
-    t_final=2.0*24.0*60.0*60.0
+    t_final=2.0*60.0*60.0
+    # t_final=1.0e-3
     delt_t=1.0e-4
     n_out=0
+
+    t_final=$(echo "$t_final" | bc -l)
 
 
     # Export all the variables
@@ -146,7 +169,7 @@ compile_program() {
 run_program() {
     echo "[INFO] Running NASAv2..."
     export I_MPI_PMI_LIBRARY=/path/to/slurm/pmi/library/libpmi.so
-    mpiexec -- "$exec_file" -initial_cond -initial_PFgeom -snes_rtol 1e-3 -snes_stol 1e-6 \
+    mpiexec -- "$exec_file" -initial_cond -initial_PFgeom -snes_rtol 1e-3 -snes_stol 1e-3 \
      -snes_max_it 6 -ksp_gmres_restart 150 -ksp_max_it 500 -ksp_converged_maxits 1 \
      -ksp_converged_reason -snes_converged_reason -snes_linesearch_monitor \
      -snes_linesearch_type basic | tee "$folder/outp.txt"

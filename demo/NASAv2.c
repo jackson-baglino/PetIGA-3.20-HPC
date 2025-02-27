@@ -177,8 +177,7 @@ void RhoVS_I(AppCtx *user, PetscScalar tem, PetscScalar *rho_vs,
   PetscReal K0,K1,K2,K3,K4,K5;
   K0 = -0.5865*1.0e4;   K1 = 0.2224*1.0e2;    K2 = 0.1375*1.0e-1;
   K3 = -0.3403*1.0e-4;  K4 = 0.2697*1.0e-7;   K5 = 0.6918;
-  // PetscReal Patm = 101325.0;
-  PetscReal Patm = 101.325;
+  PetscReal Patm = 101325.0;
   PetscReal bb = 0.62;
   PetscReal temK = tem+273.15;
   PetscReal Pvs = exp(K0*pow(temK,-1.0)+K1+K2*pow(temK,1.0)+K3*pow(temK,2.0)+K4*pow(temK,3.0)+K5*log(temK));
@@ -243,7 +242,7 @@ void Sigma0(PetscScalar temp, PetscScalar *sigm0)
   sig[0] = 3.0e-3;  sig[1] = 4.1e-3;  sig[2] = 5.5e-3; sig[3] = 8.0e-3; sig[4] = 4.0e-3;
   tem[0] = -0.0001;     tem[1] = -2.0;    tem[2] = -4.0;   tem[3] = -6.0;   tem[4] = -7.0;
   sig[5] = 6.0e-3;  sig[6] = 3.5e-2;  sig[7] = 7.0e-2; sig[8] = 1.1e-1; sig[9] = 0.75; 
-  tem[5] = -10.0;   tem[6] = -20.0;   tem[7] = -30.0;  tem[8] = -40.0;  tem[9] = -200.0;
+  tem[5] = -10.0;   tem[6] = -20.0;   tem[7] = -30.0;  tem[8] = -40.0;  tem[9] = -100.0;
 
   PetscInt ii, interv=0;
   PetscReal t0, t1, s0, s1;
@@ -477,7 +476,6 @@ PetscErrorCode Jacobian(IGAPoint pnt,
       for(b=0; b<nen; b++) {
 
         if(user->flag_tIC==1){
-
 
         } else {
         
@@ -721,7 +719,7 @@ PetscErrorCode OutputMonitor(TS ts, PetscInt step, PetscReal t, Vec U,
 
     // Create the filename for the output file
     char filename[256];
-    sprintf(filename, "%s/sol%05d.dat", dir, step);
+    sprintf(filename, "%s/sol_%05d.dat", dir, step);
 
     // Write the vector U to the output file
     ierr = IGAWriteVec(user->iga, U, filename);
@@ -812,9 +810,9 @@ PetscErrorCode InitialSedGrains(IGA iga,AppCtx *user)
   ierr = PetscRandomDestroy(&randcR);CHKERRQ(ierr);
   if(dim==3) {ierr = PetscRandomDestroy(&randcZ);CHKERRQ(ierr);}
 
-//PetscPrintf(PETSC_COMM_SELF,"before  %.4f %.4f %.4f \n",centX[0],centY[0],radius[0]);
+  //PetscPrintf(PETSC_COMM_SELF,"before  %.4f %.4f %.4f \n",centX[0],centY[0],radius[0]);
 
-//----- communication
+  //----- communication
   for(l=0;l<dim;l++){ierr = MPI_Bcast(centX[l],numb_clust,MPI_DOUBLE,0,PETSC_COMM_WORLD);CHKERRQ(ierr);}
   ierr = MPI_Bcast(radius,numb_clust,MPI_DOUBLE,0,PETSC_COMM_WORLD);CHKERRQ(ierr);
   ierr = MPI_Bcast(&n_act,1,MPI_INT,0,PETSC_COMM_WORLD);CHKERRQ(ierr);
@@ -827,7 +825,7 @@ PetscErrorCode InitialSedGrains(IGA iga,AppCtx *user)
     //PetscPrintf(PETSC_COMM_SELF,"Sed grains: points %.4f %.4f %.4f \n",centX[jj],centY[jj],radius[jj]);
   }
 
-//-------- define the Phi_sed values
+  //-------- define the Phi_sed values
 
   IGAElement element;
   IGAPoint point;
@@ -1339,8 +1337,7 @@ PetscErrorCode InitialIceGrains(IGA iga,AppCtx *user)
     PetscReal x, y, z, r;
     int readCount;
     while ((readCount = fscanf(file, "%lf %lf %lf %lf", &x, &y, &z, &r)) >= 3) {
-      PetscPrintf(PETSC_COMM_WORLD,"Reading grains. readCount = %d,  grainCount = %d\n", readCount, grainCount);
-        if (grainCount >= 700) {
+        if (grainCount >= 200) {
             fclose(file);  // Make sure to close the file before returning
             SETERRQ(PETSC_COMM_SELF, PETSC_ERR_ARG_OUTOFRANGE, "Exceeds maximum number of grains");
         }
@@ -1366,16 +1363,13 @@ PetscErrorCode InitialIceGrains(IGA iga,AppCtx *user)
         }
     }
 
-
-
     fclose(file);
     user->NCice = grainCount;  // Assuming this is for ice grains
     user->n_act = grainCount;
     PetscFunctionReturn(0);
 
-  }
-  else
-  { // Generate ice grains
+  } else { 
+    // Generate ice grains
     PetscPrintf(PETSC_COMM_WORLD,"Generating ice grains\n\n\n");
     if(user->NCice==0) {
       user->n_act = 0;
@@ -1794,8 +1788,7 @@ int main(int argc, char *argv[]) {
   user.flag_xiT   = 1;            //    note kinetics change 2-3 orders of magnitude from 0 to -70 C. 
                                   //    xi_v > 1e2*Lx/beta_sub;      xi_t > 1e4*Lx/beta_sub;   xi_v>1e-5; xi_T>1e-5;
 
-  // user.eps        = 9.1e-7;  // 2.0e-7;       //--- usually: eps < 1.0e-7, in some setups this limitation can be relaxed (see Manuscript-draft)
-// 	user.eps				= eps;
+  // user.eps        = 9.1e-7;      //--- usually: eps < 1.0e-7, in some setups this limitation can be relaxed (see Manuscript-draft)
 	user.Lambd      = 1.0;          //    for low temperatures (T=-70C), we might have eps < 1e-11
   user.air_lim    = 1.0e-6;
   user.nsteps_IC  = 10;
@@ -1901,7 +1894,7 @@ int main(int argc, char *argv[]) {
 
   PetscInt dim          = strtod(dim_str, &endptr);
   
-	PetscReal eps          = strtod(eps_str, &endptr);
+	PetscReal eps         = strtod(eps_str, &endptr);
 
   // Verify that conversion was successful
   if (*endptr != '\0') {
@@ -1923,7 +1916,7 @@ int main(int argc, char *argv[]) {
   user.RCsed      = 0.8e-5;
   user.RCsed_dev  = 0.4;
 
-  user.NCice      = 165; //less than 200, otherwise update in user
+  user.NCice      = 2; //less than 200, otherwise update in user
   user.RCice      = 0.2e-4;
   user.RCice_dev  = 0.5;
 
@@ -1940,9 +1933,9 @@ int main(int argc, char *argv[]) {
   if(user.periodic==1 && flag_BC_rhovfix==1) flag_BC_rhovfix=0;
 
   //output
-  user.outp = 5; // if 0 -> output according to t_interv
+  user.outp = 2; // if 0 -> output according to t_interv
   user.t_out = 0;    // user.t_interv = t_final/(n_out-1); //output every t_interv
-  user.t_interv =  35.0; //output every t_interv
+  user.t_interv =  36.0; //output every t_interv
 
   PetscInt adap = 1;
   PetscInt NRmin = 2, NRmax = 5;
@@ -1968,8 +1961,8 @@ int main(int argc, char *argv[]) {
   lambda_sub    = a1*user.eps/d0_sub;
   tau_sub       = user.eps*lambda_sub*(beta_sub/a1 + a2*user.eps/user.diff_sub + a2*user.eps/user.dif_vap);
 
-  user.mob_sub    = user.eps/3.0/tau_sub; 
-  user.alph_sub   = lambda_sub/tau_sub;
+  user.mob_sub    = 1*user.eps/3.0/tau_sub; 
+  user.alph_sub   = 10*lambda_sub/tau_sub;
   if(user.flag_Tdep==0) PetscPrintf(PETSC_COMM_WORLD,"FIXED PARAMETERS: tau %.4e  lambda %.4e  M0 %.4e  alpha %.4e \n\n",tau_sub,lambda_sub,user.mob_sub,user.alph_sub);
   else PetscPrintf(PETSC_COMM_WORLD,"TEMPERATURE DEPENDENT G-T PARAMETERS \n\n");
   
@@ -2005,7 +1998,6 @@ int main(int argc, char *argv[]) {
   if(user.periodic==1) {ierr = IGAAxisSetPeriodic(axis1,PETSC_TRUE);CHKERRQ(ierr);}
   ierr = IGAAxisSetDegree(axis1,p);CHKERRQ(ierr);
   ierr = IGAAxisInitUniform(axis1,Ny,0.0,Ly,C);CHKERRQ(ierr);
-
   if(dim==3){
     ierr = IGAGetAxis(iga,2,&axis2);CHKERRQ(ierr);
     if(user.periodic==1) {ierr = IGAAxisSetPeriodic(axis2,PETSC_TRUE);CHKERRQ(ierr);}
@@ -2074,9 +2066,7 @@ int main(int argc, char *argv[]) {
         PetscPrintf(PETSC_COMM_WORLD,"Pluviation Script not prepared for 3D. Run no-gravity \n");
         ierr = InitialSedGrains(iga,&user);CHKERRQ(ierr);
       }
-    } else {
-      ierr = InitialSedGrains(iga,&user);CHKERRQ(ierr);
-    }
+    } else {ierr = InitialSedGrains(iga,&user);CHKERRQ(ierr);}
 
     //output sediment/metal in OutputMonitor function --> single file for all variables
 
@@ -2123,7 +2113,6 @@ int main(int argc, char *argv[]) {
     user.n_actsed= 0;
   }
 
-  PetscPrintf(PETSC_COMM_WORLD,"Initializing ice grains. \n");
   ierr = InitialIceGrains(iga,&user);CHKERRQ(ierr);
 
   // Print the variables
