@@ -2,14 +2,16 @@
 #SBATCH -J NASAv2-10G-3D-T253K-hum90
 #SBATCH -A rubyfu
 #SBATCH -t 5-00:00:00
-#SBATCH --nodes=4
-#SBATCH --ntasks-per-node=50
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=10
 #SBATCH --cpus-per-task=1
 #SBATCH -o "output_files/%x.o%j"
 #SBATCH -e "output_files/%x.e%j"
 #SBATCH --export=ALL
 #SBATCH --partition=expansion
 #SBATCH --mem-per-cpu=1G
+#SBATCH --mail-user=jbaglino@caltech.edu
+#SBATCH --mail-type=END,FAIL,TIME_LIMIT     # Notify when job ends, fails, or hits time limit
 
 ##############################################
 # CONFIGURATION
@@ -95,15 +97,16 @@ set_parameters() {
             eps=1.56979924263831e-06;
             ;;
         *"grainReadFile-10_s1-10.dat")
-            Lx=0.5e-03
-            Ly=0.5e-03
-            Lz=2.202e-04
+            Lx=0.6e-03
+            Ly=0.6e-03
+            Lz=0.3206e-3
 
-            Nx=275
-            Ny=275
-            Nz=122
+            # Specificlly for T = 85K!!!
+            Nx=192
+            Ny=192
+            Nz=103
 
-            eps=9.096e-07
+            eps=1.56979924263831e-06
             ;;
         *)
             echo "[WARNING] No matching parameters for '$inputFile'. Using defaults."

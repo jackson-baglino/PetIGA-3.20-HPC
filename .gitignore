@@ -1,26 +1,57 @@
-MAC_SILICON-M2_OMPI-5.0.3_PETSC-3.20
-MAC_SILICON-M2_OMPI-5.0.3_PETSC-3.20-debug
-MAC_SILICON-M2_MPICH-4.2.1_PETSC-3.20-gcc-12.3.0
-MAC_SILICON-M2_MPICH-4.2.1_PETSC-3.20-gcc-12.3.0-64bit
-mac-optimal-mpi-3.20
-mac-studio-optimal
-test
-.vscode
-input
-Original
+# ======================
+# macOS System Files
+# ======================
 .DS_Store
-NASA
-NASA_panda
-NASAv2
-HPC_Petsc-3.20_OMPI-4.1.5_gcc-11.3.1-2clspqh/*
-src/*
-include/* 
-docs/*
-lib/*
-HPC_Petsc-3.20/*
-HPC_Petsc-3.20_gcc-13.2.0_omp-4.1.5/*
-HPC_Petsc-3.20_gcc-13.2.0_omp-5.0.1/*
+
+# ======================
+# Editor / IDE Settings
+# ======================
+.vscode
+
+# ======================
+# Input and Test Files
+# ======================
+input/
+test/
+Original/
+
+# ======================
+# Project Directories
+# ======================
+NASA/
+NASA_panda/
+NASAv2/
+mac-optimal-mpi-3.20/
+mac-studio-optimal/
+
+# ======================
+# Demo Outputs
+# ======================
 demo/NASAv2.o
 demo/output_files/*
+
+# ======================
+# PETSc Build Outputs (HPC + Mac Variants)
+# ======================
+HPC_Petsc-3.20/*
 HPC_Petsc-3.20-64bit/*
 HPC_Petsc-3.20_64-bit/*
+HPC_Petsc-3.20_OMPI-4.1.5_gcc-11.3.1-2clspqh/*
+HPC_Petsc-3.20_gcc-13.2.0_omp-4.1.5/*
+HPC_Petsc-3.20_gcc-13.2.0_omp-5.0.1/*
+
+MAC_SILICON-M2_OMPI-5.0.3_PETSC-3.20/
+MAC_SILICON-M2_OMPI-5.0.3_PETSC-3.20-debug/
+MAC_SILICON-M2_MPICH-4.2.1_PETSC-3.20-gcc-12.3.0/
+MAC_SILICON-M2_MPICH-4.2.1_PETSC-3.20-gcc-12.3.0-64bit/
+
+# ======================
+# Project Subdirectories
+# ======================
+src/*
+include/*
+docs/*
+lib/*
+
+projects/permafrost/obj/*
+projects/permafrost/outputs/*
