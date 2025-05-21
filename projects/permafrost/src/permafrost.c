@@ -173,16 +173,24 @@ int main(int argc, char *argv[]) {
   ierr = IGASetFormIJacobian(iga,Jacobian,&user);CHKERRQ(ierr);
 
   //Boundary Condition
-  if(flag_BC_rhovfix==1){
+  if(flag_BC_rhovfix == 1){
     PetscReal rho0_vs;
-    RhoVS_I(&user,user.temp0,&rho0_vs,NULL);
-    for(l=0;l<dim;l++) for(m=0;m<2;m++) ierr = IGASetBoundaryValue(iga,l,m,2,user.hum0*rho0_vs);CHKERRQ(ierr);
+    RhoVS_I(&user, user.temp0, &rho0_vs, NULL);
+    for(l=0; l<dim; l++) {
+      for(m=0; m<2; m++) {
+        ierr = IGASetBoundaryValue(iga,l,m,2,user.hum0*rho0_vs);CHKERRQ(ierr);
+      }
+    }
   }
   if(flag_BC_Tfix==1){
     PetscReal T_BC[dim][2], LL[dim];
     LL[0] = Lx; LL[1]=Ly; LL[2]=Lz;
     for(l=0;l<dim;l++) for(m=0;m<2;m++) T_BC[l][m] = user.temp0 + (2.0*m-1)*user.grad_temp0[l]*0.5*LL[l];
-    for(l=0;l<dim;l++) for(m=0;m<2;m++) ierr = IGASetBoundaryValue(iga,l,m,1,T_BC[l][m]);CHKERRQ(ierr);
+    for (l = 0; l < dim; l++) {
+      for (m = 0; m < 2; m++) {
+        ierr = IGASetBoundaryValue(iga, l, m, 1, T_BC[l][m]); CHKERRQ(ierr);
+        }
+    }
   }
 
   TS ts;

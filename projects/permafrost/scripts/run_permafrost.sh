@@ -1,126 +1,87 @@
-#!/bin/zsh
+#!/bin/bash
+#SBATCH -J permafrost-run
+#SBATCH -A rubyfu
+#SBATCH -t 7-00:00:00
+#SBATCH --nodes=5
+#SBATCH --ntasks-per-node=40
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu=1G
+#SBATCH -o "output_files/%x.o%j"
+#SBATCH -e "output_files/%x.e%j"
+#SBATCH --export=ALL
+#SBATCH --partition=expansion
+#SBATCH --mail-user=jbaglino@caltech.edu
+#SBATCH --mail-type=END,FAIL,TIME_LIMIT
 
-set -euo pipefail
-trap 'echo "❌ Error on line $LINENO"; exit 1' ERR
+# ==============================
+# Configuration
+# ==============================
+BASE_DIR="/home/jbaglino/PetIGA-3.20-HPC/projects/permafrost"
+INPUT_DIR="$BASE_DIR/inputs"
+OUTPUT_BASE="/resnick/scratch/jbaglino/permafrost"
+EXEC_FILE="$BASE_DIR/permafrost"
+inputFile="$INPUT_DIR/circle_data.csv"
 
-################################################################################
-# permafrost Dry Snow Metamorphism Simulation Script
-# This script compiles and runs the permafrost model with user-defined inputs,
-# creates output directories, saves metadata, and post-processes results.
-################################################################################
+# Output Folder
+timestamp=$(date +%Y-%m-%d__%H.%M.%S)
+folder="$OUTPUT_BASE/permafrost_$timestamp"
+mkdir -p "$folder"
 
-################################################################################
-# Create output folder based on timestamp and title
-################################################################################
-create_folder() {
-    name="$title$(date +%Y-%m-%d__%H.%M.%S)"
-    dir="/Users/jacksonbaglino/SimulationResults/DrySed_Metamorphism/permafrost"
-    folder="$dir/$name"
+# Parameters
+Lx=1.0e-03
+Ly=1.0e-03
+Lz=1.0e-03
+Nx=550
+Ny=550
+Nz=550
+eps=9.09629658751972e-07
+delt_t=1.0e-4
+t_final=$((52*7*24*60*60))
+n_out=100
+humidity=0.75
+temp=-20.0
+grad_temp0X=0.0
+grad_temp0Y=0.0003
+grad_temp0Z=0.0
+dim=2
 
-    if [ ! -d "$dir" ]; then
-        mkdir -p "$dir"
-    fi
+export Lx Ly Lz Nx Ny Nz eps delt_t t_final n_out \
+       humidity temp grad_temp0X grad_temp0Y grad_temp0Z dim inputFile folder
 
-    mkdir -p "$folder"
-}
+# ==============================
+# Logging Info
+# ==============================
+echo "[INFO] Job ID: $SLURM_JOB_ID"
+echo "[INFO] Output folder: $folder"
+echo "[INFO] Input file: $inputFile"
+echo "[INFO] Running on nodes: $SLURM_JOB_NODELIST"
+echo "[INFO] Starting simulation..."
 
-################################################################################
-# Compile simulation code
-################################################################################
-compile_code() {
-    echo "Compiling..."
-    make all
-}
+# ==============================
+# Compilation (optional)
+# ==============================
+cd "$BASE_DIR" || exit 1
+make permafrost || { echo "❌ Compilation failed"; exit 2; }
 
-################################################################################
-# Export simulation parameters to CSV file
-################################################################################
-write_parameters_to_csv() {
-    csv_file="$folder/simulation_parameters.csv"
-    echo "Variable,Value" > "$csv_file"
-    echo "folder,$folder" >> "$csv_file"
-    echo "inputFile,$inputFile" >> "$csv_file"
-    echo "title,$title" >> "$csv_file"
-    echo "Lx,$Lx" >> "$csv_file"
-    echo "Ly,$Ly" >> "$csv_file"
-    echo "Lz,$Lz" >> "$csv_file"
-    echo "Nx,$Nx" >> "$csv_file"
-    echo "Ny,$Ny" >> "$csv_file"
-    echo "Nz,$Nz" >> "$csv_file"
-    echo "delt_t,$delt_t" >> "$csv_file"
-    echo "t_final,$t_final" >> "$csv_file"
-    echo "n_out,$n_out" >> "$csv_file"
-    echo "humidity,$humidity" >> "$csv_file"
-    echo "temp,$temp" >> "$csv_file"
-    echo "grad_temp0X,$grad_temp0X" >> "$csv_file"
-    echo "grad_temp0Y,$grad_temp0Y" >> "$csv_file"
-    echo "grad_temp0Z,$grad_temp0Z" >> "$csv_file"
-    echo "dim,$dim" >> "$csv_file"
-    echo "eps,$eps" >> "$csv_file"
-}
+# ==============================
+# Execution
+# ==============================
+mpiexec "$EXEC_FILE" -initial_PFgeom -temp_initial \
+    -snes_rtol 1e-3 -snes_stol 1e-6 -snes_max_it 7 \
+    -ksp_gmres_restart 150 -ksp_max_it 1000 \
+    -ksp_converged_reason -snes_converged_reason \
+    -snes_linesearch_monitor -snes_linesearch_type basic \
+    | tee "$folder/outp.txt"
 
-################################################################################
-# Load input file and set grid size, domain, and epsilon based on selected input
-################################################################################
-set_parameters() {
-    input_dir="/Users/jacksonbaglino/PetIGA-3.20/projects/dry_snow_metamorphism/inputs/"
-    inputFile="${input_dir}${filename}"
+# ==============================
+# Archiving and Logs
+# ==============================
+cp "$inputFile" "$folder/"
+cp "$BASE_DIR/src/permafrost.c" "$folder/"
+cp "$BASE_DIR/scripts/run_permafrost.sh" "$folder/"
 
-    cp "$inputFile" "$folder"
-    echo "Selected input file: $inputFile"
-
-    Lx=0.5e-03
-    Ly=0.5e-03
-    Lz=0.5e-03
-    Nx=275
-    Ny=275
-    Nz=275
-    eps=9.09629658751972e-07
-
-    export folder inputFile title Lx Ly Lz Nx Ny Nz delt_t t_final n_out \
-        humidity temp grad_temp0X grad_temp0Y grad_temp0Z dim eps
-}
-
-################################################################################
-# Run the simulation using MPI
-################################################################################
-run_simulation() {
-    echo "Running simulation..."
-    echo "Nx: $Nx"
-    echo "Ny: $Ny"
-    echo "Nz: $Nz"
-    echo "Lx: $Lx"
-    echo "Ly: $Ly"
-    echo "Lz: $Lz"
-    echo "delt_t: $delt_t"
-    echo "t_final: $t_final"
-    echo "dim: $dim"
-
-    if [[ "$debug_mode" -eq 1 ]]; then
-        echo "Launching MPI under gdb..."
-        mpiexec -n 1 xterm -e gdb --args ./permafrost -initial_PFgeom -temp_initial
-    else
-        mpiexec -np 8 ./permafrost -initial_PFgeom -temp_initial -snes_rtol 1e-3 \
-        -snes_stol 1e-6 -snes_max_it 7 -ksp_gmres_restart 150 -ksp_max_it 1000 \
-        -ksp_converged_reason -snes_converged_reason -snes_linesearch_monitor \
-        -snes_linesearch_type basic | tee "$folder/outp.txt"
-    fi
-}
-
-################################################################################
-# Copy relevant scripts to folder and save summary parameters to .dat and CSV
-################################################################################
-finalize_results() {
-    echo "Finalizing results..."
-    cd ./scripts
-    cp run_permafrost.sh plotpermafrost.py plotSSA.py plotPorosity.py $folder
-    cd ../src
-    cp permafrost.c $folder
-    cd ../
-    write_parameters_to_csv
-
-    # Save simulation parameters
-    cat << EOF > $folder/sim_params.dat
+# Save simulation parameters
+cat << EOF > "$folder/sim_params.dat"
 ----- SIMULATION PARAMETERS -----
 Input file: $inputFile
 
@@ -153,64 +114,6 @@ grad_temp0X = $grad_temp0X
 grad_temp0Y = $grad_temp0Y
 grad_temp0Z = $grad_temp0Z
 EOF
-}
 
-################################################################################
-# Run post-processing plotting script
-################################################################################
-run_plotting() {
-    echo "Queuing plotpermafrost.py"
-    ./scripts/run_plotpermafrost.sh $name
-}
-
-################################################################################
-# USER-DEFINED SIMULATION SETTINGS
-################################################################################
-echo " "
-echo "Starting permafrost simulation workflow"
-echo " "
-
-debug_mode=0  # set to 1 to enable gdb debugging
-
-# Enable debug mode via command-line argument
-if [[ $# -gt 0 && $1 == "debug" ]]; then
-    debug_mode=1
-    echo "🛠️ Running in DEBUG mode"
-fi
-
-delt_t=1.0e-4
-t_final=100*24*60*60
-n_out=100
-t_final=$(echo "$t_final" | bc -l)
-
-if (( $(echo "$t_final <= 0" | bc -l) )); then
-    echo "❌ Error: t_final must be > 0. Got $t_final"
-    exit 1
-fi
-
-humidity=0.70
-temp=-20.0
-grad_temp0X=0.0
-grad_temp0Y=3.0
-grad_temp0Z=0.0
-dim=2
-filename="circle_data.csv"
-title="RandomGrains"
-
-compile_code
-
-create_folder
-
-set_parameters
-
-finalize_results
-
-run_simulation
-
-run_plotting
-
-echo "-------------------------------------------------------------------------"
-echo " "
-echo "✅ Done with permafrost simulation!"
-echo "-------------------------------------------------------------------------"
-echo " "
+# Completion Message
+echo "[INFO] Simulation completed. Results saved in $folder"

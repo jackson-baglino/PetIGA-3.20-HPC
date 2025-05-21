@@ -170,6 +170,8 @@ PetscErrorCode OutputMonitor(TS ts, PetscInt step, PetscReal t, Vec U,
     char *dir;
     dir = getenv(env);
 
+    PetscPrintf(PETSC_COMM_WORLD, "dir %s\n", dir);
+
     // Create the filename for the output file
     char filename[256];
     sprintf(filename, "%s/sol_%05d.dat", dir, step);
