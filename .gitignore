@@ -55,3 +55,4 @@ lib/*
 
 projects/permafrost/obj/*
 projects/permafrost/outputs/*
+projects/permafrost/permafrost
