@@ -66,11 +66,11 @@ int main(int argc, char *argv[]) {
 
   // grains!
   flag_sedgrav    = 0; 
-  user.NCsed      = 30; //less than 200, otherwise update in user
+  user.NCsed      = 200; //less than 200, otherwise update in user
   user.RCsed      = 0.2e-4;
   user.RCsed_dev  = 0.55;
 
-  user.NCice      = 50; //less than 200, otherwise update in user
+  user.NCice      = 200; //less than 200, otherwise update in user
   user.RCice      = 0.5e-4;
   user.RCice_dev  = 0.55;
 
@@ -84,7 +84,7 @@ int main(int argc, char *argv[]) {
   //output
   user.outp = 50; // if 0 -> output according to t_interv
   user.t_out = 0;    // user.t_interv = t_final/(n_out-1); //output every t_interv
-  user.t_interv =  600.0; //output every t_interv
+  user.t_interv =  2400.0; //output every t_interv
 
   PetscInt adap = 1;
   PetscInt NRmin = 2, NRmax = 5;

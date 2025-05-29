@@ -41,7 +41,7 @@ n_out=100
 humidity=0.75
 temp=-20.0
 grad_temp0X=0.0
-grad_temp0Y=0.0003
+grad_temp0Y=0.003
 grad_temp0Z=0.0
 dim=2
 

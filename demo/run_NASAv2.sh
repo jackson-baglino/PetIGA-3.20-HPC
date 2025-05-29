@@ -1,9 +1,9 @@
 #!/bin/bash
-#SBATCH -J NASAv2-10G-3D-T253K-hum90
+#SBATCH -J NASAv2-118G-2D-T253K-hum90
 #SBATCH -A rubyfu
 #SBATCH -t 5-00:00:00
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=10
+#SBATCH --ntasks-per-node=2
 #SBATCH --cpus-per-task=1
 #SBATCH -o "output_files/%x.o%j"
 #SBATCH -e "output_files/%x.e%j"
@@ -20,7 +20,7 @@
 # General settings
 BASE_DIR="/home/jbaglino/PetIGA-3.20-HPC/demo"
 input_dir="$BASE_DIR/input"
-output_dir="/central/scratch/jbaglino"
+output_dir="/resnick/scratch/jbaglino"
 exec_file="./NASAv2"
 
 # Job-specific settings
@@ -31,7 +31,7 @@ temp=-20.0
 # inputFile="$input_dir/grainReadFile-2.dat"
 # inputFile="$input_dir/grainReadFile-2_Molaro.dat"
 # inputFile="$input_dir/grainReadFile-5_s1-10.dat"
-inputFile="$input_dir/grainReadFile-10_s1-10.dat"
+inputFile="$input_dir/grainReadFile-118_s1-10.dat"
 # inputFile="$input_dir/grainReadFile_3D-100_s1-10.dat"
 
 ##############################################
@@ -100,13 +100,16 @@ set_parameters() {
             Lx=0.6e-03
             Ly=0.6e-03
             Lz=0.3206e-3
-
             # Specificlly for T = 85K!!!
             Nx=192
             Ny=192
             Nz=103
-
             eps=1.56979924263831e-06
+            ;;
+          *"grainReadFile-118_s1-10.dat")
+            Lx=2.03e-03; Ly=2.03e-03; Lz=2.03e-03
+            Nx=1100; Ny=1100; Nz=1100
+            eps=9.09629658751972e-07
             ;;
         *)
             echo "[WARNING] No matching parameters for '$inputFile'. Using defaults."
@@ -117,13 +120,13 @@ set_parameters() {
     esac
 
     # Shared parameters
-    dim=3
+    dim=2
     grad_temp0X=0.0
-    grad_temp0Y=3.0
+    grad_temp0Y=3.0e-5
     grad_temp0Z=0.0
 
-    t_final=2.0*60.0*60.0
-    # t_final=1.0e-3
+    # t_final=2.0*60.0*60.0
+    t_final=1.0e-3
     delt_t=1.0e-4
     n_out=0
 
