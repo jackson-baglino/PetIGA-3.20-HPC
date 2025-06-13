@@ -1,9 +1,9 @@
 #!/bin/bash
-#SBATCH -J NASAv2-118G-2D-T253K-hum90
+#SBATCH -J NASAv2-30G-2D-T253K-hum70
 #SBATCH -A rubyfu
 #SBATCH -t 5-00:00:00
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=2
+#SBATCH --ntasks-per-node=10
 #SBATCH --cpus-per-task=1
 #SBATCH -o "output_files/%x.o%j"
 #SBATCH -e "output_files/%x.e%j"
@@ -24,14 +24,15 @@ output_dir="/resnick/scratch/jbaglino"
 exec_file="./NASAv2"
 
 # Job-specific settings
-humidity=0.90
+humidity=0.70
 temp=-20.0
 
 # Define input file (uncomment the desired file)
 # inputFile="$input_dir/grainReadFile-2.dat"
 # inputFile="$input_dir/grainReadFile-2_Molaro.dat"
 # inputFile="$input_dir/grainReadFile-5_s1-10.dat"
-inputFile="$input_dir/grainReadFile-118_s1-10.dat"
+inputFile="$input_dir/grainReadFile-30_s1-10.dat"
+# inputFile="$input_dir/grainReadFile-118_s1-10.dat"
 # inputFile="$input_dir/grainReadFile_3D-100_s1-10.dat"
 
 ##############################################
@@ -111,6 +112,11 @@ set_parameters() {
             Nx=1100; Ny=1100; Nz=1100
             eps=9.09629658751972e-07
             ;;
+          *"grainReadFile-30_s1-10.dat")
+            Lx=2.0e-03; Ly=2.0e-03; Lz=2.0e-03
+            Nx=1100; Ny=1100; Nz=1100
+            eps=9.09629658751972e-07
+            ;;
         *)
             echo "[WARNING] No matching parameters for '$inputFile'. Using defaults."
             Lx=0.0002424; Ly=0.0003884; Lz=0.0002424
@@ -125,10 +131,10 @@ set_parameters() {
     grad_temp0Y=3.0e-5
     grad_temp0Z=0.0
 
-    # t_final=2.0*60.0*60.0
-    t_final=1.0e-3
+    t_final=28*24.0*60.0*60.0
+    # t_final=1.0e-3
     delt_t=1.0e-4
-    n_out=0
+    n_out=56
 
     t_final=$(echo "$t_final" | bc -l)
 
@@ -168,7 +174,7 @@ setup_output_folder() {
 # Compile NASAv2
 compile_program() {
     echo "[INFO] Compiling NASAv2..."
-    make NASAv2 || { echo "[ERROR] Compilation failed! Exiting."; exit 2; }
+    # make NASAv2 || { echo "[ERROR] Compilation failed! Exiting."; exit 2; }
 }
 
 # Run the program
@@ -229,6 +235,8 @@ cleanup() {
 ##############################################
 # MAIN SCRIPT
 ##############################################
+echo "[INFO] Starting NASAv2 simulation..."
+echo "Running on date $(date)"
 
 # Validate inputs
 validate_inputs

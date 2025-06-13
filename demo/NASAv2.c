@@ -1933,9 +1933,9 @@ int main(int argc, char *argv[]) {
   if(user.periodic==1 && flag_BC_rhovfix==1) flag_BC_rhovfix=0;
 
   //output
-  user.outp = 2; // if 0 -> output according to t_interv
-  user.t_out = 0;    // user.t_interv = t_final/(n_out-1); //output every t_interv
-  user.t_interv =  36.0; //output every t_interv
+  user.outp = 0; // if 0 -> output according to t_interv
+  user.t_out = 0;    user.t_interv = t_final/(n_out-1); //output every t_interv
+  // user.t_interv =  36.0; //output every t_interv
 
   PetscInt adap = 1;
   PetscInt NRmin = 2, NRmax = 5;
@@ -2026,13 +2026,21 @@ int main(int argc, char *argv[]) {
   if(flag_BC_rhovfix==1){
     PetscReal rho0_vs;
     RhoVS_I(&user,user.temp0,&rho0_vs,NULL);
-    for(l=0;l<dim;l++) for(m=0;m<2;m++) ierr = IGASetBoundaryValue(iga,l,m,2,user.hum0*rho0_vs);CHKERRQ(ierr);
+    for(l=0;l<dim;l++) {
+      for(m=0;m<2;m++) {
+        ierr = IGASetBoundaryValue(iga,l,m,2,user.hum0*rho0_vs);CHKERRQ(ierr);
+      }
+    }
   }
   if(flag_BC_Tfix==1){
     PetscReal T_BC[dim][2], LL[dim];
     LL[0] = Lx; LL[1]=Ly; LL[2]=Lz;
     for(l=0;l<dim;l++) for(m=0;m<2;m++) T_BC[l][m] = user.temp0 + (2.0*m-1)*user.grad_temp0[l]*0.5*LL[l];
-    for(l=0;l<dim;l++) for(m=0;m<2;m++) ierr = IGASetBoundaryValue(iga,l,m,1,T_BC[l][m]);CHKERRQ(ierr);
+    for(l=0;l<dim;l++) {
+      for(m=0;m<2;m++) {
+        ierr = IGASetBoundaryValue(iga,l,m,1,T_BC[l][m]);CHKERRQ(ierr);
+      }
+    }
   }
 
   TS ts;
